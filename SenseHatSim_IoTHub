@@ -75,5 +75,6 @@ class D2CMsgSender:
     
     while True:
         message = str(sense.temp)
+        print 'Sending message... ' + message
         print d2cMsgSender.sendD2CMsg(deviceId, message)
         time.sleep(5) # 5 second delay
