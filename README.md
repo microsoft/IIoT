@@ -1,23 +1,23 @@
 # IoT Hub Pi Hackathon
 
 ## Overview
-This hackathon demonstrates connecting a Raspberry Pi running Raspian to [Azure IoT Hub] (https://azure.microsoft.com/en-us/services/iot-hub/). The Raspberry Pi will be sending telemetry to Azure IoT Hub from either:
+This hackathon demonstrates connecting a Raspberry Pi running Raspian to [Azure IoT Hub] (https://azure.microsoft.com/en-us/services/iot-hub/) and sending telemetry to Azure IoT Hub from either:
 - a physical [Sense Hat] (https://www.raspberrypi.org/products/sense-hat/) connected to the Raspberry Pi; or
-- a Sense Hat simulator installed on the Raspberry Pi.
+- a Sense Hat Emulator installed on the Raspberry Pi.
 
-Completing this hackathon will provide you with the basic skills needed to connect and securely send telemetry from a physical device (e.g. a field device or field gateway) to the Azure IoT Hub. This hackathon does not demonstrate what can be done with the data after it arrives at the Azure IoT Hub. Having said that, we can do almost anything including complex event processing, stream processing, saving telemetry to storage or databases, analytics, training of Machine Learning models etc.
+Completing this hackathon will provide you with the basic skills needed to connect and securely send telemetry from a physical device (e.g. a field device or field gateway) to the Azure IoT Hub. This hackathon does not demonstrate what can be done with the data after it arrives at the Azure IoT Hub. Having said that, you can do almost anything including complex event processing, stream processing, saving telemetry to blob storage or databases, analytics, training of Machine Learning models etc.
 
 ### Why Sense Hat?
-We didn't want to mess around with breadboards, jumper cables, resistors etc. This just wastes time and adds nothing to the goal of connecting a sensor to Azure IoT Hub. 
+We didn't want you to mess around with breadboards, jumper cables, resistors etc. This just wastes time and adds nothing to the goal of connecting a sensor to Azure IoT Hub. The Sense Hat has all this preinstalled on the circuit board, a ready to use library, and a series of sensors to play with.
 
 ### Why HTTPS and REST?
 For simplicity and to avoid downloading/compiling SDKs during the hackathon, we chose to send the Sense Hat telemetry to Azure IoT Hub using the [IoT Hub REST API] (https://docs.microsoft.com/en-us/rest/api/iothub/) over HTTPS. Of course, you can use one of the many device SDKs available, which support sending messages over AMQP and MQTT. If you want to use the device SDKs, please visit [https://github.com/Azure/azure-iot-sdks] (https://github.com/Azure/azure-iot-sdks).
 
 ## Requirements
-- Raspberry Pi 3 (Model 2+ will probably work as well) with latest version of Raspian installed on the micro SD card
-- Sense Hat Simulator (which comes with the Raspian O/S)
-- Sense Hat (optional - for those that want to play with real hardware)
-- Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run Device Explorer. 
+- Raspberry Pi 3 (Pi Model 2 will probably work as well) with latest version of Raspian installed on the micro SD card. Using NOOBS works fine. 
+- [Sense Hat Emulator] (https://www.raspberrypi.org/blog/sense-hat-emulator/) (which comes with the Raspian O/S)
+- [Sense Hat] (https://www.raspberrypi.org/products/sense-hat/) (optional - for those that want to play with real hardware)
+- Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi). 
 - An Azure account (either a trial account, or a development subscription from your company). 
 - TBD
 
