@@ -29,6 +29,10 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 - Install [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Winbdows laptop. Device Explorer is a great tool to see messages coming into the IoT Hub from your Raspberry Pi. 
 - TBD
 
+## Steps (Performed by students during hackathon)
+1. TBD
+2. Also the python code to send multiple telemetry data points in a single JSON-formatted message to IoT Hub.
+
 ##//TODO
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
 - Order a real Sense Hat and test code sample.
