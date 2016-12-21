@@ -1,7 +1,7 @@
 """
-Sample code demonstrating Sense Hat Simulator running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
+Sample code demonstrating Sense Hat Emulator running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
 
-Module Name:  SenseHatSim_IoTHub.py
+Module Name:  SenseHatEmulator_IoTHub.py
 Project:      IoTHubPiHackathon
 Copyright (c) Microsoft Corporation.
 
