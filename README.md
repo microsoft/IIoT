@@ -31,7 +31,7 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 
 ## Steps (Performed by students during hackathon)
 1. TBD
-2. Also the python code to send multiple telemetry data points in a single JSON-formatted message to IoT Hub.
+2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub.
 
 ##//TODO
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
