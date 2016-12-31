@@ -33,6 +33,7 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 1. TBD
 2. Refer to the [SenseHat API] (https://pythonhosted.org/sense-hat/api/) and try sending other telemetry to IoT Hub from SenseHat. 
 2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub.
+4. Display the HTTP response code from the IoT Hub message onto the SenseHat LED display.
 
 ##//TODO
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
