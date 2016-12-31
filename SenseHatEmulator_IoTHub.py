@@ -77,7 +77,7 @@ class D2CMsgSender:
     sense = SenseHat()
     
     while True:
-        message = str(sense.temp)
+        message = str(sense.temp) #Refer to SenseHat API to send other data points https://pythonhosted.org/sense-hat/api/
         print 'Sending message... ' + message
         print d2cMsgSender.sendD2CMsg(deviceId, message)
         time.sleep(5) # 5 second delay
