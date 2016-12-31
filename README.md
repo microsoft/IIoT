@@ -37,3 +37,4 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 ##//TODO
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
 - Build JSON code to send multipe data points to IoT Hub.
+- Print the IoT Hub return message to the LED display on the SenseHat.
