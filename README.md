@@ -38,3 +38,4 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
 - Build JSON code to send multipe data points to IoT Hub.
 - Print the IoT Hub return message to the LED display on the SenseHat.
+- Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
