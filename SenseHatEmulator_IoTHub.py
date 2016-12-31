@@ -1,5 +1,5 @@
 """
-Sample code demonstrating Sense Hat Emulator running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
+Sample code demonstrating Sense Hat running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
 
 Module Name:  SenseHatEmulator_IoTHub.py
 Project:      IoTHubPiHackathon
@@ -25,7 +25,10 @@ import time
 import requests
 import urllib
 import time
-from sense_emu import SenseHat
+
+#If using emulator, uncomment 'from sense_emu import SenseHat ' and comment out 'from sense_hat import SenseHat'
+from sense_hat import SenseHat #for physical SenseHat attached to Raspi
+# from sense_emu import SenseHat #for SenseHat Emulator
 
 class D2CMsgSender:
     
