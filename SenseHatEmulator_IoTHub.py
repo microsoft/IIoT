@@ -27,8 +27,8 @@ import urllib
 import time
 
 #If using emulator, uncomment 'from sense_emu import SenseHat ' and comment out 'from sense_hat import SenseHat'
-from sense_hat import SenseHat #for physical SenseHat attached to Raspi
-# from sense_emu import SenseHat #for SenseHat Emulator
+from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi
+# from sense_emu import SenseHat #if using a SenseHat Emulator
 
 class D2CMsgSender:
     
