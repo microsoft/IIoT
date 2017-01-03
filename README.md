@@ -32,11 +32,9 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 ## Steps (Performed by students during hackathon)
 1. TBD
 2. Refer to the [SenseHat API] (https://pythonhosted.org/sense-hat/api/) and try sending other telemetry to IoT Hub from SenseHat. 
-2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub.
+2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See 
 4. Display the HTTP response code from the IoT Hub message onto the SenseHat LED display.
 
 ##//TODO
 - Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
-- Build JSON code to send multipe data points to IoT Hub.
-- Print the IoT Hub return message to the LED display on the SenseHat.
 - Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
