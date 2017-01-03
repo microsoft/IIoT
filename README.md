@@ -32,7 +32,7 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 ## Steps (Performed by students during hackathon)
 1. TBD
 2. Refer to the [SenseHat API] (https://pythonhosted.org/sense-hat/api/) and try sending other telemetry to IoT Hub from SenseHat. 
-2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See 
+2. Change the python code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json).
 4. Display the HTTP response code from the IoT Hub message onto the SenseHat LED display.
 
 ##//TODO
