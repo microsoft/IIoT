@@ -22,7 +22,7 @@ For simplicity and to avoid downloading/compiling SDKs during the hackathon, we 
 - A basic understanding of Python and Raspian.
 - TBD
 
-## Advanced Setup (Must be completed in advanced of the hackathon)
+## Advance Setup (Must be completed in advance of the hackathon)
 Please perform the following steps in advance of the hackathon otherwise you will waste the entire hackathon performing these steps.
 - Ensure your Raspberry Pi can boot Raspian from the SD card.
 - Ensure Sense Hat Emulator is installed (by default it is installed with Raspian). Check under 'Programming' in the Raspian GUI.
