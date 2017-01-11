@@ -24,8 +24,8 @@ For simplicity and to avoid downloading/compiling SDKs during the hackathon, we 
 
 ## Advance Setup (Must be completed in advance of the hackathon)
 Please perform the following steps in advance of the hackathon otherwise you will waste the entire hackathon performing these steps.
-- Ensure your Raspberry Pi can boot Raspian from the SD card.
-- Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Check under 'Programming' in the Raspian GUI.
+- Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card.
+- Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
 - Install [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Winbdows laptop. Device Explorer is a great tool to see messages coming into the IoT Hub from your Raspberry Pi. 
 - TBD
 
