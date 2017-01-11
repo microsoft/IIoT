@@ -16,7 +16,7 @@ For simplicity and to avoid downloading/compiling SDKs during the hackathon, we 
 ## Requirements
 - [Raspberry Pi 3 Model B] (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (Pi 2 Model B with USB Wi-Fi dongle will probably work as well) with latest version of Raspian installed on the micro SD card. Using [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) works fine. 
 - [Sense HAT Emulator] (https://www.raspberrypi.org/blog/sense-hat-emulator/) (which comes with the Raspian O/S)
-- [Sense HAT] (https://www.raspberrypi.org/products/sense-hat/) (optional - for those that want to play with real hardware)
+- [Sense HAT] (https://www.raspberrypi.org/products/sense-hat/) (optional - for those that want to play with real hardware). You can order the Sense HAT from a variety of online sites such as adafruit.com, amazon.com etc. Please order yours 3-4 weeks in advance of the hackathon so it will arrive in time.
 - Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi). 
 - An Azure subscription. You can create a [free trial] (https://azure.microsoft.com/en-us/free/?b=17.01) Azure subscription, or you can use an MSDN Azure subscription or a subscription from your company. 
 - A basic understanding of Python and Linux.
