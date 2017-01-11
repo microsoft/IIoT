@@ -39,3 +39,4 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 - Determine number of temp Azure subscriptions needed for attendees
 - Finish TBD/TODO sections above.
 - Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
+- Terry to add additional steps to integrate Streaming Analytics, PowerBI.
