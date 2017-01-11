@@ -18,7 +18,7 @@ For simplicity and to avoid downloading/compiling SDKs during the hackathon, we 
 - [Sense HAT Emulator] (https://www.raspberrypi.org/blog/sense-hat-emulator/) (which comes with the Raspian O/S)
 - [Sense HAT] (https://www.raspberrypi.org/products/sense-hat/) (optional - for those that want to play with real hardware)
 - Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi). 
-- An Azure account. You can create a [free trial] (https://azure.microsoft.com/en-us/free/?b=17.01) Azure subscription, or you can use an MSDN Azure subscription or a subscription from your company. 
+- An Azure subscription. You can create a [free trial] (https://azure.microsoft.com/en-us/free/?b=17.01) Azure subscription, or you can use an MSDN Azure subscription or a subscription from your company. 
 - A basic understanding of Python and Linux.
 - TBD
 
@@ -27,7 +27,7 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 - Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card.
 - Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
 - Install [Device Explorer] (https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Winbdows laptop. Device Explorer is a great tool to see messages coming into the IoT Hub from your Raspberry Pi. 
-- TBD
+- Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
 
 ## Steps (Performed by students during hackathon)
 1. //TODO - Lots of steps to add here, including screen shots. These steps will include connecting their Raspi to Wi-Fi, logging into their trail Azure subscription, creating and configuring Azure IoT Hub, downloading SenseHat_IoTHub.py from this repo to their Raspi and updating the connection string to start sending Sense HAT data to IoT Hub, etc...
