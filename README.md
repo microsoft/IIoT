@@ -30,11 +30,12 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 - TBD
 
 ## Steps (Performed by students during hackathon)
-1. TBD
+1. //TODO - Lots of steps to add here, including screen shots. These steps will include connecting their Raspi to Wi-Fi, logging into their trail Azure subscription, creating and configuring Azure IoT Hub, downloading SenseHat_IoTHub.py from this repo to their Raspi and updating the connection string to start sending Sense HAT data to IoT Hub, etc...
 2. Referring to the [Sense Hat API] (https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
 3. Update the code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON.py] (https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=sdOEuDcq984383oB3iqDyt2y8wIhqAmXvKQb75V7LUA%3d&docid=2_1c28ea3292574419d932d16dacb6e4204&rev=1).
 4. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py] (https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
 
 ##//TODO
-- Find out how to offer temp Azure subscriptions. I know there is a way...just need to find this.
+- Determine number of temp Azure subscriptions needed for attendees
+- Finish TBD/TODO sections above.
 - Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
