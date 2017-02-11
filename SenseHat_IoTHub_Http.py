@@ -1,21 +1,5 @@
 """
 Sample code demonstrating Sense Hat running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
-
-Module Name:  SenseHatEmulator_IoTHub.py
-Project:      IoTHubPiHackathon
-Copyright (c) Microsoft Corporation.
-
-Original source code based on https://github.com/Azure-Samples/iot-hub-python-get-started/blob/master/Python/device/d2cMsgSender.py
-
-Using [Send device-to-cloud message](https://msdn.microsoft.com/en-US/library/azure/mt590784.aspx) API to send device-to-cloud message from the simulated device application to IoT Hub.
-
-This source is subject to the Microsoft Public License.
-See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
-All other rights reserved.
-
-THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, 
-EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED 
-WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 """
 
 import base64
@@ -77,7 +61,9 @@ class D2CMsgSender:
     sense = SenseHat()
     
     while True:
-        message = str(sense.temp) #Refer to SenseHat API to send other data points https://pythonhosted.org/sense-hat/api/
+        #Send temperature from the Sense HAT
+        #Refer to Sense HAT API to send other Sense HAT sensor data https://pythonhosted.org/sense-hat/api/
+        message = str(sense.temp) 
         print 'Sending message... ' + message
         print d2cMsgSender.sendD2CMsg(deviceId, message)
         time.sleep(5) # 5 second delay
