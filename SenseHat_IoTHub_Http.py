@@ -65,7 +65,7 @@ if __name__ == '__main__':
 
     #Replace <iot_hub_name> and <sas_key> with values obtained from Azure Portal or Device Explorer
     #Ensure you use IoT Hub owner connection string, not a device connection string here.
-    connectionString = 'HostName=KHIoTHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=PUbIrbAmPvgcc1kIAW5bDlNQG6/Y7zJSoi6qSiNpcio='
+    connectionString = 'HostName=<iot_hub_name>.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=<sas_key>'
     
     #Replace with deviceId registered with your IoT Hub.
     deviceId = 'Device1'
