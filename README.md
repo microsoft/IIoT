@@ -11,7 +11,10 @@ Completing this hackathon will provide you with the basic skills needed to conne
 We didn't want you to mess around with breadboards, jumper cables, resistors etc. This just wastes time and adds nothing to the goal of connecting a sensor to Azure IoT Hub. The Sense HAT has all the necessary components installed on the circuit board, including a ready to use library, and a series of sensors to play with.
 
 ### Why HTTPS and REST?
-For simplicity and to avoid downloading/compiling SDKs during the hackathon, we chose to send the Sense Hat telemetry to Azure IoT Hub using the [IoT Hub REST API] (https://docs.microsoft.com/en-us/rest/api/iothub/) over HTTPS. Of course, you can use one of the many device SDKs available, which support sending messages over AMQP and MQTT. If you want to use the device SDKs, please visit [https://github.com/Azure/azure-iot-sdks] (https://github.com/Azure/azure-iot-sdks).
+For simplicity and to avoid downloading/compiling SDKs during the hackathon, we chose to send the Sense Hat telemetry to Azure IoT Hub using the [IoT Hub REST API] (https://docs.microsoft.com/en-us/rest/api/iothub/) over HTTPS. Of course, you can use one of the many device SDKs available, which support sending messages over AMQP and MQTT. If you want to use the device SDKs, refer to the following sections below: 
+
+- Using the Python Device SDK
+- Using the .NET Device SDK
 
 ## Requirements
 - [Raspberry Pi 3 Model B] (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) (Pi 2 Model B with USB Wi-Fi dongle will probably work as well) with latest version of Raspian installed on the micro SD card. Using [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) works fine. 
@@ -34,6 +37,29 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 2. Referring to the [Sense Hat API] (https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
 3. Update the code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON.py] (https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=sdOEuDcq984383oB3iqDyt2y8wIhqAmXvKQb75V7LUA%3d&docid=2_1c28ea3292574419d932d16dacb6e4204&rev=1).
 4. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py] (https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
+
+## Using the Python Device SDK
+IoT Hub also supports MQTT and AMQP protocols. These are generally more efficient than using the HTTP REST API. In order to use MQTT or AMQP with Python, you will need to download and possibly compile the Python Device SDK. 
+
+### If you are running Python on Windows
+The full instructions are [here] (https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) with some Python SDK examples [here] (https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples).
+
+In summary:
+- Open a command prompt and run ```pip install iothub-client```
+
+### If you are running Python on Linux (e.g. Raspian)
+The full instructions are [here] (https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) with some Python SDK examples [here] (https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples).
+
+In summary:
+- ```git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git```
+- ```cd azure-iot-sdk-python/build_all/linux```
+- ```sudo ./setup.sh```
+- ```sudo ./build.sh```
+
+After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or at ```/usr/local/lib```
+
+## Using the .NET Device SDK
+//TODO
 
 ##//TODO
 - Determine number of temp Azure subscriptions needed for attendees
