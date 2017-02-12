@@ -56,7 +56,7 @@ In summary:
 - ```sudo ./setup.sh```
 - ```sudo ./build.sh```
 
-After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or at ```/usr/local/lib```
+After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or in ```/usr/local/lib``` or ```/usr/lib```.
 
 ## Using the .NET Device SDK
 //TODO
