@@ -1,7 +1,11 @@
 """
-Sample code demonstrating Sense Hat running on Raspian and Raspberry Pi 3 sending temperature data to Azure IoT Hub using Azure IoT Hub REST API.
+Sample code demonstrating Sense HAT running on Raspian and Raspberry Pi 3 sending sensor data to Azure IoT Hub using Azure IoT Hub REST API.
 
-Test with Python 2.7 and 3.5
+Azure IoT Hub REST API reference https://docs.microsoft.com/en-us/rest/api/iothub/
+
+Sense HAT API reference https://pythonhosted.org/sense-hat/api/
+
+Adapted from https://github.com/Azure-Samples/iot-hub-python-get-started
 """
 
 import base64
@@ -14,10 +18,10 @@ import time
 import sys
 
 #If using emulator, uncomment 'from sense_emu import SenseHat ' and comment out 'from sense_hat import SenseHat'
-#from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi
-from sense_emu import SenseHat #if using a SenseHat Emulator
+#from sense_hat import Sense HAT #if using a physical SenseHat attached to Raspi
+from sense_emu import SenseHat #if using a Sense HAT Emulator (Linux only)
 
-class D2CMsgSender:
+class IoTHub:
     
     API_VERSION = '2016-02-03'
     TOKEN_VALID_SECS = 10
@@ -55,6 +59,13 @@ class D2CMsgSender:
 
         return self.TOKEN_FORMAT % (signature, expiryTime, self.keyName, targetUri)
     
+    def registerDevice(self, deviceId):
+        sasToken = self._buildIoTHubSasToken(deviceId)
+        url = 'https://%s/devices/%s?api-version=%s' % (self.iotHost, deviceId, self.API_VERSION)
+        body = '{deviceId: "%s"}' % deviceId
+        r = requests.put(url, headers={'Content-Type': 'application/json', 'Authorization': sasToken}, data=body)
+        return r.text, r.status_code
+
     def sendD2CMsg(self, deviceId, message):
         sasToken = self._buildIoTHubSasToken(deviceId)
         url = 'https://%s/devices/%s/messages/events?api-version=%s' % (self.iotHost, deviceId, self.API_VERSION)
@@ -63,20 +74,33 @@ class D2CMsgSender:
     
 if __name__ == '__main__':
 
-    #Replace <iot_hub_name> and <sas_key> with values obtained from Azure Portal or Device Explorer
-    #Ensure you use IoT Hub owner connection string, not a device connection string here.
-    connectionString = 'HostName=<iot_hub_name>.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=<sas_key>'
+    #You can obtain the connection string from portal.azure.com -> IoT Hub -> <IoT_Hub_Name> -> Shared Access Policies
+    #To send messages, ensure you use a shared access policy with at least 'device connect' permissions.
+    #To register a new device, ensure you use a shared access policy with at least 'registry write' permissions.
+    #The connection string will resemble:
+    #   'HostName=myiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=sdilhjlEDPvgcc1kIAW5bDlNQG6/Y7zJSoi6qSiNpcio='
+    connectionString = ''
     
-    #Replace with deviceId registered with your IoT Hub.
-    deviceId = 'Device1'
+    #This is the device name that will be registered in the IoT Hub. 
+    #If it is already registered, it will error and continue on.
+    deviceId = 'Device100'
     
-    d2cMsgSender = D2CMsgSender(connectionString)
+    iotHubConn = IoTHub(connectionString)
     sense = SenseHat()
     
     while True:
-        #Send temperature from the Sense HAT
-        #Refer to Sense HAT API to send other Sense HAT sensor data https://pythonhosted.org/sense-hat/api/
-        message = str(sense.temp) 
-        print('Sending message... ' + message)
-        print(d2cMsgSender.sendD2CMsg(deviceId, message))
-        time.sleep(5) # 5 second delay
+
+        try:
+            #Register new device in IoT Hub
+            print('Registering device... ' + deviceId)
+            print(iotHubConn.registerDevice(deviceId))
+
+            #Send current temperature from the Sense HAT temp sensor
+            #Refer to Sense HAT API to send other Sense HAT sensor data https://pythonhosted.org/sense-hat/api/
+            message = str(sense.temp) 
+            print('Sending message... ' + message)
+            print(iotHubConn.sendD2CMsg(deviceId, message))
+            time.sleep(5) # 5 second delay
+        except OSError as e:
+            print('Error: ' + str(e))
+            break
