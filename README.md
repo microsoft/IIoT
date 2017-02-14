@@ -49,7 +49,5 @@ In summary:
 After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or in the common shared libraries folder such as ```/usr/local/lib``` or ```/usr/lib```.
 
 ##//TODO
-- Determine number of temp Azure subscriptions needed for attendees
 - Finish TBD/TODO sections above.
 - Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
-- Terry to add additional steps to integrate Streaming Analytics, PowerBI.
