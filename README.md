@@ -39,15 +39,8 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 4. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py] (https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
 
 ## Using the Python Device SDK
-IoT Hub also supports MQTT and AMQP protocols. These are generally more efficient than using the HTTP REST API. In order to use MQTT or AMQP with Python, you will need to download and possibly compile the Python Device SDK. 
+IoT Hub also supports MQTT and AMQP protocols. These are generally more efficient and scale better than using the HTTP REST API. In order to use MQTT or AMQP with Python, you will need to download and compile the Python Device SDK on your Raspian operating system.
 
-### If you are running Python on Windows
-The full instructions are [here] (https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) with some Python SDK examples [here] (https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples).
-
-In summary:
-- Open a command prompt and run ```pip install iothub-client```
-
-### If you are running Python on Linux (e.g. Raspian)
 The full instructions are [here] (https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md) with some Python SDK examples [here] (https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples).
 
 In summary:
@@ -56,10 +49,7 @@ In summary:
 - ```sudo ./setup.sh```
 - ```sudo ./build.sh```
 
-After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or in ```/usr/local/lib``` or ```/usr/lib```.
-
-## Using the .NET Device SDK
-//TODO
+After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or in the common shared libraries folder such as ```/usr/local/lib``` or ```/usr/lib```.
 
 ##//TODO
 - Determine number of temp Azure subscriptions needed for attendees
