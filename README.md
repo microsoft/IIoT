@@ -32,18 +32,18 @@ Please perform the following steps in advance of the hackathon otherwise you wil
 
 ## Steps (Performed by students during hackathon)
 1. Connect to Wifi.
-   1. Connect your Raspberry Pi to a monitor.
-   2. Click on the wifi icon in the top right.
+  1. Connect your Raspberry Pi to a monitor.
+  1. Click on the wifi icon in the top right.
       <p align="center">
-        <img src="images/wifi.jpg" />
+        <img src="images/wifi.JPG" />
       </p>
-   3. Enter the correct wifi credentials
-2. Retrieve the ip address.
-   1. Click on the command prompt
+  1. Enter the correct wifi credentials
+1. Retrieve the ip address.
+  1. Click on the command prompt
       <p align="center">
         <img src="images/CommandPrompt.jpg" /> 
       </p>
-   2. Retrieve the ip address with the following command: `arp -a` <br/>
+  1. Retrieve the ip address with the following command: `arp -a` <br/>
 3. Disconnect from the monitor.
 4. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
 5. Setup your Azure IoT Hub.  
