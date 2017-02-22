@@ -44,53 +44,53 @@ Please perform the following steps in advance of the hackathon otherwise you wil
         <img src="images/CommandPrompt.jpg" /> 
       </p>
   1. Retrieve the ip address with the following command: `arp -a` <br/>
-3. Disconnect from the monitor.
-4. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
-5. Setup your Azure IoT Hub.  
-   1. Go to the [Azure Portal](https://portal.azure.com).
-   2. Select the [IoT Hub Service](https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Devices%2FIotHubs). 
-   3. Click on "Add".
-   4. Enter the properties for your IoT Hub. <br/>
-      a) Enter a name for your hub.  eg. TerrysFirstIoTHub
-      b) Choose the "Free" pricing tier.  This will allow you up to 5,000 messages per day.
-      c) For the Free tier, the "IoT Hub units" will default to 1.
-      d) If you have more than 1 subscription, choose the one you wish to use.
-      e) Create a new Resource group for your hub.  It can have the same name as the IoT Hub.
-      f) Select the "West US" Location.
-      g) Click the "Pin to dashboard" button.
-      h) Click the "Create" button.
-   5. Wait for the hub to be created.  You will be notified in the "Notifications" section when it is complete.  
+1. Disconnect from the monitor.
+1. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
+1. Setup your Azure IoT Hub.  
+  1. Go to the [Azure Portal](https://portal.azure.com).
+  1. Select the [IoT Hub Service](https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Devices%2FIotHubs). 
+  1. Click on "Add".
+  1. Enter the properties for your IoT Hub.
+    1. Enter a name for your hub.  eg. TerrysFirstIoTHub
+    1. Choose the "Free" pricing tier.  This will allow you up to 5,000 messages per day.
+    1. For the Free tier, the "IoT Hub units" will default to 1.
+    1. If you have more than 1 subscription, choose the one you wish to use.
+    1. Create a new Resource group for your hub.  It can have the same name as the IoT Hub.
+    1. Select the "West US" Location.
+    1. Click the "Pin to dashboard" button.
+    1. Click the "Create" button.
+1. Wait for the hub to be created.  You will be notified in the "Notifications" section when it is complete.  
       <p align="center">
-        <img src="images/Notifications.jpg" /> 
+        <img src="images/Notifications.JPG" /> 
       </p>
-6. Create (configure) your device in Azure IoT Hub.
-   1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
-   2. Click on the "Shared access policies".
-   3. Click on the "iothubowner" policy.
-   4. Copy the primary key connection string.
+1. Create (configure) your device in Azure IoT Hub.
+  1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
+  1. Click on the "Shared access policies".
+  1. Click on the "iothubowner" policy.
+  1. Copy the primary key connection string.
       <p align="center">
         <img src="images/IoTHubConnectionString.jpg" /> 
       </p>
-   5. Open Device Explorer
-   6. In the "Connection information" tab paste the connection string into the "IoT Hub Connection String" text box.
-   7. Click on "Update".
-   8. Click on the "Management" tab.
-   9. In the "Actions" section, select "Create".
-   10. Enter a name for your device.
+  1. Open Device Explorer
+  1. In the "Connection information" tab paste the connection string into the "IoT Hub Connection String" text box.
+  1. Click on "Update".
+  1. Click on the "Management" tab.
+  1. In the "Actions" section, select "Create".
+  1. Enter a name for your device.
       <p align="center">
-        <img src="images/DeviceExplorer.jpg" /> 
+        <img src="images/DeviceExplorer.JPG" /> 
       </p>
 
-   11. Save the new device key for later.
-   12. Click "Create".
-7. Configure the Raspberry Pi to send messages to the IoT Hub.
+  1. Save the new device key for later.
+  1. Click "Create".
+1. Configure the Raspberry Pi to send messages to the IoT Hub.
    1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this hackathon to a file. Save the file as: SenseHat_IoTHub_Http.py.
-   2. Update the file with your device key. <TODO>
-   3. Copy the file to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
+   1. Update the file with your device key. <TODO>
+   1. Copy the file to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
 `pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
-   4. Log into the Raspberry Pi using PuTTY.
-   5. Verify that the file was transfered by listing the directory: `ls -l`
-   6. Start sending messages by invoking the script in Python
+   1. Log into the Raspberry Pi using PuTTY.
+   1. Verify that the file was transfered by listing the directory: `ls -l`
+   1. Start sending messages by invoking the script in Python
 
 ```
 pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
