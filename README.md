@@ -80,7 +80,6 @@ Please perform the following steps in advance of the hackathon otherwise you wil
       <p align="center">
         <img src="images/DeviceExplorer.JPG" /> 
       </p>
-
   1. Save the new device key for later.
   1. Click "Create".
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
@@ -91,15 +90,13 @@ Please perform the following steps in advance of the hackathon otherwise you wil
    1. Log into the Raspberry Pi using PuTTY.
    1. Verify that the file was transfered by listing the directory: `ls -l`
    1. Start sending messages by invoking the script in Python
-
-```
-pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
-```
-
-<!--1. //TODO - Lots of steps to add here, including screen shots. These steps will include connecting their Raspi to Wi-Fi, logging into their trail Azure subscription, creating and configuring Azure IoT Hub, downloading SenseHat_IoTHub.py from this repo to their Raspi and updating the connection string to start sending Sense HAT data to IoT Hub, etc... -->
-8. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
-3. Update the code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=sdOEuDcq984383oB3iqDyt2y8wIhqAmXvKQb75V7LUA%3d&docid=2_1c28ea3292574419d932d16dacb6e4204&rev=1).
-4. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
+      ```
+      pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
+      ```
+   1. Congratulations! Your Raspberry Pi should now be sending data to Azure IoT Hub. 
+1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
+1. Update the code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=sdOEuDcq984383oB3iqDyt2y8wIhqAmXvKQb75V7LUA%3d&docid=2_1c28ea3292574419d932d16dacb6e4204&rev=1).
+1. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
 
 ## Using the Python Device SDK
 IoT Hub also supports MQTT and AMQP protocols. These are generally more efficient and scale better than using the HTTP REST API. In order to use MQTT or AMQP with Python, you will need to download and compile the Python Device SDK on your Raspian operating system.
@@ -113,7 +110,3 @@ In summary:
 - ```sudo ./build.sh```
 
 After a successful build, the ```iothub_client.so``` Python extension module is copied to the device/samples and service/samples folders. The iothub_client.so must be in the same folder as your IoT Hub client python script or in the common shared libraries folder such as ```/usr/local/lib``` or ```/usr/lib```.
-
-##//TODO
-- Finish TBD/TODO sections above.
-- Determine how to join Pi to local Wi-Fi network and to obtain IP of PI device. Bring HDMI monitor and cable?
