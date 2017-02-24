@@ -18,7 +18,7 @@ import time
 import sys
 
 #If using emulator, uncomment 'from sense_emu import SenseHat ' and comment out 'from sense_hat import SenseHat'
-#from sense_hat import Sense HAT #if using a physical SenseHat attached to Raspi
+#from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi
 from sense_emu import SenseHat #if using a Sense HAT Emulator (Linux only)
 
 class IoTHub:
