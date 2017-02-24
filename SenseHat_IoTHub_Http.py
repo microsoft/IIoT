@@ -91,9 +91,9 @@ if __name__ == '__main__':
     while True:
 
         try:
-            #Register new device in IoT Hub
-            print('Registering device... ' + deviceId)
-            print(iotHubConn.registerDevice(deviceId))
+            #Uncomment this code if you want the device to self-register with IoT Hub. Otherwise use Device Explorer to register device.
+            #print('Registering device... ' + deviceId)
+            #print(iotHubConn.registerDevice(deviceId))
 
             #Send current temperature from the Sense HAT temp sensor
             #Refer to Sense HAT API to send other Sense HAT sensor data https://pythonhosted.org/sense-hat/api/
