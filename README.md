@@ -67,34 +67,33 @@ Please perform the following steps in advance of the hackathon otherwise you wil
   1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
   1. Click on the "Shared access policies".
   1. Click on the "iothubowner" policy.
-  1. Copy the primary key connection string.
+  1. Copy the primary key connection string. Save the primary key connection string for later.
       <p align="center">
         <img src="images/IoTHubConnectionString.jpg" /> 
       </p>
   1. Open Device Explorer
-  1. In the "Connection information" tab paste the connection string into the "IoT Hub Connection String" text box.
+  1. In the "Connection information" tab paste the primary key connection string into the "IoT Hub Connection String" text box.
   1. Click on "Update".
   1. Click on the "Management" tab.
   1. In the "Actions" section, select "Create".
-  1. Enter a name for your device.
+  1. Enter a name for your device. Save the device name for later.
       <p align="center">
         <img src="images/DeviceExplorer.JPG" /> 
       </p>
-  1. Save the new device key for later.
   1. Click "Create".
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
-   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this hackathon to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
-     1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
-   1. Update the file with your device key. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
-   1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
+  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this hackathon to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
+    1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
+  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier.
+  1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
 `pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
-   1. Log into the Raspberry Pi using PuTTY.
-   1. Verify that the file was transfered by listing the directory: `ls -l`
-   1. Start sending messages by invoking the script in Python
+  1. Log into the Raspberry Pi using PuTTY.
+  1. Verify that the file was transfered by listing the directory: `ls -l`
+  1. Start sending messages by invoking the script in Python
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
       ```
-   1. Congratulations! Your Raspberry Pi should now be sending data to Azure IoT Hub. 
+  1. Congratulations! Your Raspberry Pi should now be sending data to Azure IoT Hub. 
 1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
 1. Update the code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=sdOEuDcq984383oB3iqDyt2y8wIhqAmXvKQb75V7LUA%3d&docid=2_1c28ea3292574419d932d16dacb6e4204&rev=1).
 1. Display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_JSON_LED.py](https://microsoft-my.sharepoint.com/personal/kehilsch_microsoft_com/_layouts/15/guestaccess.aspx?guestaccesstoken=l%2bcljVkaJf6TEt7CWShh2FmMWnYquyVnnwivcnQ1s7I%3d&docid=2_1b7e74a4df92a4681b60b821fb38bf666&rev=1).
