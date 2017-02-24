@@ -43,7 +43,7 @@ Please perform the following steps in advance of the hackathon otherwise you wil
       <p align="center">
         <img src="images/CommandPrompt.jpg" /> 
       </p>
-  1. Retrieve the ip address with the following command: `arp -a` <br/>
+  1. Retrieve the ip address with the following command: `ifconfig` <br/>
 1. Disconnect from the monitor.
 1. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
 1. Setup your Azure IoT Hub.  
