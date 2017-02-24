@@ -83,9 +83,10 @@ Please perform the following steps in advance of the hackathon otherwise you wil
   1. Save the new device key for later.
   1. Click "Create".
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
-   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this hackathon to a file. Save the file as: SenseHat_IoTHub_Http.py.
-   1. Update the file with your device key. <TODO>
-   1. Copy the file to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
+   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this hackathon to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
+     1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
+   1. Update the file with your device key. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
+   1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
 `pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
    1. Log into the Raspberry Pi using PuTTY.
    1. Verify that the file was transfered by listing the directory: `ls -l`
