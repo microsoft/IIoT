@@ -9,15 +9,15 @@ Please perform the following steps in advance of the HOL otherwise you will wast
   1. Insert the microSD card into your Pi and connect the power supply. 
   1. Click to install Raspbian
      <p align="center">
-        <img src="images/NOOBS_Install.jpg" width="50%" height="50%"/>
+        <img src="Images/NOOBS_Install.jpg" width="50%" height="50%"/>
       </p>
   1. Confirm the deletion of content on the SD card and the installation of the OS. 
       <p align="center">
-        <img src="images/ConfirmInstall.jpg" width="50%" height="50%"/>
+        <img src="Images/ConfirmInstall.jpg" width="50%" height="50%"/>
       </p>
 - Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
       <p align="center">
-        <img src="images/SenseHat.jpg"  width="50%" height="50%"/>
+        <img src="Images/SenseHat.jpg"  width="50%" height="50%"/>
       </p>
 - Install [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. 
 - Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
