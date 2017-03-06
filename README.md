@@ -23,9 +23,9 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 - A basic understanding of Python and Linux.
 - TBD
 
-## Advance Setup (Must be completed in advance of the HOL)
+## Advance Setup (Must be completed in before the Hands On Lab Workshop)
 
-Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site to for the hands-on-lab workshop. 
+Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site for the hands-on-lab workshop. 
 
 ## Steps (Performed by students during HOL)
 1. Connect to Wifi.
@@ -42,6 +42,7 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site t
       </p>
   1. Retrieve the ip address with the following command: `ifconfig` <br/>
      Take note of the ip address. 
+1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the Advance Steps instructions to do so. 
 1. Disconnect from the monitor.
 1. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
 
@@ -171,8 +172,11 @@ The new version of the remote monitoring pre-configured solution comes with a st
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
   1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
-  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device ID you created earlier.
-  1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
+  1. Next, you will provide the information required to connect the Raspberry Pi to the IoT pre-configured solution:
+  - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
+  - Search for ```deviceId =``` and paste in the Device ID you created earlier.
+  1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY. 
+  - The pscp executable will be in your PuTTY directory.<br/>
 `pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
   1. Log into the Raspberry Pi using PuTTY.
   1. Verify that the file was transfered by listing the directory: `ls -l`
