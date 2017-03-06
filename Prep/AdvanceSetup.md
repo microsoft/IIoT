@@ -1,6 +1,7 @@
 ## Advance Setup (Must be completed in advance of the HOL)
 
 Please perform the following steps in advance of the HOL otherwise you will waste the entire HOL performing these steps.
+
 1. Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card.
   - Install the operating system installer [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) 
   - Format the microSD card that you will use for your Raspberry Pi. 
@@ -15,13 +16,14 @@ Please perform the following steps in advance of the HOL otherwise you will wast
       <p align="center">
         <img src="Images/ConfirmInstall.jpg" width="50%" height="50%"/>
       </p>
+      
 1. Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
       <p align="center">
         <img src="Images/SenseHat.jpg"  width="50%" height="50%"/>
       </p>
 1. Enable SSH on the Raspberry Pi:
   - Open a Terminal and run <br/>
-  '''sudo raspi-config'''
+  ```sudo raspi-config```
   - Select "5 Interfacing Options" 
       <p align="center">
         <img src="Images/Interface.jpg"/>
@@ -30,11 +32,11 @@ Please perform the following steps in advance of the HOL otherwise you will wast
       <p align="center">
         <img src="Images/SelectSSH.jpg"/>
       </p>
-  - At the prompt "Would you like to the SSH server to be enabled?", select <Yes>
+  - At the prompt "Would you like to the SSH server to be enabled?", select \<Yes\>
       <p align="center">
         <img src="Images/EnableSSH.jpg"/>
       </p>
-   - Select "<Finish>" to close the Raspberry Pi Configuration Tool.
+   - Select \<Finish\> to close the Raspberry Pi Configuration Tool.
 1. Install [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. 
 1. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
 1. Download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
