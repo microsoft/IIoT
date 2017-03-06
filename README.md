@@ -23,29 +23,9 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 - A basic understanding of Python and Linux.
 - TBD
 
-## Advance Setup (Must be completed in advance of the HOL)
-Please perform the following steps in advance of the HOL otherwise you will waste the entire HOL performing these steps.
-- Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card.
-  1. Install the operating system installer [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) 
-  1. Format the microSD card that you will use for your Raspberry Pi. 
-  1. Extract the files in the NOOBs zip file. 
-  1. Copy the extracted files onto the formatted microSD card such that the files are at the root directory of the microSD card. 
-  1. Insert the microSD card into your Pi and connect the power supply. 
-  1. Click to install Raspbian
-     <p align="center">
-        <img src="images/NOOBS_Install.jpg" width="50%" height="50%"/>
-      </p>
-  1. Confirm the deletion of content on the SD card and the installation of the OS. 
-      <p align="center">
-        <img src="images/ConfirmInstall.jpg" width="50%" height="50%"/>
-      </p>
-- Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
-      <p align="center">
-        <img src="images/SenseHat.jpg"  width="50%" height="50%"/>
-      </p>
-- Install [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. 
-- Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
-- Download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
+## Advance Setup (Must be completed in before the Hands On Lab Workshop)
+
+Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site for the hands-on-lab workshop. 
 
 ## Steps (Performed by students during HOL)
 1. Connect to Wifi.
@@ -62,8 +42,195 @@ Please perform the following steps in advance of the HOL otherwise you will wast
       </p>
   1. Retrieve the ip address with the following command: `ifconfig` <br/>
      Take note of the ip address. 
+1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the Advance Steps instructions to do so. 
 1. Disconnect from the monitor.
 1. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
+
+1. Setup your Azure IoT Suite remote monitoring pre-configured solution
+  1. Go to the Microsoft IoT Suite microsite [https://www.azureiotsuite.com/](https://www.azureiotsuite.com/).
+  1. Log in using your Azure subscription credentials. 
+  1. Click the "Create a new solution" button. 
+        <p align="center">
+         <img src="images/NewRMPCS.jpg" /> 
+      </p>
+  1. Select "Remote monitoring".
+        <p align="center">
+         <img src="images/SelectRM.jpg" width="50%" height="50%" /> 
+      </p>
+  1. Fill out the form to create a Remote monitoring solution
+    - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
+    - Choose the subscription that you will be using eg. Visual Studio Enterprise with MSDN
+    - Click "I Accept" 
+    - Select the closest region to deploy your remote monitoring solution eg. East US
+    - Click "Create solution". The remote monitoring solution will get provisioned to your Azure subscription in approximately 5 minutes. 
+       <p align="center">
+         <img src="images/RMPCS.jpg" width="50%" height="50%" /> 
+      </p>
+   1. While the remote monitoring solution is being provisioned, you can see the provisioning state and logging information by clicking on the solution 
+      <p align="center">
+         <img src="images/ProvisioningState.jpg" /> 
+      </p>
+   1. Once the solution is fully provisioned, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark. While the solution is being created, we will continue to follow the steps below. 
+      <p align="center">
+         <img src="images/SolutionReady.jpg" width="50%" height="50%" /> 
+      </p>
+
+## Enabling Dynamic Maps in the Pre-configured Solution 
+
+The new version of the remote monitoring pre-configured solution comes with a static map image configured by default. For this hands on lab, we will re-configure the solution to show dynamic Bing maps. 
+1. Open up a new tab and login to the Azure Portal using your subscription credentials https://portal.azure.com/
+1. On the Azure Portal, click the "+ New" Button.
+      <p align="center">
+         <img src="images/AzureNewButton.jpg" width="50%" height="50%"/> 
+      </p>
+1. In the search bar, type in "Bing Maps". Click the "Bing Maps API for Enterprise" service when it appears.
+ <p align="center">
+         <img src="images/BingMapsSearch.jpg" /> 
+      </p>
+1. Select the "Bing Maps API for Enterprise" service. In the "Bings Maps for Enterprise" blade, click the "Create" button. 
+ <p align="center">
+         <img src="images/CreateBingMapsAPI.jpg" /> 
+      </p>
+  - Give your Bing Maps API for Enterprise Service a name. eg. StudentName-BingMaps
+  - Choose your subscription from the *Subscription* drop down box. 
+  - Use the existing *Resource Group* that was created for your remote monitoring pre-configured solution. 
+  - Select the "Internal Website Transactions Level 1" plan. Click OK. 
+  - Review the "Lgeal terms". Click the "I give Microsoft permissions to share ... and related products" check box. Click the "Purchase" button. 
+  - On the *Bing maps API for Enterprise* blade, click "Create"
+      <p align="center">
+         <img src="images/CreateBingMapsAPI2.jpg" width="50%" height="50%"/> 
+      </p>
+1. Once the Bing Maps API service is created, you'll need to retrieve the key. 
+  - Click the resource groups icon -> click the resource group that was created for the remote monitoring solution eg. IoTHandsOnLab -> click the "BingMapsAPIFree" service
+      <p align="center">
+         <img src="images/QueryKey1.jpg" /> 
+      </p>
+- Click "Key Management" -> copy the key value in the "QueryKey" field. You will need this key for the next step.
+      <p align="center">
+         <img src="images/QueryKey2.jpg" /> 
+      </p>
+1. Navigate to the Application Settings for the remote monitoring solution that you previously created. 
+  - Click the resource groups icon -> Click the resource group that was created for the remote monitoring solution
+  - Click the App Service with the same name as the remote monitoring solution that you previously created eg. IoTHandsOnLab
+      <p align="center">
+         <img src="images/AppService1.jpg" /> 
+      </p>
+  - Under *Settings* -> Click *Application Settings* -> Under *App Settings*, find the MapApiQueryKey variable and paste the previously obtained key into the value field. Hit "Save". 
+      <p align="center">
+         <img src="images/AppService2.jpg" /> 
+      </p>
+
+## Obtain Your IoT Hub Primary Key and Connection String
+1. Open the [Azure Portal](https://portal.azure.com/) tab and navigate to your IoT Hub service that you deployed as part of the remote monitoring solution
+  - Click the *resource group* icon -> click the name of your remote monitoring solution -> click the IoT Hub service that was created when you provisioned the remote monitoring solution. 
+      <p align="center">
+         <img src="images/IoTHubKeys1.jpg" /> 
+      </p>
+1. Obtain the "Connection string - primary key" for your IoT Hub. 
+  - Click on the "Shared access policies".
+  - Click on the "iothubowner" policy.
+  - Copy the primary key connection string. Save the primary key connection string in notepad for later.
+      <p align="center">
+         <img src="images/IoTHubKeys2.jpg" /> 
+      </p>
+
+## Create Your Device in the Remote Monitoring Pre-configured Solution 
+1. Go back to the Azure IoT Suite microsite tab. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
+      <p align="center">
+         <img src="images/SolutionReady.jpg" width="50%" height="50%" /> 
+      </p>
+1. Click the "Sign In" button.
+      <p align="center">
+         <img src="images/RMSignIn.jpg" width="50%" height="50%"/> 
+      </p>
+1. If the following page requires you to accept the terms and conditions, click "I Agree". 
+1. You will now have access to your created remote monitoring preconfigured solution. Feel free to browse around and review the features available in the pre-configured solution. 
+      <p align="center">
+         <img src="images/RMDashboard.jpg"/> 
+      </p>
+
+1. Open the Remote Monitoring Pre-configured Solution tab
+1. At the bottom left of the portal, click the "+ Add A Device" button. 
+      <p align="center">
+         <img src="images/AddDevice.jpg"/> 
+      </p>
+1. On the "Step 1 of 3" page, click "Add New" to add in a custom device. 
+      <p align="center">
+         <img src="images/AddNewCustomDevice.jpg"/> 
+      </p>
+1. On the "Step 2 of 3" page, click the "Let me define my own Device ID" radio button. Enter in a device ID eg. MyRaspberryPi. Click on the "Check ID" button to ensure that your device ID is unique. If the Device ID is unique, the text "Device ID is available" in green text will appear. Click the "Create" button. 
+      <p align="center">
+         <img src="images/DefineDeviceID.jpg"/> 
+      </p>
+1. The "Step 3 of 3" page provides you the *Device ID*, *IoT Hub Hostname* and *Device Key* that you will need to connect your Raspberry Pi to the remote monitoring solution. Copy and paste the value of these fields in a text document somewhere. 
+      <p align="center">
+         <img src="images/CustomDeviceParams.jpg"/> 
+      </p>
+      
+## Connect Your Raspberry Pi to the Remote Monitoring Pre-configured Solution
+
+1. Configure the Raspberry Pi to send messages to the IoT Hub.
+  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
+  1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
+  1. Next, you will provide the information required to connect the Raspberry Pi to the IoT pre-configured solution:
+  - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
+  - Search for ```deviceId =``` and paste in the Device ID you created earlier.
+  1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY. 
+  - The pscp executable will be in your PuTTY directory.<br/>
+`pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
+  1. Log into the Raspberry Pi using PuTTY.
+  1. Verify that the file was transfered by listing the directory: `ls -l`
+  1. Start sending messages by invoking the script in Python
+      ```
+      pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
+      ```
+  1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, and click Monitor. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
+1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
+  1. Update the ```SenseHat_IoTHub_Http.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON.py&version=GBmaster&_a=contents).
+  1. Update ```SenseHat_IoTHub_Http.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
+1. To send messages from IoT Hub back to your Raspberry Pi:
+  1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
+  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
+  1. Run the file using ```pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_C2D_LED.py```
+  1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. You should see the message appear on the Sense HAT LED display.
+
+  
+  
+  1. Open Device Explorer
+  1. In the "Connection information" tab paste the primary key connection string into the "IoT Hub Connection String" text box.
+  1. Click on "Update".
+  1. Click on the "Management" tab.
+  1. In the "Actions" section, select "Create".
+  1. Enter a name for your device. Save the device name for later.
+      <p align="center">
+        <img src="images/DeviceExplorer.JPG" /> 
+      </p>
+  1. Click "Create".
+1. Configure the Raspberry Pi to send messages to the IoT Hub.
+  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
+    1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
+  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier.
+  1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
+`pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
+  1. Log into the Raspberry Pi using PuTTY.
+  1. Verify that the file was transfered by listing the directory: `ls -l`
+  1. Start sending messages by invoking the script in Python
+      ```
+      pi@raspberrypi:~ $ python SenseHat_IoTHub_Http.py
+      ```
+  1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, and click Monitor. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
+1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
+  1. Update the ```SenseHat_IoTHub_Http.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON.py&version=GBmaster&_a=contents).
+  1. Update ```SenseHat_IoTHub_Http.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
+1. To send messages from IoT Hub back to your Raspberry Pi:
+  1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
+  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
+  1. Run the file using ```pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_C2D_LED.py```
+  1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. You should see the message appear on the Sense HAT LED display.
+
+
+
+-------- Steps using IoT Hub only -----
 1. Setup your Azure IoT Hub.  
   1. Go to the [Azure Portal](https://portal.azure.com).
   1. Select the [IoT Hub Service](https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Devices%2FIotHubs). 
