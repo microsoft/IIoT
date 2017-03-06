@@ -54,7 +54,7 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site t
       </p>
   1. Select "Remote monitoring".
         <p align="center">
-         <img src="images/SelectRM.jpg" /> 
+         <img src="images/SelectRM.jpg" width="50%" height="50%" /> 
       </p>
   1. Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
@@ -63,7 +63,7 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site t
     - Select the closest region to deploy your remote monitoring solution eg. East US
     - Click "Create solution". The remote monitoring solution will get provisioned to your Azure subscription in approximately 5 minutes. 
        <p align="center">
-         <img src="images/RMPCS.jpg" /> 
+         <img src="images/RMPCS.jpg" width="50%" height="50%" /> 
       </p>
    1. While the remote monitoring solution is being provisioned, you can see the provisioning state and logging information by clicking on the solution 
       <p align="center">
@@ -71,16 +71,16 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site t
       </p>
    1. Once the solution is fully provisioned, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark. While the solution is being created, we will continue to follow the steps below. 
       <p align="center">
-         <img src="images/SolutionReady.jpg" /> 
+         <img src="images/SolutionReady.jpg" width="50%" height="50%" /> 
       </p>
 
-**Enabling Dynamic Maps in the Pre-configured Solution **
+## Enabling Dynamic Maps in the Pre-configured Solution 
 
 The new version of the remote monitoring pre-configured solution comes with a static map image configured by default. For this hands on lab, we will re-configure the solution to show dynamic Bing maps. 
 1. Open up a new tab and login to the Azure Portal using your subscription credentials https://portal.azure.com/
 1. On the Azure Portal, click the "+ New" Button.
       <p align="center">
-         <img src="images/AzureNewButton.jpg" /> 
+         <img src="images/AzureNewButton.jpg" width="50%" height="50%"/> 
       </p>
 1. In the search bar, type in "Bing Maps". Click the "Bing Maps API for Enterprise" service when it appears.
  <p align="center">
@@ -97,13 +97,16 @@ The new version of the remote monitoring pre-configured solution comes with a st
   - Review the "Lgeal terms". Click the "I give Microsoft permissions to share ... and related products" check box. Click the "Purchase" button. 
   - On the *Bing maps API for Enterprise* blade, click "Create"
       <p align="center">
-         <img src="images/CreateBingMapsAPI2.jpg" /> 
+         <img src="images/CreateBingMapsAPI2.jpg" width="50%" height="50%"/> 
       </p>
 1. Once the Bing Maps API service is created, you'll need to retrieve the key. 
   - Click the resource groups icon -> click the resource group that was created for the remote monitoring solution eg. IoTHandsOnLab -> click the "BingMapsAPIFree" service
-  - Click "Key Management" -> copy the key value in the "QueryKey" field. You will need this key for the next step.
       <p align="center">
-         <img src="images/CreateBingMapsAPI2.jpg" /> 
+         <img src="images/QueryKey1.jpg" /> 
+      </p>
+- Click "Key Management" -> copy the key value in the "QueryKey" field. You will need this key for the next step.
+      <p align="center">
+         <img src="images/QueryKey2.jpg" /> 
       </p>
 1. Navigate to the Application Settings for the remote monitoring solution that you previously created. 
   - Click the resource groups icon -> Click the resource group that was created for the remote monitoring solution
