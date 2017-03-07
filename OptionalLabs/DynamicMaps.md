@@ -3,15 +3,17 @@
 1. Open up a new tab and login to the Azure Portal using your subscription credentials https://portal.azure.com/
 1. On the Azure Portal, click the "+ New" Button.
       <p align="center">
-         <img src="images/AzureNewButton.jpg" width="50%" height="50%"/> 
+         <img src="/images/AzureNewButton.jpg" width="50%" height="50%"/> 
       </p>
 1. In the search bar, type in "Bing Maps". Click the "Bing Maps API for Enterprise" service when it appears.
  <p align="center">
-         <img src="images/BingMapsSearch.jpg" /> 
+         <img src="/images/BingMapsSearch.jpg" /> 
       </p>
 1. Select the "Bing Maps API for Enterprise" service. In the "Bings Maps for Enterprise" blade, click the "Create" button. 
+ ![Create Bing Maps API](/images/CreateBingMapsAPI.jpg) 
+ 
  <p align="center">
-         <img src="images/CreateBingMapsAPI.jpg" /> 
+         <img src="/images/CreateBingMapsAPI.jpg" /> 
       </p>
   - Give your Bing Maps API for Enterprise Service a name. eg. StudentName-BingMaps
   - Choose your subscription from the *Subscription* drop down box. 
