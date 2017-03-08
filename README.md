@@ -141,6 +141,7 @@ Open up a command prompt and enter the following command to copy the python scri
 `pscp SenseHat_IoTHub_Http_Lab.py userid@server_name:/path/SenseHat_IoTHub_Http_Lab.py`
   1. Log into the Raspberry Pi using PuTTY.
   1. Verify that the file was transfered by listing the directory: `ls -l`
+  
   ![ls -l](/images/ListFiles.jpg)
   
   1. Start sending messages by invoking the script in Python
@@ -148,7 +149,9 @@ Open up a command prompt and enter the following command to copy the python scri
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab.py
       ```
   1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, and click *Monitor*. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
+  
   ![Device Explorer](/images/DeviceExplorer-ReceiveEvents.jpg)
+  
 1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
   1. Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON.py&version=GBmaster&_a=contents).
   1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
@@ -156,9 +159,13 @@ Open up a command prompt and enter the following command to copy the python scri
   1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
   1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
   1. Run the file using ```pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_C2D_LED.py```
+  
   ![Run C2D Python Script](/images/runC2D.jpg)
+  
   1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. 
+  
   ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
+  
   1. On your Sense HAT, you should see the message appear on the display.
   ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
 
