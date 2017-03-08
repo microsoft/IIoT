@@ -29,7 +29,8 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site f
 
 
 ## Hands on Workshop Steps
-### Setup
+
+### Morning
 
  * [1 - Hands on Lab Setup](/1)
 
@@ -38,8 +39,8 @@ or if you are not able to create a pre-configured solution, follow the "Create I
  * [2b - Create an IoT Hub](2/CreateIoTHub.md)
  * [3 - Connect Raspberry Pi to Azure IoT](/3)
 
-## Afternoon
+### Afternoon
 
-[Stream Analytics](www.microsoft.com)
+ * [Stream Analytics](www.microsoft.com)
 
-[Azure Functions](www.microsoft.com)
+ * [Azure Functions](/AzureFunction)
