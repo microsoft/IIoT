@@ -61,7 +61,7 @@ Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey f
     1. Expand the “Logs” view at the bottom of the page
     1. Click on “View Files”
     
-    ![Expand Function views}(/images/functionViews.jpg)
+    ![Expand Function views](/images/functionViews.jpg)
     
     1. Click on “+ Add” under the "View files" tab. 
     1. Enter “project.json”
