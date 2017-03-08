@@ -54,8 +54,10 @@ Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey f
         ex. Endpoint=sb://<eventHubName>.servicebus.windows.net/;SharedAccessKeyName=<SASPolicyName>;SharedAccessKey=<SASPolicyKey>
          Click "OK"
     
-    ![Event Hub Connection](/images/EHconnection.jpg)
-  
+      <p align="center">
+         <img src="/images/EHconnection.jpg" width="50%" height="50%" /> 
+      </p>
+      
   1. On the *New Function* page, click "Create". The template for your new Event Hub Trigger function is now created!
   1. Configure libraries for the new function created. 
     1. Expand the “Logs” view at the bottom of the page
@@ -71,13 +73,17 @@ Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey f
     1. Copy the text from [project.json](/AzureFunction/project.json) file in the github repo to the new json file you created.
     1. Click "Save". 
     
-    ![Project.json Save](/images/projectSave.jpg)
-    
+      <p align="center">
+         <img src="/images/projectSave.jpg" width="50%" height="50%" /> 
+      </p>    
+        
     1. Copy the text from [Function.txt](/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
     1. Update the CONNECTION_STRING variable to point to the IoT Hub Function Connection String that you obtained earlier.  See “(IOT_HUB_CONNECTION_STRING)” above.
-    
-    ![Function run](/images/runFunction.jpg)
-    
+
+      <p align="center">
+         <img src="/images/runFunction.jpg" /> 
+      </p>  
+        
     1. Click “Run” to start the function
 
 
