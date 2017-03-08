@@ -81,4 +81,4 @@ The new version of the remote monitoring pre-configured solution comes with a st
          <img src="/images/CustomDeviceParams.jpg"/> 
       </p>
 
-[Back to Main HOL Instructions](/)
+[Back to Main HOL Instructions](/README.md)
