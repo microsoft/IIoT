@@ -25,7 +25,7 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 
 ## Advance Setup (Steps must be completed before the Hands On Lab Workshop)
 
-Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site for the hands-on-lab workshop. 
+Follow the instructions [here](/Prep) before you arrive on-site for the hands-on-lab workshop. 
 
 
 ## Hands on Workshop Steps
