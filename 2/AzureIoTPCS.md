@@ -1,5 +1,6 @@
 In the following section of the Hands on Lab, you will walk through the creation of a remote monitoring pre-configured solution from the Azure IoT Suite microsite. 
 
+## Create a Remote Monitoring Pre-configured Solution
 1. Setup your Azure IoT Suite remote monitoring pre-configured solution
   1. Go to the Microsoft IoT Suite microsite [https://www.azureiotsuite.com/](https://www.azureiotsuite.com/).
   1. Log in using your Azure subscription credentials. 
