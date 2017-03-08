@@ -24,7 +24,7 @@ In the following section of the Hands on Lab, you will walk through the creation
       <p align="center">
          <img src="/images/ProvisioningState.jpg" /> 
       </p>
-   1. Once the solution is fully provisioned, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark. It will take about 5minutes to provisioning so while you wait for that, continue with the steps below. 
+   1. Once the solution is fully created, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark. It will take about 5 minutes to provision so while you wait for that, continue with the steps below. 
       <p align="center">
          <img src="/images/SolutionReady.jpg" width="30%" height="30%" /> 
       </p>
@@ -43,13 +43,13 @@ The new version of the remote monitoring pre-configured solution comes with a st
 1. Obtain the "Connection string - primary key" for your IoT Hub. 
   - Click on the "Shared access policies".
   - Click on the "iothubowner" policy.
-  - Copy the primary key connection string. Save the primary key connection string in notepad for later.
+  - Copy the primary key connection string. Take note of the primary key connection string for later.
       <p align="center">
          <img src="/images/IoTHubKeys2.jpg" /> 
       </p>
 
 ## Create Your Device in the Remote Monitoring Pre-configured Solution 
-1. Go back to the Azure IoT Suite microsite tab. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
+1. Go back to the Azure IoT Suite microsite tab. Your pre-configured solution should be provisioned now. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
       <p align="center">
          <img src="/images/SolutionReady.jpg" width="30%" height="30%" /> 
       </p>
@@ -63,22 +63,24 @@ The new version of the remote monitoring pre-configured solution comes with a st
          <img src="/images/RMDashboard.jpg"/> 
       </p>
 
-1. Open the Remote Monitoring Pre-configured Solution tab
-1. At the bottom left of the portal, click the "+ Add A Device" button. 
+1. Create a new custom device within the RM-PCS. 
+  1. At the bottom left of the portal, click the "+ Add A Device" button. 
       <p align="center">
          <img src="/images/AddDevice.jpg"/> 
       </p>
-1. On the "Step 1 of 3" page, click "Add New" to add in a custom device. 
+  1. On the "Step 1 of 3" page, click "Add New" to add in a custom device. 
       <p align="center">
          <img src="/images/AddNewCustomDevice.jpg"/> 
       </p>
-1. On the "Step 2 of 3" page, click the "Let me define my own Device ID" radio button. Enter in a device ID eg. MyRaspberryPi. Click on the "Check ID" button to ensure that your device ID is unique. If the Device ID is unique, the text "Device ID is available" in green text will appear. Click the "Create" button. 
+  1. On the "Step 2 of 3" page, click the "Let me define my own Device ID" radio button. Enter in a device ID eg. MyRaspberryPi. Click on the "Check ID" button to ensure that your device ID is unique. If the Device ID is unique, the text "Device ID is available" in green text will appear. Click the "Create" button. 
       <p align="center">
          <img src="/images/DefineDeviceID.jpg"/> 
       </p>
-1. The "Step 3 of 3" page provides you the *Device ID*, *IoT Hub Hostname* and *Device Key* that you will need to connect your Raspberry Pi to the remote monitoring solution. Copy and paste the value of these fields in a text document somewhere. 
+  1. The "Step 3 of 3" page provides you the *Device ID*, *IoT Hub Hostname* and *Device Key* that you will need to connect your Raspberry Pi to the remote monitoring solution. Copy and paste the value of these fields in a text document somewhere. 
       <p align="center">
          <img src="/images/CustomDeviceParams.jpg"/> 
       </p>
+
+Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
 
 [Back to Main HOL Instructions](/README.md)
