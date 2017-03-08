@@ -31,11 +31,12 @@ Follow the instructions [here](Prep/AdvanceSetup.md) before you arrive on-site f
 ## Hands on Workshop Steps
 ### Setup
 
-[Hands on Lab Setup](/1)
+ * [1 - Hands on Lab Setup](/1)
 
-[1a - Create a Preconfigured Solution](/2/CreatePCS.md)
-or
-[1b - Create an IoT Hub](2/CreateIoTHub.md)
+ * [2a - Remote Monitoring Pre-configured Solution](/2/AzureIoTPCS.md)
+or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
+ * [2b - Create an IoT Hub](2/CreateIoTHub.md)
+ * [3 - Connect Raspberry Pi to Azure IoT](/3)
 
 ## Afternoon
 
