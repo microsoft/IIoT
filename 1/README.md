@@ -14,6 +14,6 @@
       </p>
   1. Retrieve the ip address with the following command: `ifconfig` <br/>
      Take note of the ip address. 
-1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Advance Steps instructions](/prep). 
+1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Advance Steps instructions](/Prep). 
 1. Using your laptop, verify you connection by connecting to the Rasberry Pi using PuTTY.
 1. Disconnect from the monitor.
