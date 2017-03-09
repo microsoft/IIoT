@@ -35,13 +35,14 @@ Follow the instructions [here](/Prep) before you arrive on-site for the hands-on
 
  * [1 - Hands on Lab Setup](/1)
 
- * [2a - Remote Monitoring Pre-configured Solution](/2/AzureIoTPCS.md)
-or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
+ * [2a - Remote Monitoring Pre-configured Solution](/2/AzureIoTPCS.md)<br>
+   or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
  * [2b - Create an IoT Hub](2/CreateIoTHub.md)
  * [3 - Connect Raspberry Pi to Azure IoT](/3)
+ * [4 - Send a Message to your Pi](/4)
 
 ### Afternoon
 
- * [Stream Analytics](www.microsoft.com)
+ * [5 - Stream Analytics](/StreamAnalytics)
 
- * [Azure Functions](/AzureFunction)
+ * [6 - Azure Functions](/AzureFunction)
