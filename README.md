@@ -20,6 +20,7 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 - Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi). 
 - [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client.
 - An Azure subscription. You can create a [free trial](https://azure.microsoft.com/en-us/free/?b=17.01) Azure subscription, or you can use an MSDN Azure subscription or a subscription from your company. 
+- A PowerBI account 
 - A basic understanding of Python and Linux.
 - TBD
 
