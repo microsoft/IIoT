@@ -19,6 +19,7 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 - [Sense HAT](https://www.raspberrypi.org/products/sense-hat/) (optional - for those that want to play with real hardware). You can order the Sense HAT from a variety of online sites such as adafruit.com, amazon.com etc. Please order yours 3-4 weeks in advance of the HOL so it will arrive in time.
 - Laptop (running whatever operating system you desire) but ideally running Windows so you can install/run [Device Explorer](https://github.com/Azure/azure-iot-sdks/releases/download/2016-11-17/SetupDeviceExplorer.msi). 
 - [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client.
+- If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 - An Azure subscription. You can create a [free trial](https://azure.microsoft.com/en-us/free/?b=17.01) Azure subscription, or you can use an MSDN Azure subscription or a subscription from your company. 
 - A PowerBI account 
 - A basic understanding of Python and Linux.
@@ -35,13 +36,15 @@ Follow the instructions [here](/Prep) before you arrive on-site for the hands-on
 
  * [1 - Hands on Lab Setup](/1)
 
- * [2a - Remote Monitoring Pre-configured Solution](/2/AzureIoTPCS.md)
-or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
+ * [2a - Remote Monitoring Pre-configured Solution](/2/AzureIoTPCS.md)<br>
+   or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
  * [2b - Create an IoT Hub](2/CreateIoTHub.md)
  * [3 - Connect Raspberry Pi to Azure IoT](/3)
+ * [4 - Send a Message to your Pi](/4)
 
 ### Afternoon
 
- * [Stream Analytics](/StreamAnalytics)
 
- * [Azure Functions](/AzureFunction)
+ * [5 - Stream Analytics](/StreamAnalytics)
+
+ * [6 - Azure Functions](/AzureFunction)
