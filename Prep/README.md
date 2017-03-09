@@ -17,10 +17,26 @@ Please perform the following steps in advance of the HOL otherwise you will wast
         <img src="Images/ConfirmInstall.jpg" width="50%" height="50%"/>
       </p>
       
-1. Ensure Sense HAT Emulator is installed (by default it is installed with Raspian). Verify by checking under 'Programming' in the Raspian GUI.
+1. If you do not have the Sense HAT and will be using the Sense HAT Emulator, you will have to run through some extra steps: 
+  1. First, run through the steps to ensure it's installed. Verify by checking under 'Programming' in the Raspian GUI.
+
       <p align="center">
         <img src="Images/SenseHat.jpg"  width="50%" height="50%"/>
       </p>
+      
+  1. Next, make sure that VNC is enabled:
+     - Select Menu -> Preferences -> Raspberry Pi Configuration -> Interfaces.
+     
+        <p align="center">
+          <img src="Images/menu.jpg"  width="50%" height="50%"/>
+        </p>
+        
+     - Ensure VNC is Enabled.
+     
+        <p align="center">
+          <img src="Images/enableVNC.jpg"  width="50%" height="50%"/>
+        </p>
+         
 1. Enable SSH on the Raspberry Pi:
   - Open a Terminal and run <br/>
   ```sudo raspi-config```
