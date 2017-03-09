@@ -41,7 +41,8 @@ Open up a command prompt and enter the following command to copy the python scri
   
   ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
   
-  1. On your Sense HAT, you should see the message appear on the display.
+  1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator)
+  
   ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
 
 [Back to Main HOL Instructions](/README.md)
