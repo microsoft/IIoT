@@ -39,7 +39,6 @@ Follow the instructions [here](/Prep) before you arrive on-site for the hands-on
 or if you are not able to create a pre-configured solution, follow the "Create IoT Hub" steps in the following link:
  * [2b - Create an IoT Hub](2/CreateIoTHub.md)
  * [3 - Connect Raspberry Pi to Azure IoT](/3)
- * [4 - Send a message to the Pi](/4)
 
 ### Afternoon
 
