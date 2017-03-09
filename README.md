@@ -42,6 +42,6 @@ or if you are not able to create a pre-configured solution, follow the "Create I
 
 ### Afternoon
 
- * [Stream Analytics](www.microsoft.com)
+ * [Stream Analytics](/StreamAnalytics)
 
  * [Azure Functions](/AzureFunction)
