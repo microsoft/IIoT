@@ -28,13 +28,13 @@ Please perform the following steps in advance of the HOL otherwise you will wast
      - Select Menu -> Preferences -> Raspberry Pi Configuration -> Interfaces.
      
         <p align="center">
-          <img src="Images/menu.jpg"  width="50%" height="50%"/>
+          <img src="/images/menu.jpg"  width="50%" height="50%"/>
         </p>
         
      - Ensure VNC is Enabled.
      
         <p align="center">
-          <img src="Images/enableVNC.jpg"  width="50%" height="50%"/>
+          <img src="/images/enableVNC.jpg"  width="50%" height="50%"/>
         </p>
          
 1. Enable SSH on the Raspberry Pi:
