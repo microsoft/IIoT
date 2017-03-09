@@ -68,7 +68,7 @@ Prerequisites: Power BI account
     1. IoT Hub: Choose the IoT Hub you have been using for the lab
     1. Endpoint: Messaging
     1. Shared Access Policy Name: iothubowner
-    1. Consumer Group: $Default (or empty)
+    1. Consumer Group: asa (we created this earlier)
     1. Event Serialization Format: JSON
     1. Encoding: UTF-8
     1. Click "Create" and wait for the input to be created. 
