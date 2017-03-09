@@ -94,7 +94,7 @@ Prerequisites: Power BI account
          <img src="/images/powerBIOutput.jpg" width="50%" height="50%" /> 
       </p>      
     
-    1. A new window will open requiring credentials to authorize the connection to PowerBI.
+    1. A new window will open requiring credentials to authorize the connection to PowerBI. 
    
       <p align="center">
          <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
@@ -145,7 +145,10 @@ Prerequisites: Power BI account
 ## View Data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
 1. Sign in
-1. <TODO - Finish this off>
+1. Go to the bottom of the bar on the left.  Select "Streaming Datasets"
+1. You should see the dataset you configured in Stream Analytics.  Click on it.
+1. Click on the "Create Report" icon for your dataset
+
 
 
 [Back to Main HOL Instructions](/README.md)
