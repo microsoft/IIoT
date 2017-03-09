@@ -49,6 +49,13 @@ The new version of the remote monitoring pre-configured solution comes with a st
          <img src="/images/IoTHubKeys2.jpg" /> 
       </p>
 
+## Create consumer groups. These will be used later in this lab.
+1. Under "Messaging", select "Endpoints"
+1. Click on "Events"
+1. In the blade on the right, add the following consumer groups
+  1. "deviceexplorer"
+  1. "asa"
+
 ## Create Your Device in the Remote Monitoring Pre-configured Solution 
 1. Go back to the Azure IoT Suite microsite tab. Your pre-configured solution should be provisioned now. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
       <p align="center">
