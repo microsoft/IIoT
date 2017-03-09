@@ -81,6 +81,12 @@ The new version of the remote monitoring pre-configured solution comes with a st
       <p align="center">
          <img src="/images/CustomDeviceParams.jpg"/> 
       </p>
+      
+  1. As a last step, add a high temperature limit to the device twin.  We willuse this later in the lab.
+    1. Click on the device
+    1. Under "Device Twin", click edit
+    1. Add a new "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it type "Number".
+    1. Click "Save Changes to Device Twin".
 
 Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
 
