@@ -96,7 +96,6 @@ if __name__ == '__main__':
     #To register a new device, ensure you use a shared access policy with at least 'registry write' permissions.
     #The connection string will resemble:
     #   'HostName=myiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=sdilhjlEDPvgcc1kIAW5bDlNQG6/Y7zJSoi6qSiNpcio='
-    #   'HostName=calgaryhandsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A='
     connectionString = ''
     
     #This is the device name that will be registered in the IoT Hub. 
