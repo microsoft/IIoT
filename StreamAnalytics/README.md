@@ -2,15 +2,14 @@
 
 Prerequisites: Power BI account
 
-## Create Stream Analytics Job
+## Create Azure Stream Analytics (ASA) Job
 
 1. Log into the [Azure portal](https://ms.portal.azure.com)
-1. Go to the Stream Analytics blade
-1. Add a Stream Analytics Job
+1. Add an Azure Stream Analytics (ASA) Job
   1. Click on "+ New"
   
      <p align="center">
-         <img src="/images/AzureNewButton.jpg" width="50%" height="50%" /> 
+         <img src="/images/AzureNewButton.jpg" width="50%" height="50%"/> 
       </p>    
   
   1. In the "Search the marketplace" file, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
@@ -89,25 +88,60 @@ Prerequisites: Power BI account
   1. Enter the properties
     1. Output alias: Free form text for the input. eg. "PowerBI"
     1. Sink: Power BI
-    1. Click "Authorize" and enter Power BI credentials
+    1. Click "Authorize". 
+    
+      <p align="center">
+         <img src="/images/powerBIOutput.jpg" width="50%" height="50%" /> 
+      </p>      
+    
+    1. A new window will open requiring credentials to authorize the connection to PowerBI.
+   
+      <p align="center">
+         <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
+      </p>      
+       
     1. Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
-    1. Enter a Data table. eg. Raspberry Pi Data Table
+    1. Enter a Table Name. eg. Raspberry Pi Data Table
     1. Click "Create"
-1. Wait for the input and output to be created.  Check Notifications in the portal. 
-1. Create a Query
-  1. Under "Job Topology" click on "Query"
-  1. Enter the following query
+   
+      <p align="center">
+         <img src="/images/powerBIOutput2.jpg" width="50%" height="50%" /> 
+      </p>      
+       
+    1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
+1. Create an ASA Query.
+  1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
+  1. Enter the following query: 
+  
     SELECT <br>
       * <br>
     INTO  <br>
       [PowerBI] <br>
     FROM <br>
       ["IoTHub"] <br>
-   1. Click "Save"
-1. Start the Job
+      
+   1. Click "Save". 
+   1. Click "Test" 
+   
+      <p align="center">
+         <img src="/images/ASAQuery.jpg" width="50%" height="50%" /> 
+      </p>      
+       
+1. Start the ASA Job
   1. Click on "Overview" 
   1. Click "Start"
-
+   
+      <p align="center">
+         <img src="/images/startASA.jpg" width="50%" height="50%" /> 
+      </p>  
+      
+  1. For the "Job output start time", click "Now"
+  1. Click "Start"
+   
+      <p align="center">
+         <img src="/images/startASA2.jpg" width="50%" height="50%" /> 
+      </p>  
+          
 ## View Data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
 1. Sign in
