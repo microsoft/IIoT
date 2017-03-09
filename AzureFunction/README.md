@@ -87,4 +87,4 @@ Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey f
     1. Click “Run” to start the function
 
 
-[Back to Main HOL Instructions](/README.md)
+[Back to Main HOL Instructions](/)
