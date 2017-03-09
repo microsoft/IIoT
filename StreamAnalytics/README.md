@@ -148,6 +148,13 @@ Prerequisites: Power BI account
 1. Go to the bottom of the bar on the left.  Select "Streaming Datasets"
 1. You should see the dataset you configured in Stream Analytics.  Click on it.
 1. Click on the "Create Report" icon for your dataset
+1. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
+1. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart
+1. Save your report.
+1. Click on the "Pin Visual" button on the chart
+1. Click on "New Dashboard"
+1. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
+1. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
 
 
 
