@@ -21,7 +21,7 @@ Open up a command prompt and enter the following command to copy the python scri
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab.py
       ```
-  1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, and click *Monitor*. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
+  1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, enter "deviceexplorer" in the "Consumer Group" text box, and click *Monitor*. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
   
   ![Device Explorer](/images/DeviceExplorer-ReceiveEvents.jpg)
 
