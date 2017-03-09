@@ -44,6 +44,7 @@ Follow the instructions [here](/Prep) before you arrive on-site for the hands-on
 
 ### Afternoon
 
+
  * [5 - Stream Analytics](/StreamAnalytics)
 
  * [6 - Azure Functions](/AzureFunction)

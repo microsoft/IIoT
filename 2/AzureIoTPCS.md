@@ -49,6 +49,13 @@ The new version of the remote monitoring pre-configured solution comes with a st
          <img src="/images/IoTHubKeys2.jpg" /> 
       </p>
 
+## Create consumer groups. These will be used later in this lab.
+1. Under "Messaging", select "Endpoints"
+1. Click on "Events"
+1. In the blade on the right, add the following consumer groups
+  1. "deviceexplorer"
+  1. "asa"
+
 ## Create Your Device in the Remote Monitoring Pre-configured Solution 
 1. Go back to the Azure IoT Suite microsite tab. Your pre-configured solution should be provisioned now. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
       <p align="center">
@@ -81,6 +88,12 @@ The new version of the remote monitoring pre-configured solution comes with a st
       <p align="center">
          <img src="/images/CustomDeviceParams.jpg"/> 
       </p>
+      
+  1. As a last step, add a high temperature limit to the device twin.  We willuse this later in the lab.
+    1. Click on the device
+    1. Under "Device Twin", click edit
+    1. Add a new "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it type "Number".
+    1. Click "Save Changes to Device Twin".
 
 Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
 
