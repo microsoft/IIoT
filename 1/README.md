@@ -19,7 +19,7 @@
   1. Open PuTTY. 
   1. Enter the IP address of your Raspberry Pi into the *Host Name (or IP address)* field. 
       <p align="center">
-        <img src="/images/PuTTY.JPG" />
+        <img src="/images/PuTTY.jpg" />
       </p>
   1. If you get prompted to accept a security certificate, click "Yes". 
 1. Disconnect from the monitor.
