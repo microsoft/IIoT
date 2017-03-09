@@ -146,3 +146,6 @@ Prerequisites: Power BI account
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
 1. Sign in
 1. <TODO - Finish this off>
+
+
+[Back to Main HOL Instructions](/README.md)
