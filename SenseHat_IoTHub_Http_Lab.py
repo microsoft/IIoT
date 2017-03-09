@@ -84,17 +84,6 @@ class IoTHub:
         url = 'https://%s/devices/%s/messages/events?api-version=%s' % (self.iotHost, deviceId, self.API_VERSION)
         r = requests.post(url, headers={'Authorization': sasToken}, data=message)
         return r.text, r.status_code
-
-class telemetry :
-    def __init__(self, pitch, yaw, roll, temp, humidity):
-        """Return a new object."""
-        self.DeviceId = deviceId
-        self.pitch = pitch
-        self.yaw = yaw
-        self.roll = roll
-        self.Temperature = float(temp)
-        self.ExternalTemperature = 0
-        self.Humidity = float(humidity)
         
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__, 
@@ -139,13 +128,9 @@ if __name__ == '__main__':
             else:
                 print('No messages from IoT Hub')  
 
-            orientation = sense.get_orientation_degrees()
-            temp = str(sense.temp)
-            humidity = str(sense.humidity)
-            jsonMessage = telemetry("{pitch}".format(**orientation),"{yaw}".format(**orientation),"{roll}".format(**orientation),temp=temp, humidity=humidity)
-            print(jsonMessage.toJSON())
-            response = iotHubConn.sendD2CMsg(deviceId, jsonMessage.toJSON())
-            print(response[1])
+            message = str(sense.temp) 
+            print('Sending message... ' + message)
+            print(iotHubConn.sendD2CMsg(deviceId, message))
                 
             time.sleep(5) # 5 second delay
             
