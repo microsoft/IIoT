@@ -4,6 +4,7 @@ Please perform the following steps in advance of the HOL otherwise you will wast
 
 1. Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card.
   - Follow the instructions to install the operating system: [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) 
+  - If you have a new microSD card that hasn't been formatted before, use [SDFormatter](https://www.sdcard.org/downloads/formatter_4/eula_windows/) to do a full format of the card. 
   - Insert the microSD card into your Pi and connect the power supply. 
   - Click to install Raspbian
      <p align="center">
