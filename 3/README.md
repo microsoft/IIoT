@@ -48,8 +48,6 @@ Open up a command prompt and enter the following command to copy the python scri
          <img src="/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
       </p>
  
-    - You can also go to your remote monitoring pre-configured solution (RM-PCS) dashboard and look at the data points being plotted on the Telemetry History chart. 
-    
 ***** ---- TERRY to fill out steps students should follow below -------- ********
 
 1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
@@ -59,7 +57,7 @@ Open up a command prompt and enter the following command to copy the python scri
          <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
       </p>
    
-  1. Go to the RM-PCS dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
+  1. Go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
       
   1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
 1. To send messages from IoT Hub back to your Raspberry Pi:
@@ -79,5 +77,16 @@ Open up a command prompt and enter the following command to copy the python scri
   
 
 Congratulations! You just connected your Raspberry Pi to the IoT hub and created an application which demonstrated the two-way messaging capabilities. 
+
+## Hands-On assignment.  
+
+Alter the Python code to send the following items to the IoT Hub in JSON format:
+  - Pitch
+  - Yaw
+  - Roll
+  - Humidity
+  - Temperature
+
+The correct script can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you copy this script, remember to put in your IoT Hub connection string, and the Device Id.
 
 [Back to Main HOL Instructions](/README.md)
