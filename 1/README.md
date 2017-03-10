@@ -13,7 +13,7 @@
         <img src="/images/CommandPrompt.jpg" /> 
       </p>
   1. Retrieve the ip address with the following command: `ifconfig` <br/>
-     Take note of the ip address. Feel free to download and use a [template](/"IoT HOL - Lab Parameters.xlsx") created to track these configuration details. 
+     Take note of the ip address. Feel free to download and use a [template](/IoT HOL - Lab Parameters.xlsx) created to track these configuration details. 
 1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Advance Steps instructions](/Prep). 
 1. Connect to your Raspberry Pi using your laptop to verify the connection. 
   1. Open PuTTY. 
