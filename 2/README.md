@@ -55,6 +55,9 @@ The new version of the remote monitoring pre-configured solution comes with a st
 1. In the blade on the right, add the following consumer groups
   1. "deviceexplorer"
   1. "asa"
+      <p align="center">
+         <img src="/images/consumerGroups.jpg" /> 
+      </p>
 
 ## Create Your Device in the Remote Monitoring Pre-configured Solution 
 1. Go back to the Azure IoT Suite microsite tab. Your pre-configured solution should be provisioned now. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
@@ -84,16 +87,23 @@ The new version of the remote monitoring pre-configured solution comes with a st
       <p align="center">
          <img src="/images/DefineDeviceID.jpg"/> 
       </p>
-  1. The "Step 3 of 3" page provides you the *Device ID*, *IoT Hub Hostname* and *Device Key* that you will need to connect your Raspberry Pi to the remote monitoring solution. Copy and paste the value of these fields in a text document somewhere. 
+  1. The "Step 3 of 3" page provides you the *Device ID*, *IoT Hub Hostname* and *Device Key* that you will need to connect your Raspberry Pi to the remote monitoring solution. Take note of the value of these fields. 
       <p align="center">
          <img src="/images/CustomDeviceParams.jpg"/> 
       </p>
       
-  1. As a last step, add a high temperature limit to the device twin.  We willuse this later in the lab.
-    1. Click on the device
-    1. Under "Device Twin", click edit
-    1. Add a new "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it type "Number".
+  1. As a last step, add a high temperature limit to the device twin.  We will use this later in the lab.
+    1. Click on the device. 
+    1. Under "Device Twin", in the "Tags" category, click "Edit"
+       <p align="center">
+         <img src="/images/twinTag1.jpg" /> 
+      </p>
+    1. Click "+ Add Tag".
+    1. Add a new parameter "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it of data type "Number".
     1. Click "Save Changes to Device Twin".
+      <p align="center">
+         <img src="/images/twinTag2.jpg" width="30%" height="30%" /> 
+      </p>
 
 Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
 
