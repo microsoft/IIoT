@@ -45,13 +45,18 @@ Open up a command prompt and enter the following command to copy the python scri
     - Click the Data tab, select your device from the Device ID list, click the "enable" checkbox beside the *Consumer Group* field, enter "deviceexplorer" in the "Consumer Group" text box, and click "Monitor". If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
   
       <p align="center">
-         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+         <img src="/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
       </p>
  
 ***** ---- TERRY to fill out steps students should follow below -------- ********
 
 1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
   1. Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (sample_payload.json). Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON.py&version=GBmaster&_a=contents).
+  
+      <p align="center">
+         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+      </p>
+      
   1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
 1. To send messages from IoT Hub back to your Raspberry Pi:
   1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
