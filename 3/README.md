@@ -44,8 +44,10 @@ Open up a command prompt and enter the following command to copy the python scri
       
     - Click the Data tab, select your device from the Device ID list, click the "enable" checkbox beside the *Consumer Group* field, enter "deviceexplorer" in the "Consumer Group" text box, and click "Monitor". If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
   
-  ![Device Explorer](/images/DeviceExplorer-ReceiveEvents.jpg)
-
+      <p align="center">
+         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+      </p>
+ 
 ***** ---- TERRY to fill out steps students should follow below -------- ********
 
 1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
