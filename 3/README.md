@@ -8,8 +8,8 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   1. Comment/uncomment the *import* statements that correspond to whether you are using a Sense HAT or the Sense Hat emulator. 
      Below the import statements, you will see:
      
-     ``` #from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi
-         from sense_emu import SenseHat #if using a Sense HAT Emulator (Linux only) ```
+     ``` #from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi``` <br/>
+     ``` from sense_emu import SenseHat #if using a Sense HAT Emulator (Linux only) ```
          
      - if using the Sense HAT, uncomment the *from sense_hat* statement and comment the *from sense_emu* statement
      - if using the Sense HAT emulator, comment the *from sense_hat* and uncomment the *from sense_emu* statement
