@@ -114,7 +114,7 @@ Prerequisites: Power BI account
   1. Enter the following query: 
   
     SELECT <br>
-      * <br>
+      /* <br>
     INTO  <br>
       [PowerBI] <br>
     FROM <br>
