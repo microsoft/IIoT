@@ -9,13 +9,13 @@ Prerequisites: Power BI account
   1. Click on "+ New"
   
      <p align="center">
-         <img src="/images/AzureNewButton.jpg" width="50%" height="50%"/> 
+         <img src="/images/AzureNewButton.jpg" width="30%" height="30%"/> 
       </p>    
   
   1. In the "Search the marketplace" file, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
   
      <p align="center">
-         <img src="/images/newASA.jpg" width="50%" height="50%" /> 
+         <img src="/images/newASA.jpg" width="40%" height="40%" /> 
      </p>    
   
     1. Click on the "Stream Analytics job" that shows up in the results. Click "Create".
@@ -31,7 +31,7 @@ Prerequisites: Power BI account
   1. Click "Create". Feel free to click the "Pin to dashboard" check box. This will add the newly created ASA service to the main Azure portal dashboard. 
       
       <p align="center">
-         <img src="/images/newASA3.jpg" width="50%" height="50%" /> 
+         <img src="/images/newASA3.jpg" width="30%" height="30%" /> 
       </p>   
   
   1. Wait for the job to be created. You will see a notification banner that will pop up in the top right corner of the Azure portal to indicate the status of the job. This banner will disappear automatically. If you wish to see all the past notifications, click the bell icon. 
@@ -44,7 +44,7 @@ Prerequisites: Power BI account
   1. If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
       
       <p align="center">
-         <img src="/images/clickASA1.jpg" width="50%" height="50%" /> 
+         <img src="/images/clickASA1.jpg" width="30%" height="30%" /> 
       </p>   
        
      If not, click "Resource Groups" -> Your *resource group name* -> Your *ASA name*
@@ -74,7 +74,7 @@ Prerequisites: Power BI account
     1. Click "Create" and wait for the input to be created. 
               
       <p align="center">
-         <img src="/images/ASANewInput.jpg" width="50%" height="50%" /> 
+         <img src="/images/ASANewInput.jpg" width="30%" height="30%" /> 
       </p>   
   
 1. Next, add an Output for the Stream Analytics job.
@@ -91,7 +91,7 @@ Prerequisites: Power BI account
     1. Click "Authorize". 
     
       <p align="center">
-         <img src="/images/powerBIOutput.jpg" width="50%" height="50%" /> 
+         <img src="/images/powerBIOutput.jpg" width="30%" height="30%" /> 
       </p>      
     
     1. A new window will open requiring credentials to authorize the connection to PowerBI. 
@@ -105,7 +105,7 @@ Prerequisites: Power BI account
     1. Click "Create"
    
       <p align="center">
-         <img src="/images/powerBIOutput2.jpg" width="50%" height="50%" /> 
+         <img src="/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
       </p>      
        
     1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
