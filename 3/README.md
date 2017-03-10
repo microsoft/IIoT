@@ -6,10 +6,10 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http_Lab.py``` and open it with a text editor such as Notepad.
   1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http_Lab.py``` using a text editor such as Nano.
   1. Next, you will provide the information required to connect the Raspberry Pi to the IoT pre-configured solution:
-  - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
-  - Search for ```deviceId =``` and paste in the Device ID you created earlier.
+    - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
+    - Search for ```deviceId =``` and paste in the Device ID you created earlier.
   1. Copy ```SenseHat_IoTHub_Http_Lab.py``` to your Raspberry Pi using PuTTY. 
-  - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already. Otherwise, the pscp executable will be in your PuTTY directory.<br/>
+    - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already. Otherwise, the pscp executable will be in your PuTTY directory.<br/>
 Open up a command prompt and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be pi/raspberry <br/>
 `pscp SenseHat_IoTHub_Http_Lab.py userid@server_name:/path/SenseHat_IoTHub_Http_Lab.py`
   1. Log into the Raspberry Pi using PuTTY.
