@@ -5,23 +5,44 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
   1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http_Lab.py``` and open it with a text editor such as Notepad.
   1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http_Lab.py``` using a text editor such as Nano.
+  1. Comment/uncomment the *import* statements that correspond to whether you are using a Sense HAT or the Sense Hat emulator. 
+     Below the import statements, you will see:
+     
+     ``` #from sense_hat import SenseHat #if using a physical SenseHat attached to Raspi
+         from sense_emu import SenseHat #if using a Sense HAT Emulator (Linux only) ```
+         
+     - if using the Sense HAT, uncomment the *from sense_hat* statement and comment the *from sense_emu* statement
+     - if using the Sense HAT emulator, comment the *from sense_hat* and uncomment the *from sense_emu* statement
+
   1. Next, you will provide the information required to connect the Raspberry Pi to the IoT pre-configured solution:
-    - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. 
+    - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> iothubowner -> Connection string-primary key)
     - Search for ```deviceId =``` and paste in the Device ID you created earlier.
   1. Copy ```SenseHat_IoTHub_Http_Lab.py``` to your Raspberry Pi using PuTTY. 
     - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already. Otherwise, the pscp executable will be in your PuTTY directory.<br/>
+    
 Open up a command prompt and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be pi/raspberry <br/>
-`pscp SenseHat_IoTHub_Http_Lab.py userid@server_name:/path/SenseHat_IoTHub_Http_Lab.py`
+
+`pscp SenseHat_IoTHub_Http_Lab.py <userid>@<server ip or server name>:/<$path>/SenseHat_IoTHub_Http_Lab.py`
+
+(for the <$path>, use */home/pi*)
+
   1. Log into the Raspberry Pi using PuTTY.
   1. Verify that the file was transfered by listing the directory: `ls -l`
   
   ![ls -l](/images/ListFiles.jpg)
   
-  1. Start sending messages by invoking the script in Python
+  1. Start sending messages by invoking the script in Python<br/>
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab.py
       ```
-  1. On your laptop, open Device Explorer, click the Data tab, select your device from the Device ID list, enter "deviceexplorer" in the "Consumer Group" text box, and click *Monitor*. If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
+  1. Connect your Device Explorer to the IoT Hub and check to see if messages are arriving at the IoT Hub:
+    - On your laptop, open Device Explorer. Under the Configuration tab, copy and paste the IoT Hub Connection String obtained earlier and click "Update". This connects the Device Explorer app to the IoT Hub that you created. 
+    
+      <p align="center">
+         <img src="/images/DeviceExplorer-Connect.jpg" width="50%" height="50%" /> 
+      </p>
+      
+    - Click the Data tab, select your device from the Device ID list, click the "enable" checkbox beside the *Consumer Group* field, enter "deviceexplorer" in the "Consumer Group" text box, and click "Monitor". If you see messages arriving then Congratulations, your Raspberry Pi is now sending data to Azure IoT Hub. 
   
   ![Device Explorer](/images/DeviceExplorer-ReceiveEvents.jpg)
 
