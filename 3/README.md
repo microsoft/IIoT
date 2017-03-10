@@ -56,11 +56,13 @@ Open up a command prompt and enter the following command to copy the python scri
       <p align="center">
          <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
       </p>
+   
+  1. Go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
       
   1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
 1. To send messages from IoT Hub back to your Raspberry Pi:
   1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
-  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
+  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub connection string-pirmary key you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
   1. Run the file using ```pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_C2D_LED.py```
   
   ![Run C2D Python Script](/images/runC2D.jpg)
@@ -72,5 +74,8 @@ Open up a command prompt and enter the following command to copy the python scri
   1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator)
   
   ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
+  
+
+Congratulations! You just connected your Raspberry Pi to the IoT hub and created an application which demonstrated the two-way messaging capabilities. 
 
 [Back to Main HOL Instructions](/README.md)
