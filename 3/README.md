@@ -60,12 +60,6 @@ Open up a command prompt and enter the following command to copy the python scri
       
   1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. Solution source code - Authorized MSFT personnel only [SenseHat_IoTHub_Http_JSON_LED.py](https://kevinhilscher.visualstudio.com/_git/IoT%20Hackathon?path=%2FSenseHat_IoTHub_Http_JSON%20_LED.py&version=GBmaster&_a=contents).
 1. To send messages from IoT Hub back to your Raspberry Pi:
-  1. Copy the ```SenseHat_IoTHub_Http_C2D_LED.py``` file to your Raspberry Pi using pscp or download it directly using git clone.
-  1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub connection string-pirmary key you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier. Save the file.
-  1. Run the file using ```pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_C2D_LED.py```
-  
-  ![Run C2D Python Script](/images/runC2D.jpg)
-  
   1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. 
   
   ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
