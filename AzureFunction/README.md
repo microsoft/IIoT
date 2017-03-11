@@ -86,5 +86,10 @@ Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey f
         
     1. Click “Run” to start the function
 
+## Trying it out
+
+You may have difficulties getting your Pi temperature over the threshold.  You can do one of the following:
+- Lower the threshold in the device twin in the preconfigured solution website
+- Update your Python script to use the Sense Hat emulator instead of the physical board.  
 
 [Back to Main HOL Instructions](/README.md)
