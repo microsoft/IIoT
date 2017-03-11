@@ -11,7 +11,7 @@ Prerequisites: Power BI account
 1. Right click on the "DeviceSimulator-Webjob", and click "Stop"
   
      <p align="center">
-         <img src="/images/StopDeviceSimulator.jpg" width="30%" height="30%"/> 
+         <img src="/images/StopDeviceSimulator.jpg" width="60%" height="60%"/> 
       </p>    
   
 ## Create Azure Stream Analytics (ASA) Job
