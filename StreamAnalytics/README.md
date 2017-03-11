@@ -2,6 +2,18 @@
 
 Prerequisites: Power BI account
 
+## Stop the device simulators
+
+1. Log into the [Azure portal](https://ms.portal.azure.com)
+1. Go to the "App Services" blade
+1. Click on the App services associated with your preconfigured solution
+1. Go To the "WebJobs" blade
+1. Right click on the "DeviceSimulator-Webjob", and click "Stop"
+  
+     <p align="center">
+         <img src="/images/AStopDeviceSimulator.jpg" width="30%" height="30%"/> 
+      </p>    
+  
 ## Create Azure Stream Analytics (ASA) Job
 
 1. Log into the [Azure portal](https://ms.portal.azure.com)
