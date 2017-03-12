@@ -160,7 +160,7 @@ Prerequisites: Power BI account
 1. Go to the bottom of the bar on the left.  Select "Streaming Datasets"
    
       <p align="center">
-         <img src="/images/PowerBILab.png" width="50%" height="50%" /> 
+         <img src="/images/PowerBILab.png" width="80%" height="80%" /> 
       </p>  
       
 1. You should see the dataset you configured in Stream Analytics.  Click on it.
