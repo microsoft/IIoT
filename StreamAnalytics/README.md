@@ -130,7 +130,7 @@ Prerequisites: Power BI account
     INTO  <br>
       [PowerBI] <br>
     FROM <br>
-      ["IoTHub"] <br>
+      [IoTHub] <br>
          
    1. Click "Save". 
    1. Click "Test" 
