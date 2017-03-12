@@ -47,3 +47,5 @@ Follow the instructions [here](/Prep) before you arrive on-site for the hands-on
  * [4 - Stream Analytics](/StreamAnalytics)
 
  * [5 - Azure Functions](/AzureFunction)
+ 
+ * [6 - Lab Clean-up](/Cleanup)
