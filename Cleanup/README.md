@@ -11,7 +11,7 @@ At the end of the Hands on Labs, you should clean up your Azure account so that 
     - One the blade that appears, click the "Delete solution" button
     
       <p align="center">
-         <img src="/images/DeletePCS.jpg" width="60%" height="60%"/> 
+         <img src="/images/DeletePCS.jpg" width="40%" height="40%"/> 
       </p> 
 
 1. If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
