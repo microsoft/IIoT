@@ -9,7 +9,7 @@ At the end of the Hands on Labs, you should clean up your Azure account so that 
   1.	Change the Storage account from Standard – GRS to Standard – LRS.
     - Navigate to Settings > Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
      
-  1.Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
+  1. Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
   
   1. Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
 
