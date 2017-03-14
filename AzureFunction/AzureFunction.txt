@@ -57,8 +57,10 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
         log.Info("Twin not retrieved");
 
     double highTemperatureLimit = twin.Tags["HighTemperatureLimit"];
-    string temperatureStatus = twin.Tags["TemperatureStatus"];
-
+    
+    string temperatureStatus = "Normal";
+    if (twin.Tags.Contains("TemperatureStatus"))
+        temperatureStatus = twin.Tags["TemperatureStatus"];
     
     if (raspberryPi.Temperature >= highTemperatureLimit && temperatureStatus != "High")
     {
