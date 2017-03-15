@@ -74,12 +74,10 @@ In this part of the lab, you will create an Azure function that will be used to 
     </p>    
         
     1. Copy the text from [Function.txt](/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
-    1. Update the CONNECTION_STRING variable to point to the IoT Hub Function Connection String that you obtained earlier.  See “(IOT_HUB_CONNECTION_STRING)” above.
-
-      <p align="center">
-         <img src="/images/runFunction.jpg" /> 
-      </p>  
-        
+    1. In the run.csx file, find the CONNECTION_STRING variable and set the value to the IoT Hub Functions Connection String that you obtained earlier.  See “(IOT_HUB_CONNECTION_STRING)” above.
+    <p align="center">
+    <img src="/images/runFunction.jpg" />
+    </p>
     1. Click “Run” to start the function
 
 ## Trying it out
