@@ -40,8 +40,8 @@ In this part of the lab, you will create an Azure function that will be used to 
   ![New Function](/images/NewFunction.jpg)
   
   1. Choose the “EventHubTrigger-CSharp”
-    1. Enter “Name your function”
-    1. Enter “Event Hub name”.  Use the Event hub-compatible name obtained above. 
+    1. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
+    1. In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. 
     
     ![Select EH Trigger](/images/EHTrigger.jpg)
     
@@ -49,10 +49,25 @@ In this part of the lab, you will create an Azure function that will be used to 
       - Click "new”.
       - Click "Add a connection string".
       - In the *Connection name* field, enter the IoT Hub Event Hub-compatible connection name that you obtained earlier
-      - In the *Connection string* field, enter the IoT Event Hub compatible connection string. This connection string is a combination of the connection string for the Event Hub endpoint and the Shared Access key for the fuction's policy that you created above. <br>
-Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey from the function policy*
-        ex. Endpoint=sb://<eventHubName>.servicebus.windows.net/;SharedAccessKeyName=<SASPolicyName>;SharedAccessKey=<SASPolicyKey>
-         Click "OK"
+      - In the *Connection string* field, enter the IoT Event Hub compatible connection string. This connection string can be formed using a combination of strings obtained from the connection parameters noted earlier in the lab. The three strings are:
+         1. The string "Endpoint="
+         2. The value of the *Event Hub-compatible string* eg. sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/
+         3. A subset string obtained from the Functions endpoint connection string. You will require the text associated with the ShareAccessKeyName and the ShareAccessKey. eg.  ;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=*
+         
+         In our example, the values we obtained in the previous steps were:
+         *Event Hub-compatible endpoint*: ```diff + sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/``` and the 
+         *Functions endpoint connection string*: HostName=iothandsonlabc4f51.azure-devices.net;```diff + SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=```
+         
+         The formed Event Hub connection string will be (use the values highlighted in ```diff + green```)
+         Endpoint=sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=
+         
+         the string "Endpoint=", the connection string for the Event Hub endpoint and the Shared Access key for the fuction's policy that you created above. <br />
+Format: "Endpoint=" + *Event Hub-compatible endpoint* + ";" + *SharedAccessKey from the function policy*<br />
+
+For example, if your Event Hub-compatible endpoint is *sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/*
+and your functions endpoint connection string is *HostName=iothandsonlabc4f51.azure-devices.net;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=*
+
+   - Click "OK"
     
       <p align="center">
          <img src="/images/EHconnection.jpg" width="50%" height="50%" /> 
