@@ -51,7 +51,7 @@ In this part of the lab, you will create an Azure function that will be used to 
          and the <br />
          ![IoT Hub Functions Connection String](/images/FunctionsConnectionString.jpg) <br />
                   
-         The newly formed Event Hub connection string will look like the following (join the values highlighted in yellow and green)
+         The newly formed Event Hub connection string will look like the following (join the values highlighted in yellow and green). Paste this new connection string value into the "Connection string" field. 
          <br />
          ![New Event Hub Connection String](/images/EHConnectionString.jpg)
          
