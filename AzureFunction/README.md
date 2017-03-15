@@ -2,7 +2,7 @@
 
 In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. 
 
-### Steps
+### Obtain Values Required to Connect Function to the IoT Hub
 1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
   1. Open the Azure Portal [here](https://ms.portal.azure.com)
   1. Click on the IoT Hub that was created earlier. 
@@ -21,14 +21,14 @@ In this part of the lab, you will create an Azure function that will be used to 
     1. Click the "Create" button. 
     ![Create SAS](/images/CreateSAS.jpg)
     1. Once the new Shared Access Policy has been created, click the new policy. 
-    1. Take note of the "Connection String-primary key".  (IOT_HUB_CONNECTION_STRING)
+    1. Take note of the "Connection String-primary key".  This is the value for the new *Functions endpoint connection string* (IOT_HUB_CONNECTION_STRING)
     You will now have the values that you will need to connect your function to the IoT Hub. 
     ![Connection string](/images/ConnectionString.jpg)
-    
-1.	Create an Azure Function. You will be creating a C# Azure Function that will be activated whenever the compatible event hub within the IoT hub service receives a new event. 
+
+### Create a Function
+1.	Next, you will create an Azure Function. In this step, you will be creating a C# Azure Function that will be activated whenever the compatible event hub within the IoT hub service receives a new event. 
   1. Go to the Azure functions portal: [here](https://functions.azure.com/signin)
   1. Select your Subscription, enter a Name for your Function App, and select the Region you will deploy the function to. Click on "Create + get started"
-  
   ![Create Function](/images/CreateFunction.jpg)
   
   1. Click on “+ New Function”
