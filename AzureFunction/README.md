@@ -8,25 +8,21 @@ In this part of the lab, you will create an Azure function that will be used to 
   1. Click on the IoT Hub that was created earlier. 
   1. Under the “Messaging” category click on “Endpoints”.
   1. In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
-  1. Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields.  (EVENTHUB_CONFIG)
-     
-  ![Event Hub Endpoint](/images/EHendpointValues.jpg)
-  
+  1. Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields.  (EVENTHUB_CONFIG)<br />  
+  ![Event Hub Endpoint](/images/EHendpointValues.jpg) <br />
   1. Create a new Shared Access Policy for the function that you will create. 
     1. Click on “Shared Access Policies”
     1. Click on “+ Add”
     1. Enter a name for your policy.  Eg. “Function”  
     1. Give the following permissions
-      1. Registry Read
-      1. Registry write
-      1. Service connect
+      - Registry Read
+      - Registry write
+      - Service connect
     1. Click the "Create" button. 
-    
     ![Create SAS](/images/CreateSAS.jpg)
-    
     1. Once the new Shared Access Policy has been created, click the new policy. 
     1. Take note of the "Connection String-primary key".  (IOT_HUB_CONNECTION_STRING)
-    
+    You will now have the values that you will need to connect your function to the IoT Hub. 
     ![Connection string](/images/ConnectionString.jpg)
     
 1.	Create an Azure Function. You will be creating a C# Azure Function that will be activated whenever the compatible event hub within the IoT hub service receives a new event. 
