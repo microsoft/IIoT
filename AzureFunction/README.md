@@ -47,11 +47,12 @@ In this part of the lab, you will create an Azure function that will be used to 
          3. A subset string obtained from the *Functions connection string*. You will require the text associated with the ShareAccessKeyName and the ShareAccessKey. eg.  ;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=*
          
          In our example, the values we obtained in the previous steps were:
-         *Event Hub-compatible endpoint*: ```sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/``` and the 
-         *Functions endpoint connection string*: HostName=iothandsonlabc4f51.azure-devices.net;```SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=```
-         
-         The newly formed Event Hub connection string will look like the following (use the values highlighted in ```grey```)
-         Endpoint=sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=
+         ![Event Hub endpoint Name](/images/EHCompatibleEP.jpg)
+         and the 
+         ![IoT Hub Functions Connection String](/images/FunctionsConnectionString.jpg) <br />
+                  
+         The newly formed Event Hub connection string will look like the following (join the values highlighted in yellow and green)
+         ![New Event Hub Connection String](/images/EHConnectionString.jpg)
          
    - Click "OK"
     
