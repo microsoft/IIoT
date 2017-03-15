@@ -21,7 +21,7 @@ In this part of the lab, you will create an Azure function that will be used to 
     1. Click the "Create" button. 
     ![Create SAS](/images/CreateSAS.jpg)
     1. Once the new Shared Access Policy has been created, click the new policy. 
-    1. Take note of the "Connection String-primary key".  This is the value for the new *IoT Hub Functions connection string* (IOT_HUB_CONNECTION_STRING) <br />
+    1. Take note of the "Connection String-primary key".  This is the value for the new IoT Hub Functions connection string (IOT_HUB_CONNECTION_STRING) <br />
     You should have three different values noted now: “Event Hub-compatible name", “Event Hub-compatible endpoint" and the IoT Hub Functions connection string. These values will be used to connect your function to the IoT Hub. 
     ![Connection string](/images/ConnectionString.jpg)
 
@@ -36,17 +36,15 @@ In this part of the lab, you will create an Azure function that will be used to 
   1. Choose the “EventHubTrigger-CSharp”
     1. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
     1. In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. 
-    
     ![Select EH Trigger](/images/EHTrigger.jpg)
-    
-    1. Create a new “Event Hub connection”.  This is the connection string for the event hub.
+    1. Next, you will create a new “Event Hub connection”.  The value for this connection will be the connection string for the event hub compatible endpoint built into the IoT Hub. The steps to create the new connection are as follows:
       - Click "new”.
       - Click "Add a connection string".
       - In the *Connection name* field, enter the IoT Hub Event Hub-compatible connection name that you obtained earlier
       - In the *Connection string* field, enter the IoT Event Hub compatible connection string. This connection string can be formed using a combination of strings obtained from the connection parameters noted earlier in the lab. The three strings are:
          1. The string "Endpoint="
          2. The value of the *Event Hub-compatible string* eg. sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/
-         3. A subset string obtained from the Functions endpoint connection string. You will require the text associated with the ShareAccessKeyName and the ShareAccessKey. eg.  ;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=*
+         3. A subset string obtained from the *Functions connection string*. You will require the text associated with the ShareAccessKeyName and the ShareAccessKey. eg.  ;SharedAccessKeyName=functions;SharedAccessKey=hMfDUWMgNIXtLTqQ9Opr6/NtrqcxcJ9gKULcmPppZiA=*
          
          In our example, the values we obtained in the previous steps were:
          *Event Hub-compatible endpoint*: ```diff + sb://iothub-ns-iothandson-123156-90f62e3525.servicebus.windows.net/``` and the 
@@ -65,14 +63,10 @@ In this part of the lab, you will create an Azure function that will be used to 
   1. Configure libraries for the new function created. 
     1. Expand the “Logs” view at the bottom of the page
     1. Click on “View Files”
-    
     ![Expand Function views](/images/functionViews.jpg)
-    
     1. Click on “+ Add” under the "View files" tab. 
     1. Enter “project.json”
-    
     ![Add project file](/images/addProject.jpg)
-    
     1. Copy the text from [project.json](/AzureFunction/project.json) file in the github repo to the new json file you created.
     1. Click "Save". 
     
