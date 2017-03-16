@@ -73,17 +73,17 @@ Prerequisites: Power BI account
       </p>   
     
   1. In the "New Input" blade that appears, fill in the fields:
-    1. Alias: Free form text name for the input.  eg. "IoTHub"
-    1. Source Type: Data Stream
-    1. Source: IoT Hub
-    1. Subscription: Use IoT Hub from current subscription
-    1. IoT Hub: Choose the IoT Hub you have been using for the lab
-    1. Endpoint: Messaging
-    1. Shared Access Policy Name: iothubowner
-    1. Consumer Group: asa (we created this earlier)
-    1. Event Serialization Format: JSON
-    1. Encoding: UTF-8
-    1. Click "Create" and wait for the input to be created. 
+    - Alias: Free form text name for the input.  eg. "IoTHub"
+    - Source Type: Data Stream
+    - Source: IoT Hub
+    - Subscription: Use IoT Hub from current subscription
+    - IoT Hub: Choose the IoT Hub you have been using for the lab
+    - Endpoint: Messaging
+    - Shared Access Policy Name: iothubowner
+    - Consumer Group: asa (we created this earlier)
+    - Event Serialization Format: JSON
+    - Encoding: UTF-8
+    - Click "Create" and wait for the input to be created. 
     <p align="center">
        <img src="/images/ASANewInput.jpg" width="30%" height="30%" /> 
     </p>   
@@ -96,22 +96,22 @@ Prerequisites: Power BI account
       </p>   
   
   1. Click "+ Add" in the blade to the right
-  1. Fill out the properties in the "New Output" blade. 
-    1. Enter in any free form text for the "Output alias". eg. "PowerBI"
-    1. For the Sink, select "Power BI".
-    1. Click "Authorize". 
+  1. Fill out the values in the "New Output" blade. 
+    - Enter in any free form text for the "Output alias". eg. "PowerBI"
+    - For the Sink, select "Power BI".
+    - Click "Authorize". 
     <p align="center">
        <img src="/images/powerBIOutput.jpg" width="30%" height="30%" /> 
     </p>      
     
-    1. A new window will open requiring credentials to authorize the connection to PowerBI. Enter your credentials and click "Sign in".
+    - A new window will open requiring credentials to authorize the connection to PowerBI. Enter your credentials and click "Sign in".
     <p align="center">
        <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
     </p>      
        
-    1. Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
-    1. Enter a Table Name. eg. Raspberry Pi Data Table
-    1. Click "Create"
+    - Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
+    - Enter a Table Name. eg. Raspberry Pi Data Table
+    - Click "Create"
     <p align="center">
        <img src="/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
     </p>      
