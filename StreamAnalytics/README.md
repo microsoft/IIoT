@@ -96,15 +96,15 @@ Prerequisites: Power BI account
       </p>   
   
   1. Click "+ Add" in the blade to the right
-  1. Enter the properties
-    1. Output alias: Free form text for the input. eg. "PowerBI"
-    1. Sink: Power BI
+  1. Fill out the properties in the "New Output" blade. 
+    1. Enter in any free form text for the "Output alias". eg. "PowerBI"
+    1. For the Sink, select "Power BI".
     1. Click "Authorize". 
     <p align="center">
        <img src="/images/powerBIOutput.jpg" width="30%" height="30%" /> 
     </p>      
     
-    1. A new window will open requiring credentials to authorize the connection to PowerBI. 
+    1. A new window will open requiring credentials to authorize the connection to PowerBI. Enter your credentials and click "Sign in".
     <p align="center">
        <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
     </p>      
