@@ -44,7 +44,7 @@ The new version of the remote monitoring pre-configured solution comes with a st
 1. Obtain the "Connection string - primary key" for your IoT Hub. 
   - Click on the "Shared access policies".
   - Click on the "iothubowner" policy.
-  - Copy the primary key connection string. Take note of the primary key connection string for later. You can use the following template to capture all the required variables for this lab: [IoT HOL - Lab Parameters.xlsx](https://github.com/khilscher/IoTHubPiHackathon/blob/master/"IoT HOL - Lab Parameters.xlsx")
+  - Copy the primary key connection string. Take note of the primary key connection string for later. You can use the following template to capture all the required variables for this lab: [IoT HOL - Lab Parameters.xlsx]("/IoTHOL-LabParameters.xlsx")
       <p align="center">
          <img src="/images/IoTHubKeys2.jpg" /> 
       </p>
