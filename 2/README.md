@@ -102,7 +102,7 @@ The new version of the remote monitoring pre-configured solution comes with a st
     1. Add a new parameter "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it of data type "Number".
     1. Click "Save Changes to Device Twin".
     <p align="center">
-      <img src="/images/twinTag2.jpg" width="50%" height="50%" /> 
+      <img src="/images/twinTag2.jpg" width="70%" height="70%" /> 
     </p>
 
 Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
