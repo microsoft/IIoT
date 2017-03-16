@@ -47,40 +47,38 @@ Open up a command prompt on **your local machine** and enter the following comma
       <p align="center">
          <img src="/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
       </p>
- 
-
-1. Referring to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/), update the code to send other telemetry to IoT Hub from the Sense HAT. 
-  1. Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json). 
-  
-      <p align="center">
-         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
-      </p>
-   
-  1. Go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
-      
-  1. Update ```SenseHat_IoTHub_Http_Lab.py``` to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. 
-  
-1. To send messages from IoT Hub back to your Raspberry Pi:
-  1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. 
-  
-  ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
-  
-  1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator)
-  
-  ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
+  1. To send messages from IoT Hub back to your Raspberry Pi:
+    1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. 
+    ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
+    1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator)
+    ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
   
 
 Congratulations! You just connected your Raspberry Pi to the IoT hub and created an application which demonstrated the two-way messaging capabilities. 
 
 ## Hands-On assignment.  
 
-Alter the Python code to send the following items to the IoT Hub in JSON format:
+In this assignment, you will use your Python skills to alter the code to send the following additional sensor telemetry to the IoT Hub in JSON format:
   - Pitch
   - Yaw
   - Roll
   - Humidity
   - Temperature
 
-The correct script can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you copy this script, remember to put in your IoT Hub connection string, and the Device Id.
+### Tips: 
+- You can refer to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/) for information on how to update the code to send other telemetry to IoT Hub from the Sense HAT. 
+
+- Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
+  
+      <p align="center">
+         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+      </p>
+   
+- Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
+      
+- You can also try updating the ```SenseHat_IoTHub_Http_Lab.py``` code to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. 
+  
+
+The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id.
 
 [Back to Main HOL Instructions](/README.md)
