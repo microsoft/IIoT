@@ -48,9 +48,9 @@ Open up a command prompt on **your local machine** and enter the following comma
          <img src="/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
       </p>
   1. To send messages from IoT Hub back to your Raspberry Pi:
-    1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. 
+    1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. <br />
     ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
-    1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator)
+    1. On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
     ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
   
 
@@ -69,10 +69,9 @@ In this assignment, you will use your Python skills to alter the code to send th
 - You can refer to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/) for information on how to update the code to send other telemetry to IoT Hub from the Sense HAT. 
 
 - Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
-  
-      <p align="center">
-         <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
-      </p>
+<p align="center">
+  <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+</p>
    
 - Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
       
