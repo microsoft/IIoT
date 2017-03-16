@@ -74,9 +74,6 @@ In this assignment, you will use your Python skills to alter the code to send th
 </p>
    
 - Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
-      
-- You can also try updating the ```SenseHat_IoTHub_Http_Lab.py``` code to display the HTTP response code from the IoT Hub message onto the Sense HAT LED display. 
-  
 
 The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id.
 
