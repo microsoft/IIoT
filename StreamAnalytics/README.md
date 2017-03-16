@@ -84,10 +84,9 @@ Prerequisites: Power BI account
     1. Event Serialization Format: JSON
     1. Encoding: UTF-8
     1. Click "Create" and wait for the input to be created. 
-              
-      <p align="center">
-         <img src="/images/ASANewInput.jpg" width="30%" height="30%" /> 
-      </p>   
+    <p align="center">
+       <img src="/images/ASANewInput.jpg" width="30%" height="30%" /> 
+    </p>   
   
 1. Next, add an Output for the Stream Analytics job.
   1. Under the "Job Topology" category, click on "Outputs". 
@@ -101,24 +100,21 @@ Prerequisites: Power BI account
     1. Output alias: Free form text for the input. eg. "PowerBI"
     1. Sink: Power BI
     1. Click "Authorize". 
-    
-      <p align="center">
-         <img src="/images/powerBIOutput.jpg" width="30%" height="30%" /> 
-      </p>      
+    <p align="center">
+       <img src="/images/powerBIOutput.jpg" width="30%" height="30%" /> 
+    </p>      
     
     1. A new window will open requiring credentials to authorize the connection to PowerBI. 
-   
-      <p align="center">
-         <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
-      </p>      
+    <p align="center">
+       <img src="/images/authorizePBI.jpg" width="50%" height="50%" /> 
+    </p>      
        
     1. Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
     1. Enter a Table Name. eg. Raspberry Pi Data Table
     1. Click "Create"
-   
-      <p align="center">
-         <img src="/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
-      </p>      
+    <p align="center">
+       <img src="/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
+    </p>      
        
     1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
 1. Create an ASA Query.
