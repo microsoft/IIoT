@@ -121,12 +121,12 @@ Prerequisites: Power BI account
   1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
   1. Enter the following query: 
  
-    SELECT <br>
-      &#42; <br>
-    INTO  <br>
-      [PowerBI] <br>
-    FROM <br>
-      [IoTHub] <br>
+    SELECT 
+      * 
+    INTO  
+      [PowerBI] 
+    FROM 
+      [IoTHub] 
          
    1. Click "Save". 
    1. Click "Test" 
