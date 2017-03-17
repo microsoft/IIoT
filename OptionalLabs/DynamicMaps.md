@@ -10,10 +10,10 @@
          <img src="/images/BingMapsSearch.jpg" /> 
       </p>
 1. Select the "Bing Maps API for Enterprise" service. In the "Bings Maps for Enterprise" blade, click the "Create" button. 
- 
-     <p align="center">
-         <img src="/images/CreateBingMapsAPI.jpg" /> 
-      </p>
+
+<p align="center">
+<img src="/images/CreateBingMapsAPI.jpg" /> 
+</p>
   - Give your Bing Maps API for Enterprise Service a name. eg. StudentName-BingMaps
   - Choose your subscription from the *Subscription* drop down box. 
   - Use the existing *Resource Group* that was created for your remote monitoring pre-configured solution. 
