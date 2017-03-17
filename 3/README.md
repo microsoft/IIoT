@@ -31,7 +31,7 @@ Open up a command prompt on **your local machine** and enter the following comma
   
   ![ls -l](/images/ListFiles.jpg)
   
-  1. Start sending messages by invoking the script in Python<br/>
+  1. Start sending messages by invoking the script in Python<br/> (if you are using the Sense HAT emulator, start the emulator in your VNC session: start -> programming -> Sense HAT emulator)
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab.py
       ```
