@@ -1,10 +1,10 @@
 This tutorial will walk you through the steps to send messages via AMQP and MQTT.
 
 1. Compiling requires more memory.  Increase the swap space to 500 MB.
-  - Edit this file:  /etc/dphys-swapfile 
-  - Change swap file sile to 500.  eg. CONF_SWAPSIZE=500
-  - Stop the swapfile: /etc/init.d/dphys-swapfile stop
-  - Start the swapfile: /etc/init.d/dphys-swapfile start
+   - Edit this file:  /etc/dphys-swapfile 
+   - Change swap file sile to 500.  eg. CONF_SWAPSIZE=500
+   - Stop the swapfile: /etc/init.d/dphys-swapfile stop
+   - Start the swapfile: /etc/init.d/dphys-swapfile start
 1. Clone the repository:  git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git 
 1. Compile by following these commands:
 
