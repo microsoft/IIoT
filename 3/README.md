@@ -68,13 +68,15 @@ In this assignment, you will use your Python skills to alter the code to send th
 ### Tips: 
 - You can refer to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/) for information on how to update the code to send other telemetry to IoT Hub from the Sense HAT. 
 
-- Update the ```SenseHat_IoTHub_Http_Lab.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
+- Update the ```SenseHat_IoTHub_Http_Lab_Key.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
 <p align="center">
   <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
 </p>
    
 - Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
 
-The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id.
+<!--
+The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id. 
+-->
 
 [Back to Main HOL Instructions](/README.md)
