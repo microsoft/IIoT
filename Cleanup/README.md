@@ -1,6 +1,10 @@
 At the end of the Hands on Labs, you should clean up your Azure account so that the resources provisioned do not continue to consume funds from your account. There are two options that we suggest you follow:
 
-1. Remove the Lock on the Azure Function.  
+1. Remove any functions you created. <br>
+    - Click on "Function Apps" in the Azure portal  https://ms.portal.azure.com/
+    - Click on the function that you created
+    - Click on "Manage"
+    - Click on the "Delete" button
 
 1. Delete the Remote Monitoring Pre-configured Solution completely if you are not planning to continue to work on the labs in your own time. <br />
   1. Best way to remove all the resources is through the www.azureiotsuite.com microsite
