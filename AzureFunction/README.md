@@ -31,8 +31,8 @@ In this part of the lab, you will create an Azure function that will be used to 
   1. Select your Subscription, enter a Name for your Function App, and select the Region you will deploy the function to. Click on "Create + get started" <br />
   ![Create Function](/images/CreateFunction.jpg)
   
-  1. Click on "Custom Function"
-  ![Create Function](/images/CustomFunction.jpg)
+  1. Click on "Custom Function" <br>
+  ![Create Function](/images/CustomFunction.JPG)
   
   1. Choose the “EventHubTrigger-CSharp”
     1. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
