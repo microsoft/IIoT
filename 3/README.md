@@ -3,8 +3,8 @@
 In this lab, you will configure your Raspberry Pi to connect to the IoT solution that you created earlier. You will create a small application on your Raspberry Pi (python script) to send a D2C (Device to Cloud) message to the IoT Hub and also create another application to receive a C2D (Cloud to Device) message that will be displayed on the Sense HAT or the Sense HAT emulator. 
 
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
-  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http_Lab.py``` and open it with a text editor such as Notepad.
-  1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http_Lab.py``` using a text editor such as Nano.
+  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http_Lab_Key.py``` and open it with a text editor such as Notepad.
+  1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http_Lab_Key.py``` using a text editor such as Nano.
   1. Comment/uncomment the *import* statements that correspond to whether you are using a Sense HAT or the Sense Hat emulator. 
      Below the import statements, you will see:
      
@@ -17,12 +17,12 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   1. Next, you will provide the information required to connect the Raspberry Pi to the IoT pre-configured solution:
     - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> iothubowner -> Connection string-primary key)
     - Search for ```deviceId =``` and paste in the Device ID you created earlier.
-  1. Copy ```SenseHat_IoTHub_Http_Lab.py``` to your Raspberry Pi using PuTTY. 
+  1. Copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using PuTTY. 
     - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already. Otherwise, the pscp executable will be in your PuTTY directory.<br/>
     
 Open up a command prompt on **your local machine** and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be pi/raspberry <br/>
 
-`pscp SenseHat_IoTHub_Http_Lab.py <userid>@<server ip or server name>:/<$path>/SenseHat_IoTHub_Http_Lab.py`
+`pscp SenseHat_IoTHub_Http_Lab_Key.py <userid>@<server ip or server name>:/<$path>/SenseHat_IoTHub_Http_Lab_Key.py`
 
 (for the <$path>, use */home/pi*)
 
@@ -33,7 +33,7 @@ Open up a command prompt on **your local machine** and enter the following comma
   
   1. Start sending messages by invoking the script in Python<br/> (if you are using the Sense HAT emulator, start the emulator in your VNC session: start -> programming -> Sense HAT emulator)
       ```
-      pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab.py
+      pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
   1. Connect your Device Explorer to the IoT Hub and check to see if messages are arriving at the IoT Hub:
     - On your laptop, open Device Explorer. Under the Configuration tab, copy and paste the IoT Hub Connection String obtained earlier and click "Update". This connects the Device Explorer app to the IoT Hub that you created. 
