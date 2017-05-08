@@ -55,7 +55,7 @@ Open up a command prompt on **your local machine** and enter the following comma
   
 
 Congratulations! You just connected your Raspberry Pi to the IoT hub and created an application which demonstrated the two-way messaging capabilities. 
-
+<!--
 ## Hands-On assignment.  
 
 In this assignment, you will use your Python skills to alter the code to send the following additional sensor telemetry to the IoT Hub in JSON format:
@@ -74,7 +74,7 @@ In this assignment, you will use your Python skills to alter the code to send th
 </p>
    
 - Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
-
+-->
 <!--
 The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id. 
 -->
