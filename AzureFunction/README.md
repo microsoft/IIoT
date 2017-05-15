@@ -34,6 +34,8 @@ In this part of the lab, you will create an Azure function that will be used to 
   1. Click on "Custom Function" <br>
   ![Create Function](/images/CustomFunction.JPG)
   
+  1. Click on the plus sign ("+") next to "Functions".
+  
   1. Choose the “EventHubTrigger-CSharp”
     1. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
     1. In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. 
