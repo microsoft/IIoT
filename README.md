@@ -21,7 +21,7 @@ For simplicity and to avoid downloading/compiling SDKs during the HOL, we chose 
 - [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client.
 - If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 - An corporate Azure subscription. You can use a corporate MSDN Azure subscription or a subscription from your company. 
-- A PowerBI account 
+- A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 
 ## Advance Setup (Steps must be completed before the Hands On Lab Workshop)
