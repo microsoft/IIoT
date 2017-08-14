@@ -1,4 +1,4 @@
-## Advance Setup (Must be completed in advance of the HOL)
+## Pre-lab Setup (Must be completed in advance of the HOL)
 
 Please perform the following steps in advance of the HOL otherwise you will waste the entire HOL performing these steps.
 
