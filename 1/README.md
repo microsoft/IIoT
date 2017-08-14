@@ -1,5 +1,7 @@
 ## Hands on Lab - Initial Setup
 
+These steps will be performed in the morning before the workshop starts. You will need to walk through each of the following steps to make sure that you can connect your Raspberry Pi to the local WiFi as well as ensure the requisite tools are installed and enabled. 
+
 1. Turn on your Raspberry Pi and connect to Wifi.
   1. Connect your Raspberry Pi to a monitor.
   1. Click on the wifi icon in the top right.
