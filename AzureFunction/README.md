@@ -1,6 +1,6 @@
 ## Azure Functions Lab
 
-In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. 
+In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a C2D message and the status will be displayed on the Sense HAT LED display. 
 
 ### Obtain Values Required to Connect Function to the IoT Hub
 1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
@@ -87,8 +87,14 @@ In this part of the lab, you will create an Azure function that will be used to 
 
 ## Trying it out
 
-You may have difficulties getting your Pi temperature over the threshold.  You can do one of the following:
-- Lower the threshold in the device twin in the preconfigured solution website
-- Update your Python script to use the Sense Hat emulator instead of the physical board.  
+You will now attempt to trigger the function and have the function send a message back to the Sense HAT. 
+If you recall in lab 2, you created a tag parameter called tags.HighTemperatureLimit and set it to 40. This is the threshold that will determine when the status of the Sense HAT will change to Hot (if temperature is above the limit) or to Normal (when the temperature drops below the limit). When the status changes, the state (hot or normal) will appear on the Sense HAT display LEDs. 
+
+1. If your python script is no longer running on the Raspberry Pi, start it back up using the command ```python SenseHat_IoTHub_Http_Lab_Key.py```
+2. Try to get the temperature of the Sense HAT above the threshold value (if set to the instructed value, you should be trying to get the temperature above 40C)
+
+If you are having difficulties getting the temperature on your physical Sense HAT over the threshold, you can do one of the following:
+- Lower the threshold in the device twin for the RaspberryPi device. You can do this in the preconfigured solution portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
+- Update your Python script to use the Sense Hat emulator instead of the physical board. Using the Sense HAT emulator will allow you to virtually control the temperature (and other properties)
 
 [Back to Main HOL Instructions](/README.md)
