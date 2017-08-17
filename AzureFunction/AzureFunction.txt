@@ -21,7 +21,8 @@ static RegistryManager registryManager;
 
 // It is a better to store the connection string in the App Settings
 // for your function and retrieve it with Environment.GetEnvironmentVariable("<setting name>")
-private const string CONNECTION_STRING = "HostName=calgaryhandsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A=";
+// The CONNECTION_STRING variable should be in the form: "HostName=handsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A="
+private const string CONNECTION_STRING = "";
 
 public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 {
