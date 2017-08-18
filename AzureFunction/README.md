@@ -26,17 +26,20 @@ In this part of the lab, you will create an Azure function that will be used to 
     You should have three different values noted now: “Event Hub-compatible name", “Event Hub-compatible endpoint" and the IoT Hub Functions connection string. These values will be used to connect your function to the IoT Hub. 
 
 ### Create a Function
-1.	Next, you will create an Azure Function. In this step, you will be creating a C# Azure Function that will be activated whenever the compatible event hub within the IoT hub service receives a new event. 
-  1. Go to the Azure functions portal: [here](https://functions.azure.com/signin)
-  1. Select your Subscription, enter a Name for your Function App, and select the Region you will deploy the function to. Click on "Create + get started" <br />
+<br>
+In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenver the IoT hub service receives a new event. For ease of getting through the lab, we have provided code that you can insert into the function. When triggered, the code will compare the input to the set threshold (the tag parameter setting) and if above or below, will send a cloud to device (C2D) message to the RaspberryPi. 
+Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub actually leverages the event hub under the covers. 
+
+1. Go to the Azure functions portal: [here](https://functions.azure.com/signin)
+2. Select your Subscription, enter a Name for your Function App, and select the Region you will deploy the function to. Click on "Create + get started" <br />
   ![Create Function](/images/CreateFunction.jpg)
   
-  1. Click on "Custom Function" <br>
+  - Click on "Custom Function" <br>
   ![Create Function](/images/CustomFunction.JPG)
   
-  1. Click on the plus sign ("+") next to "Functions".
+  - Click on the plus sign ("+") next to "Functions".
   
-  1. Choose the “EventHubTrigger-CSharp”
+  - Choose the “EventHubTrigger-CSharp”
     1. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
     1. In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. 
     ![Select EH Trigger](/images/EHTrigger.jpg)
@@ -64,8 +67,8 @@ In this part of the lab, you will create an Azure function that will be used to 
          <img src="/images/EHconnection.jpg" width="50%" height="50%" /> 
       </p>
       
-  1. On the *New Function* page, click "Create". The template for your new Event Hub Trigger function is now created!
-  1. Configure libraries for the new function created. 
+  - On the *New Function* page, click "Create". The template for your new Event Hub Trigger function is now created!
+  - Configure libraries for the new function created. 
     1. Expand the “Logs” view at the bottom of the page
     1. Click on “View Files”
     ![Expand Function views](/images/functionViews.jpg)
