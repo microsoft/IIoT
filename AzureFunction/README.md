@@ -32,11 +32,10 @@ In the next part of this lab, you will be creating a C# Azure Function that will
 For ease of getting through the lab, we have provided the code that you will need to write the function. When triggered, the code in the function will compare the input to the set threshold (the tag parameter setting that you previously set to a value of 40). If the value is above or below, the function will send a cloud to device (C2D) message to the RaspberryPi. Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub service is built with the event hub service running under the covers.
 1. Navigate to the Azure portal: https://portal.azure.com 
 2. Click the ‘+’ sign and type in “function app” 
-![FindFunction](/images/CreateFunction.jpg)
-3.	Click the “Create” button
+![FindFunction](/images/CreateFunction1.jpg)
+3.	Click the “Create” button <b4> 
 ![Create Function](/images/CreateFunction2.jpg)
-4.	Fill out the required values to create a function
-![Fill out Function Params](/images/CreateFunction3.jpg)
+4.	Fill out the required values to create a function <br>
   - Provide the function app a name (eg. functionC2DHoL)
   - Select your Azure subscription
   - Select your existing subscription that you are using for the hands on lab
@@ -44,7 +43,8 @@ For ease of getting through the lab, we have provided the code that you will nee
   - For location, choose the closest data centre (eg. East US)
   - For storage, select “create new” and provide a name for the storage
   - You can leave Application Insights turned off
-  - Click “Create”
+  - Click “Create” <br>
+  ![Fill out Function Params](/images/CreateFunction3.jpg)
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
 ![Click to create function](/images/CreateFunction4.jpg)
