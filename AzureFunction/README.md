@@ -3,28 +3,16 @@
 In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the status of the Raspberry Pi is normal and the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a Cloud to Device (C2D) message and the status will be displayed on the Sense HAT LED display. 
 
 ### Obtain Values Required to Connect Function to the IoT Hub
-1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
-  1. Open the Azure Portal [here](https://ms.portal.azure.com)
-  1. Click on the IoT Hub that was created earlier. 
-  1. Under the “Messaging” category click on “Endpoints”.
-  1. In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
-  1. Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields.  (EVENTHUB_CONFIG)<br />  
-  ![Event Hub Endpoint](/images/EHendpointValues.jpg) <br />
-  1. Create a new Shared Access Policy for the function that you will create. 
-    1. Click on “Shared Access Policies”
-    1. Click on “+ Add”
-    1. Enter a name for your policy.  Eg. “Function”  
-    1. Give the following permissions
-      - Registry Read
-      - Registry write
-      - Service connect
-    1. Click the "Create" button. 
-    ![Create SAS](/images/CreateSAS.jpg)
-    1. Once the new Shared Access Policy has been created, click the new policy. 
-    1. Take note of the "Connection String-primary key".  This is the value for the new IoT Hub Functions connection string (IOT_HUB_CONNECTION_STRING) <br />
-    ![Connection string](/images/ConnectionString.jpg) <br><br> 
-    You should have three different values noted now: “Event Hub-compatible name", “Event Hub-compatible endpoint" and the IoT Hub Functions connection string. These values will be used to connect your function to the IoT Hub. 
 
+Before you start to build out the Azure function, you'll need some configuration information from the IoT Hub you provisioned. <br>
+1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
+  - Open the Azure Portal [here](https://ms.portal.azure.com)
+  - Click on the IoT Hub that was created earlier. 
+  - Under the “Messaging” category click on “Endpoints”.
+  - In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
+  - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. <br />  
+  ![Event Hub Endpoint](/images/EHendpointValues.jpg) <br />
+  
 ### Create a Function
 
 In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenever the IoT hub service receives a new event. 
