@@ -49,13 +49,13 @@ For ease of getting through the lab, we have provided the code that you will nee
   - You can leave Application Insights turned off
   - Click “Create” <br>
       <p align="center">
-    <img src="/images/CreateFunction3.jpg" width="50%" height="50%" />
+    <img src="/images/CreateFunction3.jpg" width="30%" height="30%" />
     </p> 
   
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
     <p align="center">
-    <img src="/images/CreateFunction4.jpg" width="50%" height="50%" />
+    <img src="/images/CreateFunction4.jpg" />
     </p> 
 7. Click on “Custom Function”
     <p align="center">
@@ -73,7 +73,7 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Click “Select”
   
     <p align="center">
-    <img src="/images/Select.JPG" width="50%" height="50%" />
+    <img src="/images/Select.jpg" width="50%" height="50%" />
     </p>
 
   - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
@@ -93,7 +93,7 @@ For ease of getting through the lab, we have provided the code that you will nee
     <img src="/images/projectSave.jpg" width="50%" height="50%" />
     </p>    
 13.	Now add the main source code that will used within the function
-  - Copy the text from Function.txt in the github repo to the "run.csx" file.
+  - Copy the text from [Function.txt](/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
   - In the run.csx file, find the CONNECTION_STRING variable and set the value to the IoT Hub Functions Connection String that you obtained earlier. See “(IOT_HUB_CONNECTION_STRING)” above.
   - Click “Save and run” to run the function
 
