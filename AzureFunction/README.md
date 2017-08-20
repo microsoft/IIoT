@@ -10,7 +10,7 @@ Before you start to build out the Azure function, you'll need some configuration
   - Click on the IoT Hub that was created earlier. 
   - Under the “Messaging” category click on “Endpoints”.
   - In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
-  - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. <br />  
+  - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. Feel free to use the parameters XLS to note these new values. <br />  
   ![Event Hub Endpoint](/images/EHendpointValues.jpg) <br />
   
 ### Create a Function
