@@ -1,6 +1,6 @@
 ## Azure Functions Lab
 
-In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a C2D message and the status will be displayed on the Sense HAT LED display. 
+In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the status of the Raspberry Pi is normal and the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a Cloud to Device (C2D) message and the status will be displayed on the Sense HAT LED display. 
 
 ### Obtain Values Required to Connect Function to the IoT Hub
 1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
@@ -27,6 +27,70 @@ In this part of the lab, you will create an Azure function that will be used to 
 
 ### Create a Function
 <br>
+
+In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenever the IoT hub service receives a new event. 
+For ease of getting through the lab, we have provided the code that you will need to write the function. When triggered, the code in the function will compare the input to the set threshold (the tag parameter setting that you previously set to a value of 40). If the value is above or below, the function will send a cloud to device (C2D) message to the RaspberryPi. Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub service is built with the event hub service running under the covers.
+1. Navigate to the Azure portal: https://portal.azure.com 
+2. Click the ‘+’ sign and type in “function app” 
+![FindFunction](/images/CreateFunction.jpg)
+3.	Click the “Create” button
+![Create Function](/images/CreateFunction2.jpg)
+4.	Fill out the required values to create a function
+![Fill out Function Params](/images/CreateFunction3.jpg)
+  - Provide the function app a name (eg. functionC2DHoL)
+  - Select your Azure subscription
+  - Select your existing subscription that you are using for the hands on lab
+  - For hosting plan, select “consumption plan”
+  - For location, choose the closest data centre (eg. East US)
+  - For storage, select “create new” and provide a name for the storage
+  - You can leave Application Insights turned off
+  - Click “Create”
+5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
+6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
+![Click to create function](/images/CreateFunction4.jpg)
+
+7. Click on “Custom Function”
+  ![Create Function](/images/CustomFunction.JPG)
+8. Choose the “EventHubTrigger – C#”
+9.	Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
+10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51.
+![Select Trigger](/images/EHTrigger.jpg)
+11.	Next, you will create a new “Event Hub connection”. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
+  - Click "new”.
+  - Select “IoT Hub”
+  - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
+  - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
+  - Click “Select”
+
+![Select to build Connect](/images/Select.jpg)
+
+  - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
+12.	You will now configure the required libraries that will be needed for the new function created. 
+  - Expand the “Logs” view at the bottom of the page
+  - Click on “View Files”	
+
+![Expand Function views](/images/functionViews.jpg)
+
+  - Click on “+ Add” under the "View files" tab. 
+  - Enter “project.json” <br />
+![Add project file](/images/addProject.jpg)
+
+  - Copy the text from [project.json](/AzureFunction/project.json) file in the github repo to the new json file you created.
+  - Click "Save". 
+    <p align="center">
+    <img src="/images/projectSave.jpg" width="50%" height="50%" />
+    </p>    
+13.	Now add the main source code that will used within the function
+  - Copy the text from Function.txt in the github repo to the "run.csx" file.
+  - In the run.csx file, find the CONNECTION_STRING variable and set the value to the IoT Hub Functions Connection String that you obtained earlier. See “(IOT_HUB_CONNECTION_STRING)” above.
+  - Click “Save and run” to run the function
+
+   <p align="center">
+    <img src="/images/runFunction.jpg" />
+    </p>
+
+---------------
+
 In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenver the IoT hub service receives a new event. For ease of getting through the lab, we have provided code that you can insert into the function. When triggered, the code will compare the input to the set threshold (the tag parameter setting) and if above or below, will send a cloud to device (C2D) message to the RaspberryPi. 
 Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub actually leverages the event hub under the covers. 
 
