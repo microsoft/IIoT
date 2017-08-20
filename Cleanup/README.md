@@ -22,34 +22,34 @@ At the end of the Hands on Labs, you should clean up your Azure account so that 
       </p> 
 
 ### Option 2
-1. If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
-  -  Change the IoT Hub from an S2 – Standard to an S1 – Standard.
-    - Within the pre-configured solution resource group, click on the IoT Hub service. 
-    - Navigate to Settings -> Pricing and Scale -> and change the pricing tier to S1 – Standard. Make sure to click "Save" in the top navigation.
+If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
+1. Change the IoT Hub from an S2 – Standard to an S1 – Standard.
+  - Within the pre-configured solution resource group, click on the IoT Hub service. 
+  - Navigate to Settings -> Pricing and Scale -> and change the pricing tier to S1 – Standard. Make sure to click "Save" in the top navigation.
     
       <p align="center">
          <img src="/images/reduceIoTHub.jpg" width="90%" height="90%"/> 
       </p> 
- 
-  - Change the Storage account from Standard – GRS to Standard – LRS.
-    - Click on the pre-configured solution storage account
-    - Navigate to Settings -> Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
+
+2. Change the Storage account from Standard – GRS to Standard – LRS.
+  - Click on the pre-configured solution storage account
+  - Navigate to Settings -> Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
 
       <p align="center">
          <img src="/images/reduceStorage.jpg" width="90%" height="90%"/> 
       </p> 
       
-  - Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
-     - Click on the app service plans that were provisioned as part of the pre-configured solution
-     - Under Settings -> Scale Up (App Service Plan), select the B1 - Basic plan and click "Select"
-     - Do the same for the *-jobhost* service plan
+3. Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
+   - Click on the app service plans that were provisioned as part of the pre-configured solution
+   - Under Settings -> Scale Up (App Service Plan), select the B1 - Basic plan and click "Select"
+   - Do the same for the *-jobhost* service plan
      <p align="center">
          <img src="/images/reduceAppService.jpg" width="90%" height="90%"/> 
       </p>   
       
-  - Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
-    - From within the jobhost service plan, select Settings -> Webjobs. 
-    - Right-click the "DeviceSimulator-Webjob" webjob. Click "Stop". 
+4. Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
+  - From within the jobhost service plan, select Settings -> Webjobs. 
+  - Right-click the "DeviceSimulator-Webjob" webjob. Click "Stop". 
 
       <p align="center">
          <img src="/images/pauseSimulatedDevices.jpg" width="90%" height="90%"/> 
