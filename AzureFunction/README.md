@@ -26,15 +26,19 @@ In this part of the lab, you will create an Azure function that will be used to 
     You should have three different values noted now: “Event Hub-compatible name", “Event Hub-compatible endpoint" and the IoT Hub Functions connection string. These values will be used to connect your function to the IoT Hub. 
 
 ### Create a Function
-<br>
 
 In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenever the IoT hub service receives a new event. 
 For ease of getting through the lab, we have provided the code that you will need to write the function. When triggered, the code in the function will compare the input to the set threshold (the tag parameter setting that you previously set to a value of 40). If the value is above or below, the function will send a cloud to device (C2D) message to the RaspberryPi. Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub service is built with the event hub service running under the covers.
 1. Navigate to the Azure portal: https://portal.azure.com 
 2. Click the ‘+’ sign and type in “function app” 
-![FindFunction](/images/CreateFunction1.jpg)
-3.	Click the “Create” button <b4> 
-![Create Function](/images/CreateFunction2.jpg)
+    <p align="center">
+    <img src="/images/CreateFunction1.jpg" width="50%" height="50%" />
+    </p> 
+ 3.	Click the “Create” button <br> 
+    <p align="center">
+    <img src="/images/CreateFunction2.jpg" width="50%" height="50%" />
+    </p> 
+
 4.	Fill out the required values to create a function <br>
   - Provide the function app a name (eg. functionC2DHoL)
   - Select your Azure subscription
@@ -44,16 +48,22 @@ For ease of getting through the lab, we have provided the code that you will nee
   - For storage, select “create new” and provide a name for the storage
   - You can leave Application Insights turned off
   - Click “Create” <br>
-  ![Fill out Function Params](/images/CreateFunction3.jpg)
+      <p align="center">
+    <img src="/images/CreateFunction3.jpg" width="50%" height="50%" />
+    </p> 
+  
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
-![Click to create function](/images/CreateFunction4.jpg)
-
+    <p align="center">
+    <img src="/images/CreateFunction4.jpg" width="50%" height="50%" />
+    </p> 
 7. Click on “Custom Function”
-  ![Create Function](/images/CustomFunction.JPG)
+    <p align="center">
+    <img src="/images/CustomFunction.JPG" width="50%" height="50%" />
+    </p> 
 8. Choose the “EventHubTrigger – C#”
-9.	Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
-10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51.
+9. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
+10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. <br>
 ![Select Trigger](/images/EHTrigger.jpg)
 11.	Next, you will create a new “Event Hub connection”. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
   - Click "new”.
@@ -61,8 +71,10 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
   - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
   - Click “Select”
-
-![Select to build Connect](/images/Select.jpg)
+  
+    <p align="center">
+    <img src="/images/Select.JPG" width="50%" height="50%" />
+    </p>
 
   - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
