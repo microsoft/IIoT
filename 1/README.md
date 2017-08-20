@@ -1,28 +1,30 @@
 ## Hands on Lab - Initial Setup
 
+These steps will be performed in the morning before the workshop starts. You will need to walk through each of the following steps to make sure that you can connect your Raspberry Pi to the local WiFi as well as ensure the requisite tools are installed and enabled. 
+
 1. Turn on your Raspberry Pi and connect to Wifi.
-  1. Connect your Raspberry Pi to a monitor.
-  1. Click on the wifi icon in the top right.
+  - Connect your Raspberry Pi to a monitor.
+  - Click on the wifi icon in the top right.
       <p align="center">
         <img src="/images/wifi.JPG" />
       </p>
-  1. Enter the correct wifi credentials
-1. Retrieve the ip address.
-  1. Click on the command prompt
+  - Enter the correct wifi credentials
+2. Retrieve the IP address.
+  - Click on the command prompt
       <p align="center">
         <img src="/images/CommandPrompt.jpg" /> 
       </p>
-  1. Retrieve the ip address with the following command: `ifconfig` <br/>
-     Take note of the ip address. Feel free to download and use a [template](https://github.com/khilscher/IoTHubPiHackathon/raw/master/IoT%20HOL%20-%20Lab%20Parameters.xlsx) created to track these configuration details. 
-1. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Advance Steps instructions](/Prep). 
-1. Connect to your Raspberry Pi using your laptop to verify the connection. 
-  1. Open PuTTY. 
-  1. Enter the IP address of your Raspberry Pi into the *Host Name (or IP address)* field. 
+  - Retrieve the IP address with the following command: `ifconfig` <br>
+     Take note of the IP address. Use the following [template](https://github.com/khilscher/IoTHubPiHackathon/raw/master/IoT%20HOL%20-%20Lab%20Parameters.xlsx) to track the configuration details that you will collect over the course of the lab. 
+3. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Pre-lab Steps instructions](/Prep). <br><br>
+4. Connect to your Raspberry Pi using your laptop to verify the connection. 
+  - Open PuTTY. 
+  - Enter the IP address of your Raspberry Pi into the *Host Name (or IP address)* field. 
       <p align="center">
         <img src="/images/PuTTY.jpg" />
       </p>
-  1. If you get prompted to accept a security certificate, click "Yes". 
-1. Disconnect from the monitor.
+  - If you get prompted to accept a security certificate, click "Yes". 
+5. Disconnect from the monitor.
 
 
 [Back to Main HOL Instructions](/README.md)

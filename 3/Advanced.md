@@ -1,4 +1,4 @@
-This tutorial will walk you through the steps to send messages via AMQP and MQTT.
+This tutorial will walk you through the steps to send messages via AMQP and MQTT. In the previous labs, we used HTTP/REST which is not ideal for IoT type scenarios as it will has high overhead, will have scale issues and generally isn't as fast.
 
 1. Compiling requires more memory.  Increase the swap space to 500 MB.
    - Edit this file:  /etc/dphys-swapfile 
