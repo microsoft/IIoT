@@ -20,11 +20,16 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   - Copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using pscp (or some other secure client to copy files). 
     - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already and you should be able to run psp from any path. Otherwise, the pscp executable will be in your PuTTY directory.<br/>
     
-Open up a command prompt on **your local machine** and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be pi/raspberry <br/>
+Open up a command prompt on **your local machine** and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be ***pi/raspberry*** <br/>
 
 `pscp SenseHat_IoTHub_Http_Lab_Key.py <userid>@<server ip or server name>:/<$path>/SenseHat_IoTHub_Http_Lab_Key.py`
 
+(for the <userid>, use your Raspberry Pi Username. By default, the username is "pi"
+(for <server ip or server name>, use the Raspbery Pi's IP address) 
 (for the <$path>, use */home/pi*)
+
+As an example, if your RaspberryPi has an IP of 192.168.1.1, the command you will run is: 
+'pscp SenseHat_IoTHub_Http_Lab_Key.py pi@192.168.1.1:/home/pi'
 
   - Log into the Raspberry Pi using PuTTY.
   - Verify that the file was transfered by listing the directory: `ls -l`
