@@ -1,6 +1,10 @@
 ## Pre-workshop Setup (Must be completed in advance of the HOL)
 
-Please perform the following steps in advance of the HOL otherwise you will waste the entire HOL performing these steps.
+Please perform the following steps in advance of the Hands-on-labs otherwise you will spend a significant time during the workshop performing these steps.
+
+### Raspberry Pi Setup
+
+You will need to walk through the following steps on your Raspberry Pi prior to the hands-on-lab. <BR>
 
 1. Ensure your Raspberry Pi can boot [Raspian] (https://www.raspberrypi.org/downloads/) from the SD card. 
   - Follow the instructions to install the operating system: [NOOBS] (https://www.raspberrypi.org/downloads/noobs/) 
@@ -39,6 +43,12 @@ Please perform the following steps in advance of the HOL otherwise you will wast
   - In the menu, choose "Preferences", then "Raspberry Pi Configuration"
   - Enable SSH
 
-4. Install [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-8-10/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. Documentation for Device Explorer can be found [here](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer)
-5. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
-6. Download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
+### Laptop Setup
+
+The following steps will walk you through the installation of tools that you need to run on your laptop for this lab: 
+
+1. Install [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-8-10/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. Documentation for Device Explorer can be found [here](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) <BR>
+If you are running a non-Windows machine, device explorer will not work and you will need to use the command-line tool - iothub-explorer. The instructions for on how to install and use iothub-explorer is [here](https://github.com/azure/iothub-explorer)
+2. Download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
+3. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
+
