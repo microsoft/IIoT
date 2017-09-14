@@ -155,41 +155,34 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 ## View Data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
 2. Sign in
-3. Go to the bottom of the bar on the left.  Select "Streaming Datasets"
+3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset)
    
       <p align="center">
-         <img src="/images/PowerBILab.png" width="80%" height="80%" /> 
+         <img src="/images/PowerBILab.jpg" width="80%" height="80%" /> 
       </p>  
-      
-3. You should see the dataset you configured in Stream Analytics.  Click on it.
-4. Click on the "Create Report" icon for your dataset
-   
-      <p align="center">
-         <img src="/images/CreateReport.png" width="50%" height="50%" /> 
-      </p>  
-      
-5. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
+            
+4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
    
       <p align="center">
          <img src="/images/Fields.jpg" width="50%" height="50%" /> 
       </p>  
       
-6. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart
+5. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart
    
       <p align="center">
          <img src="/images/Visualizations.jpg" width="50%" height="50%" /> 
       </p>  
       
-7. Save your report.
-8. Click on the "Pin Visual" button on the chart
+6. Save your report.
+7. Click on the "Pin Visual" button on the chart
    
       <p align="center">
          <img src="/images/Pin.jpg" width="50%" height="50%" /> 
       </p>  
       
-9. Click on "New Dashboard"
-10. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
-11. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
+8. Click on "New Dashboard"
+9. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
+10. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
 
 
 
