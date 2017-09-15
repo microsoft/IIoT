@@ -50,5 +50,6 @@ The following steps will walk you through the installation of tools that you nee
 1. Install [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-8-10/SetupDeviceExplorer.msi) on your Windows laptop. Device Explorer is a great tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. Documentation for Device Explorer can be found [here](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) <BR>
 If you are running a non-Windows machine, device explorer will not work and you will need to use the command-line tool - iothub-explorer. The instructions for on how to install and use iothub-explorer is [here](https://github.com/azure/iothub-explorer)
 2. Download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
-3. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
+3. If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
+4. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
 
