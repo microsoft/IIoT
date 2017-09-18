@@ -1,6 +1,6 @@
 At the end of the Hands on Labs, you should clean up your Azure account so that the resources provisioned do not continue to consume funds from your account. There are two options that we suggest you follow:
 
-### Option 1
+### Option 1 - Delete the Pre-configured Solution Completely
 1. Remove any functions you created. <br>
     - Click on "Function Apps" in the Azure portal  https://ms.portal.azure.com/
     - Click on the function that you created
@@ -21,7 +21,7 @@ At the end of the Hands on Labs, you should clean up your Azure account so that 
          <img src="/images/DeletePCS.jpg" width="40%" height="40%"/> 
       </p> 
 
-### Option 2
+### Option 2 - Reduce the size of the running Azure services
 If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
 1. Change the IoT Hub from an S2 – Standard to an S1 – Standard.
   - Within the pre-configured solution resource group, click on the IoT Hub service. 
