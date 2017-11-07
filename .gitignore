@@ -1,7 +1,0 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/SenseHatEmulator_IoTHub_TM.py
-/cpfrompi.bat
-/cptopi.bat
