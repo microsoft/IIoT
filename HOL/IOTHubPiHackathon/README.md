@@ -50,14 +50,14 @@ The following subsections of the Hands on Labs are as follows:
 
  * [1 - Hands on Lab Setup](/HOL/IOTHubPiHackathon/1)
 
- * [2 - Remote Monitoring Pre-configured Solution](/2)<br>
+ * [2 - Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2)<br>
 
- * [3 - Connect Raspberry Pi to Azure IoT](/3)
+ * [3 - Connect Raspberry Pi to Azure IoT](/HOL/IOTHubPiHackathon/3)
 
 ### Afternoon
 
- * [4 - Stream Analytics](/StreamAnalytics)
+ * [4 - Stream Analytics](/HOL/IOTHubPiHackathon/StreamAnalytics)
 
- * [5 - Azure Functions](/AzureFunction)
+ * [5 - Azure Functions](/HOL/IOTHubPiHAckathon/AzureFunction)
  
- * [6 - Lab Clean-up](/Cleanup)
+ * [6 - Lab Clean-up](/HOL/IOTHubPiHackathon/Cleanup)
