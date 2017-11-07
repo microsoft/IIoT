@@ -58,6 +58,6 @@ The following subsections of the Hands on Labs are as follows:
 
  * [4 - Stream Analytics](/HOL/IOTHubPiHackathon/StreamAnalytics)
 
- * [5 - Azure Functions](/HOL/IOTHubPiHAckathon/AzureFunction)
+ * [5 - Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
  
  * [6 - Lab Clean-up](/HOL/IOTHubPiHackathon/Cleanup)
