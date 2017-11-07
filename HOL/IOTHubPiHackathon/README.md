@@ -39,7 +39,7 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 
 ## Pre-workshop Setup (Steps must be completed before the Hands On Lab Workshop)
 
-Follow the instructions [here](/Prep) before you arrive on-site for the hands-on-lab workshop. 
+Follow the instructions [here](/HOL/IOTHubPiHackathon/Prep) before you arrive on-site for the hands-on-lab workshop. 
 
 
 ## Hands on Workshop Steps
