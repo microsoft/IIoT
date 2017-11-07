@@ -48,7 +48,7 @@ The following subsections of the Hands on Labs are as follows:
 
 ### Morning
 
- * [1 - Hands on Lab Setup](/1)
+ * [1 - Hands on Lab Setup](/HOL/IOTHubPiHackathon/1)
 
  * [2 - Remote Monitoring Pre-configured Solution](/2)<br>
 
