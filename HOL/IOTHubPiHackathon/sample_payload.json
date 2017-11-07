@@ -1,0 +1,9 @@
+{
+    "DeviceId": "RaspberryPi",
+    "ExternalTemperature": 0,
+    "Humidity": 7.42866516113,
+    "Temperature": 37.8324356079,
+    "pitch": "2.14371527549",
+    "roll": "301.881776918",
+    "yaw": "160.873863408"
+}

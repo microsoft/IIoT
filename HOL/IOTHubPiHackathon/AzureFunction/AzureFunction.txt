@@ -1,0 +1,111 @@
+﻿#r "Newtonsoft.Json"
+using System;
+using Microsoft.Azure.Devices;
+using Microsoft.Azure.Devices.Shared;
+using Newtonsoft.Json;
+using System.Text;
+
+public class RaspberryPi
+{
+    public string DeviceId;
+    public double Temperature;
+    public double ExternalTemperature;
+    public double Humidity;
+    public double pitch;
+    public double yaw;
+    public double roll;
+}
+
+static ServiceClient serviceClient;
+static RegistryManager registryManager;
+
+// It is a better to store the connection string in the App Settings
+// for your function and retrieve it with Environment.GetEnvironmentVariable("<setting name>")
+// The CONNECTION_STRING variable should be in the form: "HostName=handsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A="
+private const string CONNECTION_STRING = "";
+
+public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
+{
+    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
+
+    // Initiate the services used to interact with the IoT Hub
+    serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(CONNECTION_STRING);
+    registryManager = registryManager ?? RegistryManager.CreateFromConnectionString(CONNECTION_STRING);
+
+    //Retrieve IoT Hub Messages
+    var raspberryPi = new RaspberryPi();
+    try
+    {
+        //(This line is what it’s all about. Take the Message that trigger this function and load it into our object by deserializing it.)
+        raspberryPi = Newtonsoft.Json.JsonConvert.DeserializeObject<RaspberryPi>(myEventHubMessage);
+    }
+    catch (Exception ex)
+    {
+        log.Info($"Error deserializing: {ex.Message}");
+        return null;
+    }
+
+    // Retrieve the digital twin from the IoT Hub.
+    Twin twin = await registryManager.GetTwinAsync(raspberryPi.DeviceId);
+    if (twin != null)
+    {
+        log.Info("Twin Properties:");
+        log.Info(twin.Properties.Desired.ToJson());
+        log.Info(twin.Properties.Reported.ToJson());
+        log.Info(twin.Tags.ToJson());
+    }
+    else
+        log.Info("Twin not retrieved");
+
+    double highTemperatureLimit = twin.Tags["HighTemperatureLimit"];
+    
+    string temperatureStatus = "Normal";
+    if (twin.Tags.Contains("TemperatureStatus"))
+        temperatureStatus = twin.Tags["TemperatureStatus"];
+    
+    if (raspberryPi.Temperature >= highTemperatureLimit && temperatureStatus != "High")
+    {
+        log.Info("Changing status to Hot");
+        await SendCloudToDeviceMessageAsync(raspberryPi.DeviceId, "High");
+        await AddTag(twin, "High");
+    }
+    else if (raspberryPi.Temperature < highTemperatureLimit && temperatureStatus != "Normal")
+    {
+        log.Info("Changing status to Normal");
+        await SendCloudToDeviceMessageAsync(raspberryPi.DeviceId, "Normal");
+        await AddTag(twin, "Normal");
+    }
+
+    return null;
+}
+
+/// <summary>
+/// Sends a message to the device via a method.  If the device is not active an error occurs.
+/// </summary>
+/// <param name="deviceId">The device identifier</param>
+/// <param name="message">Text to send to the device</param>
+/// <returns></returns>
+private async static Task SendCloudToDeviceMessageAsync(string deviceId, string message)
+{
+    var commandMessage = new Message(Encoding.ASCII.GetBytes(message));
+    await serviceClient.SendAsync(deviceId, commandMessage);
+}
+
+/// <summary>
+/// Updates the device registry "TemperatureStatus" tag
+/// </summary>
+/// <param name="twin">The devices twin</param>
+/// <param name="status">The new status</param>
+/// <returns></returns>
+public static async Task AddTag(Twin twin, string status)
+{
+    string patch =
+        @"{{
+             tags: {{
+                 TemperatureStatus: ""{0}""
+                 }}
+         }}";
+    patch = string.Format(patch, status);
+
+    await registryManager.UpdateTwinAsync(twin.DeviceId, patch, twin.ETag);
+}
