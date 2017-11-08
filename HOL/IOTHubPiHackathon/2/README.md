@@ -45,7 +45,7 @@ The new version of the remote monitoring pre-configured solution comes with a st
 This is the shared access key that you will use to connect your device to the IoT Hub. The key provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions)
   - Click on the "Shared access policies".
   - Click on the "iothubowner" policy.
-  - Copy the primary key connection string. Take note of the primary key connection string for later. You can use the following template to capture all the required variables for this lab: [IoT HOL - Lab Parameters.xlsx](/IoTHOL-LabParameters.xlsx)
+  - Copy the primary key connection string. Take note of the primary key connection string for later. You can use the following template to capture all the required variables for this lab: [IoT HOL - Lab Parameters.xlsx](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubKeys2.jpg" /> 
       </p>
