@@ -3,7 +3,7 @@
 In this lab, you will configure your Raspberry Pi to connect to the IoT solution that you created earlier. You will create a small application on your Raspberry Pi (python script) to send a D2C (Device to Cloud) message to the IoT Hub and also modify that such that the application can be used to receive a C2D (Cloud to Device) message that will be displayed on the Sense HAT or the Sense HAT emulator. The python script is a sample that will interact with the Sense HAT to collect telemetry data (temperature, humidity, pitch, yaw, roll) from the device. It will also contain code that will securely connect the Raspberry Pi to Azure IoT Hub and allow bidirectional communication to it. 
 
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
-  - Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py) from this HOL to a text editor (eg. Notepad) on your laptop. Save the file as ```SenseHat_IoTHub_Http_Lab_Key.py```.
+  - Copy the [Python code](https://github.com/Microsoft/IIoT/HOL/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py) from this HOL to a text editor (eg. Notepad) on your laptop. Save the file as ```SenseHat_IoTHub_Http_Lab_Key.py```.
   - Alternatively, you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http_Lab_Key.py``` using a text editor (eg. Nano) on your Raspberry Pi.
   - Comment/uncomment the *import* statements that correspond to whether you are using a Sense HAT or the Sense Hat emulator. 
      Below the import statements, you will see:
@@ -34,7 +34,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   - Log into the Raspberry Pi using PuTTY.
   - Verify that the file was transfered by listing the directory: `ls -l`
   
-  ![ls -l](/images/ListFiles.jpg)
+  ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
   
   - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator)
   - Start sending messages by invoking the script in Python<br/>
@@ -45,19 +45,19 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
     - On your laptop, open Device Explorer. Under the Configuration tab, copy and paste the IoT Hub Connection String obtained earlier into the "IoT Hub Connection String" field and click "Update". This connects the Device Explorer app to the IoT Hub that you created. 
     
       <p align="center">
-         <img src="/images/DeviceExplorer-Connect.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer-Connect.jpg" width="50%" height="50%" /> 
       </p>
       
     - Click the Data tab, select your device from the Device ID list, click the "enable" checkbox beside the *Consumer Group* field, enter "deviceexplorer" in the "Consumer Group" text box, and click "Monitor". If you see messages arriving in the "Event Hub Data" field of the tool, then congratulations! Your Raspberry Pi is now sending data to Azure IoT Hub. 
   
       <p align="center">
-         <img src="/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
       </p>
   - To send messages from IoT Hub back to your Raspberry Pi:
     - On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. <br />
-    ![Send Message](/images/SendMsg-DvcExplorer.jpg) 
+    ![Send Message](/HOL/IOTHubPiHackathon/images/SendMsg-DvcExplorer.jpg) 
     - On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
-    ![Sense HAT Message Display](/images/SenseMsgDisplay.jpg)
+    ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
   
 
 Congratulations! You just connected your Raspberry Pi to the IoT hub and created an application which demonstrated the two-way messaging capabilities. 
@@ -74,9 +74,9 @@ In this assignment, you will use your Python skills to alter the code to send th
 ### Tips: 
 - You can refer to the [Sense Hat API](https://pythonhosted.org/sense-hat/api/) for information on how to update the code to send other telemetry to IoT Hub from the Sense HAT. 
 
-- Update the ```SenseHat_IoTHub_Http_Lab_Key.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/khilscher/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
+- Update the ```SenseHat_IoTHub_Http_Lab_Key.py``` code to send multiple telemetry data points (e.g. Yaw, Pitch, Roll, or Temperature, Pressure, Humidity) in a single JSON-formatted message to IoT Hub. See [sample_payload.json] (https://github.com/Microsoft/IIoT/HOL/IoTHubPiHackathon/blob/master/sample_payload.json) for an example of the type of message to be sent. 
 <p align="center">
-  <img src="/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
+  <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer-ReceiveEvents.jpg" width="50%" height="50%" /> 
 </p>
    
 - Once you have updated and run your code, go to the remote monitoring pre-configured solution dashboard and take a look at the new telemetry data points that are being plotted on the Telemetry History chart. 
@@ -85,6 +85,6 @@ In this assignment, you will use your Python skills to alter the code to send th
 The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id. 
 -->
 
-Finished early?  Try this [advanced tutorial](https://github.com/khilscher/IoTHubPiHackathon/blob/master/3/Advanced.md)
+Finished early?  Try this [advanced tutorial](https://github.com/Microsoft/IIoT/HOL/IoTHubPiHackathon/blob/master/3/Advanced.md)
 
-[Back to Main HOL Instructions](/README.md)
+[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
