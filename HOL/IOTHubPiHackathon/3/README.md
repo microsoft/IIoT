@@ -85,6 +85,6 @@ In this assignment, you will use your Python skills to alter the code to send th
 The finished script for this assignnment can be found [here](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http_Lab_Key.py).  If you use this script, remember to update the file with your IoT Hub connection string and the Device Id. 
 -->
 
-Finished early?  Try this [advanced tutorial](/HOL/IOTHubPiHackathon/blob/master/3/Advanced.md)
+Finished early?  Try this [advanced tutorial](/HOL/IOTHubPiHackathon/Advanced.md)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
