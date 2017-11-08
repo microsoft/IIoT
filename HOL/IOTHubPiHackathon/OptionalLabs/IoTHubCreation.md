@@ -15,7 +15,7 @@
     1. Click the "Create" button.
 1. Wait for the hub to be created.  You will be notified in the "Notifications" section when it is complete.  
       <p align="center">
-        <img src="images/Notifications.JPG" /> 
+        <img src="/HOL/IOTHubPiHackathon/images/Notifications.JPG" /> 
       </p>
 1. Create (configure) your device in Azure IoT Hub.
   1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
@@ -23,7 +23,7 @@
   1. Click on the "iothubowner" policy.
   1. Copy the primary key connection string. Save the primary key connection string for later.
       <p align="center">
-        <img src="images/IoTHubConnectionString.jpg" /> 
+        <img src="/HOL/IOTHubPiHackathon/images/IoTHubConnectionString.jpg" /> 
       </p>
   1. Open Device Explorer
   1. In the "Connection information" tab paste the primary key connection string into the "IoT Hub Connection String" text box.
@@ -32,12 +32,12 @@
   1. In the "Actions" section, select "Create".
   1. Enter a name for your device. Save the device name for later.
       <p align="center">
-        <img src="images/DeviceExplorer.JPG" /> 
+        <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer.JPG" /> 
       </p>
   1. Click "Create".
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
-  1. Copy the [Python code](https://github.com/khilscher/IoTHubPiHackathon/blob/master/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
-    1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/khilscher/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
+  1. Copy the [Python code](https://github.com/Microsoft/IIoT/blob/master/HOL/IOTHubPiHackathon/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
+    1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/Microsoft/IIoT/HOL/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
   1. Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the primary key connection string you copied earlier. Then look for ```deviceId =``` and paste in the Device Name you created earlier.
   1. Copy ```SenseHat_IoTHub_Http.py``` to your Raspberry Pi using PuTTY.  The pscp executable will be in your PuTTY directory.<br/>
 `pscp SenseHat_IoTHub_Http.py userid@server_name:/path/SenseHat_IoTHub_Http.py`
@@ -58,4 +58,4 @@
   1. On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. You should see the message appear on the Sense HAT LED display.
 
 
-[Back to Main HOL Instructions](/README.md)
+[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
