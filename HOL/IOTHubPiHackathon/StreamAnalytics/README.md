@@ -158,7 +158,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset)
    
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.jpg" width="80%" height="80%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.png" width="80%" height="80%" /> 
       </p>  
             
 4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
