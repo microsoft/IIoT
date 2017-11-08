@@ -13,12 +13,12 @@ At the end of the Hands on Labs, you should clean up your Azure account so that 
     - Click the tile for your pre-configured solution: 
     
       <p align="center">
-         <img src="/images/SolutionReady.jpg" width="50%" height="50%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/SolutionReady.jpg" width="50%" height="50%"/> 
       </p> 
     - Once the blade that appears, click the "Delete solution" button
     
       <p align="center">
-         <img src="/images/DeletePCS.jpg" width="40%" height="40%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/DeletePCS.jpg" width="40%" height="40%"/> 
       </p> 
 
 ### Option 2 - Reduce the size of the running Azure services
@@ -28,7 +28,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
   - Navigate to Settings -> Pricing and Scale -> and change the pricing tier to S1 – Standard. Make sure to click "Save" in the top navigation.
     
       <p align="center">
-         <img src="/images/reduceIoTHub.jpg" width="90%" height="90%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/reduceIoTHub.jpg" width="90%" height="90%"/> 
       </p> 
 
 2. Change the Storage account from Standard – GRS to Standard – LRS.
@@ -36,7 +36,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
   - Navigate to Settings -> Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
 
       <p align="center">
-         <img src="/images/reduceStorage.jpg" width="90%" height="90%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/reduceStorage.jpg" width="90%" height="90%"/> 
       </p> 
       
 3. Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
@@ -44,7 +44,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
    - Under Settings -> Scale Up (App Service Plan), select the B1 - Basic plan and click "Select"
    - Do the same for the *-jobhost* service plan
      <p align="center">
-         <img src="/images/reduceAppService.jpg" width="90%" height="90%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/reduceAppService.jpg" width="90%" height="90%"/> 
       </p>   
       
 4. Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
@@ -52,7 +52,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
   - Right-click the "DeviceSimulator-Webjob" webjob. Click "Stop". 
 
       <p align="center">
-         <img src="/images/pauseSimulatedDevices.jpg" width="90%" height="90%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/pauseSimulatedDevices.jpg" width="90%" height="90%"/> 
       </p> 
 
 
