@@ -29,13 +29,13 @@ You will need to walk through the following steps on your Raspberry Pi prior to 
      - Select Menu -> Preferences -> Raspberry Pi Configuration -> Interfaces.
      
         <p align="center">
-          <img src="/HOL/IOTHubPiHackathon/Prep/images/menu.jpg"  width="50%" height="50%"/>
+          <img src="/HOL/IOTHubPiHackathon/images/menu.jpg"  width="50%" height="50%"/>
         </p>
         
      - Ensure VNC is Enabled.
      
         <p align="center">
-          <img src="/HOL/IOTHubPiHackathon/Prep/images/enableVNC.jpg"  width="50%" height="50%"/>
+          <img src="/HOL/IOTHubPiHackathon/images/enableVNC.jpg"  width="50%" height="50%"/>
         </p>
          
 3. Enable SSH on the Raspberry Pi. You will be SSH-ing to the Raspberry Pi to modify and execute scripts. 
