@@ -11,7 +11,7 @@ Before you start to build out the Azure function, you'll need some configuration
   - Under the “Messaging” category click on “Endpoints”.
   - In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
   - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. Feel free to use the parameters XLS to note these new values. <br />  
-  ![Event Hub Endpoint](/images/EHendpointValues.jpg) <br />
+  ![Event Hub Endpoint](/HOL/IOTHubPiHackathon/images/EHendpointValues.jpg) <br />
   
 ### Create a Function
 
@@ -20,11 +20,11 @@ For ease of getting through the lab, we have provided the code that you will nee
 1. Navigate to the Azure portal: https://portal.azure.com 
 2. Click the ‘+’ sign and type in “function app” 
     <p align="center">
-    <img src="/images/CreateFunction1.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/CreateFunction1.jpg" width="50%" height="50%" />
     </p> 
  3.	Click the “Create” button <br> 
     <p align="center">
-    <img src="/images/CreateFunction2.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/CreateFunction2.jpg" width="50%" height="50%" />
     </p> 
 
 4.	Fill out the required values to create a function <br>
@@ -37,22 +37,22 @@ For ease of getting through the lab, we have provided the code that you will nee
   - You can leave Application Insights turned off
   - Click “Create” <br>
       <p align="center">
-    <img src="/images/CreateFunction3.jpg" width="30%" height="30%" />
+    <img src="/HOL/IOTHubPiHackathon/images/CreateFunction3.jpg" width="30%" height="30%" />
     </p> 
   
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
     <p align="center">
-    <img src="/images/CreateFunction4.jpg" />
+    <img src="/HOL/IOTHubPiHackathon/images/CreateFunction4.jpg" />
     </p> 
 7. Click on “Custom Function”
     <p align="center">
-    <img src="/images/CustomFunction.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/CustomFunction.JPG" width="50%" height="50%" />
     </p> 
 8. Choose the “EventHubTrigger – C#”
 9. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
 10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. <br>
-![Select Trigger](/images/EHTrigger.jpg)
+![Select Trigger](/HOL/IOTHubPiHackathon/images/EHTrigger.jpg)
 11.	Next, you will create a new “Event Hub connection”. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
   - Click "new”.
   - Select “IoT Hub”
@@ -61,7 +61,7 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Click “Select”
   
     <p align="center">
-    <img src="/images/Select.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/Select.jpg" width="50%" height="50%" />
     </p>
 
   - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
@@ -69,11 +69,11 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Expand the “Logs” view at the bottom of the page
   - Click on “View Files”	
 
-![Expand Function views](/images/functionViews.jpg)
+![Expand Function views](/HOL/IOTHubPiHackathon/images/functionViews.jpg)
 
   - Click on “+ Add” under the "View files" tab. 
   - Enter “project.json” <br />
-![Add project file](/images/addProject.jpg)
+![Add project file](/HOL/IOTHubPiHackathon/images/addProject.jpg)
 
   - Copy the text from [project.json](/AzureFunction/project.json) file in the github repo to the new json file you created.
   - Click "Save". 
@@ -81,12 +81,12 @@ For ease of getting through the lab, we have provided the code that you will nee
     <img src="/images/projectSave.jpg" width="50%" height="50%" />
     </p>    
 13.	Now add the main source code that will used within the function
-  - Copy the text from [Function.txt](/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
+  - Copy the text from [Function.txt](/HOL/IOTHubPiHackathon/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
   - In the run.csx file, find the CONNECTION_STRING variable and set the value to the IoT Hub Primary Key Connection String obtained in an earlier lab.
   - Click “Save and run” to run the function
 
    <p align="center">
-    <img src="/images/runFunction.jpg" />
+    <img src="/HOL/IOTHubPiHackathon/images/runFunction.jpg" />
     </p>
 
 ## Trying it out
@@ -101,4 +101,4 @@ If you are having difficulties getting the temperature on your physical Sense HA
 - Lower the threshold in the device twin for the RaspberryPi device. You can do this in the preconfigured solution portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
 - Update your Python script to use the Sense Hat emulator instead of the physical board. Using the Sense HAT emulator will allow you to virtually control the temperature (and other properties)
 
-[Back to Main HOL Instructions](/README.md)
+[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
