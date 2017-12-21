@@ -58,7 +58,7 @@ Now we will configure a device in the IoT Hub for your Raspberry Pi.
    1. Check "Auto Generate Keys"
    1. Select "Enable" for "Connect Device to IoT Hub"
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubDeviceParams.JPG" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubParams.JPG" /> 
       </p>
    1. Click on Save
    
