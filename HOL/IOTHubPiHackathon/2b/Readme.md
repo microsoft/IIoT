@@ -4,7 +4,7 @@ In the following section of the Hands on Lab, you will walk through provisioning
 1. Open the [Azure Portal](https://portal.azure.com/).
 1. Click "Create a resource" in the top left of the portal.
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.JPG" /> 
       </p>
 1. Type "IoT Hub" in the search, and choose "IoT Hub"
 1. Click on the "Create" button.
