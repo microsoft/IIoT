@@ -29,7 +29,7 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 
 ### SOFTWARE
 - OPTIONAL if using a laptop. [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
-- If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
+- If you are using the Sense HAT Emulator (vs the physical device) and are emulating in from a laptop, you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 - [iothub-explorer](https://github.com/azure/iothub-explorer) 
 
 ### OTHERS 
