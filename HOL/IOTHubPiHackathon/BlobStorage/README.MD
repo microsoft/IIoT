@@ -45,7 +45,7 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
   - Click "Create". Feel free to click the "Pin to dashboard" check box. This will add the newly created ASA service to the main Azure portal dashboard. 
       
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/newASA3.jpg" width="30%" height="30%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/StreamAnalyticsBlob.JPG" width="30%" height="30%" /> 
       </p>   
   
   - Wait for the job to be created. You will see a notification banner that will pop up in the top right corner of the Azure portal to indicate the status of the job. This banner will disappear automatically. If you wish to see all the past notifications, click the bell icon. 
