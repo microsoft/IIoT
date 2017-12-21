@@ -45,3 +45,23 @@ Consumer groups are a key element in Azure event ingestion services that allow c
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/consumerGroups.jpg" /> 
       </p>
+3. Click "Save"
+
+## Create A Device
+
+Now we will configure a device in the IoT Hub for your Raspberry Pi.
+1. Under "Explorers", choose "IoT Devices"
+1. Click "+ Add"
+1. Enter the parameters for your device:
+   1. Device ID.  This is a name for your device.  It needs to be unique in the IoT Hub.  eg. TMDevice
+   1. Authentication Type.  Choose "Symmetric Key"
+   1. Check "Auto Generate Keys"
+   1. Select "Enable" for "Connect Device to IoT Hub"
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubDeviceParams.JPG" /> 
+      </p>
+   1. Click on Save
+   
+Congratulations! You have successfully spun up an IoT Hub and created a new custom device that you will configure in the next section of the labs! 
+
+[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
