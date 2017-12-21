@@ -1,10 +1,30 @@
+In the following section of the Hands on Lab, you will walk through provisioning an IoT Hub service from the Azure portal. 
 
-
-## Obtain Your IoT Hub Primary Key and Connection String
-1. Open the [Azure Portal](https://portal.azure.com/) tab and navigate to your IoT Hub service that you deployed as part of the remote monitoring solution
-  - Click the *resource group* icon -> click the name of your remote monitoring solution -> click the IoT Hub service that was created when you provisioned the remote monitoring solution. 
+## Create an IoT Hub
+1. Open the [Azure Portal](https://portal.azure.com/).
+1. Click "Create a resource" in the top left of the portal.
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubKeys1.jpg" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" /> 
+      </p>
+1. Type "IoT Hub" in the search, and choose "IoT Hub"
+1. Click on the "Create" button.
+1. Enter the details for your Hub:
+   1. Name.  A globally unique name for your IoT Hub.  eg. my initials are "TM", so "TMIoTHub"
+   1. Pricing and scale tier.  Choose the "F1" free tier.  This will give you 8,000 free messages per day.
+   1. Subscription.  Choose a subscription you have permissions to create services in.
+   1. Resource group.  Choose "Create new", then enter a globally unique name for your resource group.  eg. "TMResourceGroup"
+   1. Location.  Choose a data center that is near your physical location.  eg. "West US"
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubParams.JPG" /> 
+      </p>   
+   1. Click on "Create".
+   1. Watch the notifications to see when your IoT Hub has been created.  (should be less than a minute)
+      
+## Obtain Your IoT Hub Primary Key and Connection String
+1. Open the [Azure Portal](https://portal.azure.com/) tab and navigate to your IoT Hub service that you provisioned above
+  - Click the *resource group* icon -> click the name of the resource group you created above -> click the IoT Hub service
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/ResourceGroupForIoTHub.JPG" /> 
       </p>
 2. Obtain the "Connection string - primary key" for your IoT Hub. <BR>
 This is the shared access key that you will use to connect your device to the IoT Hub. The key provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions)
