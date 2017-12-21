@@ -25,10 +25,10 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) with latest version of Raspian installed on the micro SD card. Using [NOOBS](https://www.raspberrypi.org/downloads/noobs/) works fine.  **Note:** if you are using the **Raspberry Pi Zero W**, make sure you bring the mini-HDMI to HMDI adapter for connectivity to a monitor as well as a USB hub so that you can connect a keyboard and mouse to the Pi. (if you already have a Pi 2 Model B with USB Wi-Fi dongle, that will probably work as well)
 - OPTIONAL (for those who want to play with real hardware): [Sense HAT](https://www.raspberrypi.org/products/sense-hat/)
   If you don't want to use the physical Sense HAT, you can also use the [Sense HAT Emulator](https://www.raspberrypi.org/blog/sense-hat-emulator/) which comes with the Raspian O/S. You will use the sensors build into the Sense HAT to generate telemetry data as well as use the RGB LED matrix to display messages sent from your IoT solution. 
-- OPTIONAL Laptop.  The lab can be completed using only a Raspberry Pi.  A laptop can be used to edit files in user friendly editors before transferring the files to the Raspberry Pi.
+- OPTIONAL Laptop.  A laptop can be used to edit files in user friendly editors before transferring the files to the Raspberry Pi. The lab can be completed using only a Raspberry Pi, but you will also need a monitor, mouse and keyboard.   
 
 ### SOFTWARE
-- OPTIONAL if using a laptop. [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
+- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
 - If you are using the Sense HAT Emulator (vs the physical device) and are emulating in from a laptop, you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 - [iothub-explorer](https://github.com/azure/iothub-explorer) 
 
