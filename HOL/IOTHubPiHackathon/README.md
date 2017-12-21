@@ -25,16 +25,16 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) or [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/) with latest version of Raspian installed on the micro SD card. Using [NOOBS](https://www.raspberrypi.org/downloads/noobs/) works fine.  **Note:** if you are using the **Raspberry Pi Zero W**, make sure you bring the mini-HDMI to HMDI adapter for connectivity to a monitor as well as a USB hub so that you can connect a keyboard and mouse to the Pi. (if you already have a Pi 2 Model B with USB Wi-Fi dongle, that will probably work as well)
 - OPTIONAL (for those who want to play with real hardware): [Sense HAT](https://www.raspberrypi.org/products/sense-hat/)
   If you don't want to use the physical Sense HAT, you can also use the [Sense HAT Emulator](https://www.raspberrypi.org/blog/sense-hat-emulator/) which comes with the Raspian O/S. You will use the sensors build into the Sense HAT to generate telemetry data as well as use the RGB LED matrix to display messages sent from your IoT solution. 
-- Laptop (running whatever operating system you desire) but IDEALLY running Windows so you can install/run [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2017-8-10/SetupDeviceExplorer.msi). If you are running a non-Windows OS, then you will use the CLI tool [iothub-explorer](https://github.com/azure/iothub-explorer)
+- OPTIONAL Laptop.  The lab can be completed using only a Raspberry Pi.  A laptop can be used to edit files in user friendly editors before transferring the files to the Raspberry Pi.
 
 ### SOFTWARE
-- [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
+- OPTIONAL if using a laptop. [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
 - If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
-- Install [Device Explorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer). If you are running a non-Windows OS, then you will use the CLI tool [iothub-explorer](https://github.com/azure/iothub-explorer)
+- [iothub-explorer](https://github.com/azure/iothub-explorer) 
 
 ### OTHERS 
-- A corporate Azure subscription. You can use a corporate MSDN Azure subscription or a subscription from your company. 
-- A PowerBI account (same account as the corporate Azure account).
+- An Azure subscription with administrative permissions. [OPTIONAL] A corporate Azure subscription is only required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
+- [Optional] A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 
 ## Pre-workshop Setup (Steps must be completed before the Hands On Lab Workshop)
