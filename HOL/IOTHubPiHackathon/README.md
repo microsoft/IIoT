@@ -58,8 +58,8 @@ The following subsections of the Hands on Labs are as follows:
 
 ### Afternoon
 
- * 4 - Route your IoT data to one (or both) of the following:<br>
-   * [Stream Analytics](/HOL/IOTHubPiHackathon/StreamAnalytics)
+ * 4 - Route your IoT data using Stream Analytics to one (or both) of the following:<br>
+   * [Power BI](/HOL/IOTHubPiHackathon/StreamAnalytics)
    * [Blob Storage](/HOL/IOTHubPiHackathon/BlobStorage)
 
  * [5 - Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
