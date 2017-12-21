@@ -38,7 +38,7 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
           <img src="/HOL/IOTHubPiHackathon/images/newASA1.jpg" width="50%" height="50%" /> 
        </p>    
       
-    1. Enter a name for your job.  eg. "HandsOnLab-PowerBI" 
+    1. Enter a name for your job.  eg. "HandsOnLab-BlobStorage" 
     1. Choose your subscription.
     1. Choose a Resource Group. Use the existing Resource Group that was created previously. This will make it easier to delete all the resources when you are done with the lab. 
   - Choose a Location.  eg. West US
