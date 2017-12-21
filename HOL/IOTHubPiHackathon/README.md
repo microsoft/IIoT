@@ -28,13 +28,13 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 - OPTIONAL Laptop.  The lab can be completed using only a Raspberry Pi.  A laptop can be used to edit files in user friendly editors before transferring the files to the Raspberry Pi.
 
 ### SOFTWARE
-- OPTIONAL if using a laptop. [PuTTY] (http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
+- OPTIONAL if using a laptop. [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
 - If you are using the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 - [iothub-explorer](https://github.com/azure/iothub-explorer) 
 
 ### OTHERS 
-- An Azure subscription with administrative permissions. [OPTIONAL] A corporate Azure subscription is only required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
-- [Optional] A PowerBI account (same account as the corporate Azure account).
+- An Azure subscription with administrative permissions. OPTIONAL: A corporate Azure subscription is only required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
+- OPTIONAL A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 
 ## Pre-workshop Setup (Steps must be completed before the Hands On Lab Workshop)
