@@ -6,13 +6,13 @@ These steps will be performed in the morning before the workshop starts. You wil
   - Connect your Raspberry Pi to a monitor.
   - Click on the wifi icon in the top right.
       <p align="center">
-        <img src="/images/wifi.JPG" />
+        <img src="/HOL/IOTHubPiHackathon/images/wifi.JPG" />
       </p>
   - Enter the correct wifi credentials
 2. Retrieve the IP address.
   - Click on the command prompt
       <p align="center">
-        <img src="/images/CommandPrompt.jpg" /> 
+        <img src="/HOL/IOTHubPiHackathon/images/CommandPrompt.jpg" /> 
       </p>
   - Retrieve the IP address with the following command: `ifconfig` <br>
      Take note of the IP address and use the following [template](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx) to track the configuration details that you will collect over the course of the lab. 
@@ -21,7 +21,7 @@ These steps will be performed in the morning before the workshop starts. You wil
   - Open PuTTY. 
   - Enter the IP address of your Raspberry Pi into the *Host Name (or IP address)* field. 
       <p align="center">
-        <img src="/images/PuTTY.jpg" />
+        <img src="/HOL/IOTHubPiHackathon/images/PuTTY.jpg" />
       </p>
   - If you get prompted to accept a security certificate, click "Yes". 
 5. Disconnect from the monitor.
