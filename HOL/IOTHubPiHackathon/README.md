@@ -50,7 +50,9 @@ The following subsections of the Hands on Labs are as follows:
 
  * [1 - Hands on Lab Setup](/HOL/IOTHubPiHackathon/1)
 
- * [2 - Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2)<br>
+ * 2 - Provision one of the following:<br>
+   * [A Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2), or<br>
+   * [An IoT Hub](/HOL/IOTHubPiHackathon/2b)<br>
 
  * [3 - Connect Raspberry Pi to Azure IoT](/HOL/IOTHubPiHackathon/3)
 
