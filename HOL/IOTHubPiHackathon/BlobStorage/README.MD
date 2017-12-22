@@ -60,7 +60,7 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
      If not, click "Resource Groups" -> Your *resource group name* -> Your *ASA name*
       
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/clickASA2.jpg" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/BlobStorage.JPG" /> 
       </p>   
        
   - Under the "Job Topology" category, click on "Inputs".
