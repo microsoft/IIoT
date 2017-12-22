@@ -41,21 +41,35 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
-  - Connect your Device Explorer to the IoT Hub. The Device Explorer is an Azure IoT tool that can be used to perform operations such as manage the devices registered to an IoT hub, view device-to-cloud messages sent to an IoT hub, and send cloud-to-device messages from an IoT hub. We will use the tool to check to see if messages are arriving at the IoT Hub:
-    - On your laptop, open Device Explorer. Under the Configuration tab, copy and paste the IoT Hub Connection String obtained earlier into the "IoT Hub Connection String" field and click "Update". This connects the Device Explorer app to the IoT Hub that you created. 
-    
+  - Next we use iothub-explorer to view our incoming telemetry and send messages to our device via the IoT Hub.  To start, login using the following command:
+      ```
+      iothub-explorer login "<iothubowner connection-string>"
+      ```
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer-Connect.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="50%" height="50%" /> 
       </p>
+  - To view the IoT Hub attributes of your device, enter the following:
+      ```
+      iothub-explorer get <device name> --<iothubowner connection-string>
+      ```
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerGet.JPG" width="50%" height="50%" /> 
+      </p>
+  - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
+      ```
+      iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
+      ```
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="50%" height="50%" /> 
+      </p>
+  - To send a message to your Raspberry PI via the IoT Hub, enter the following:
+      ```
+      iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
+      ```
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="50%" height="50%" /> 
+      </p>  
       
-    - Click the Data tab, select your device from the Device ID list, click the "enable" checkbox beside the *Consumer Group* field, enter "deviceexplorer" in the "Consumer Group" text box, and click "Monitor". If you see messages arriving in the "Event Hub Data" field of the tool, then congratulations! Your Raspberry Pi is now sending data to Azure IoT Hub. 
-  
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer-ReceiveData.jpg" width="50%" height="50%" /> 
-      </p>
-  - To send messages from IoT Hub back to your Raspberry Pi:
-    - On your laptop, open Device Explorer, click the Messages to Device tab, select your device from the Device ID list, type in a message into the Message textbox and click Send. <br />
-    ![Send Message](/HOL/IOTHubPiHackathon/images/SendMsg-DvcExplorer.jpg) 
     - On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
     ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
   
