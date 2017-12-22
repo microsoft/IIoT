@@ -46,28 +46,28 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       iothub-explorer login "<iothubowner connection-string>"
       ```
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="100%" height="100%" /> 
       </p>
   - To view the IoT Hub attributes of your device, enter the following:
       ```
       iothub-explorer get <device name> --<iothubowner connection-string>
       ```
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerGet.JPG" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerGet.JPG" width="100%" height="100%" /> 
       </p>
   - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
       ```
       iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
       ```
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
   - To send a message to your Raspberry PI via the IoT Hub, enter the following:
       ```
       iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
       ```
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
       </p>  
       
     - On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
