@@ -32,9 +32,9 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
 'pscp SenseHat_IoTHub_Http_Lab_Key.py pi@192.168.1.1:/home/pi'
 
     - Log into the Raspberry Pi using PuTTY.
-    - Verify that the file was transfered by listing the directory: `ls -l`
+  - Verify that the file was transfered by listing the directory: `ls -l`
   
-     ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
+   ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
   
   - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator)
   - Start sending messages by invoking the script in Python<br/>
