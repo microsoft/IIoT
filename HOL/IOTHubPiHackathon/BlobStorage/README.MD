@@ -55,11 +55,7 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
       </p>   
   
 - Next, you will add an Input for the Stream Analytics job. 
-  1. If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
-      
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/clickASA1.jpg" width="30%" height="30%" /> 
-      </p>   
+  1. If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. <br>
        
      If not, click "Resource Groups" -> Your *resource group name* -> Your *ASA name*
       
@@ -99,25 +95,19 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
   
   1. Click "+ Add" in the blade to the right
   1. Fill out the values in the "New Output" blade. 
-    - Enter in any free form text for the "Output alias". eg. "PowerBI"
-    - For the Sink, select "Power BI".
-    - Click "Authorize". 
-    <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput.jpg" width="30%" height="30%" /> 
-    </p>      
+    - Enter in any free form text for the "Output alias". eg. "BlobStorage"
+    - For the Sink, select "Blob Storage".
+    - In "Import option", select "Select blob storage from your subscription".
+    - In "Storage Account", select "Create a new storage account"
+    - In "Storage Account", enter a globally unique storage account name.  eg. handsonlabstorageaccount
+    - In "Container", enter "iotdata"
+    - In "Path pattern", enter "data/{date}/{time}"
     
-    - A new window will open requiring credentials to authorize the connection to PowerBI. Enter your credentials and click "Sign in".
+    - Click "Create". 
     <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/authorizePBI.jpg" width="50%" height="50%" /> 
+       <img src="/HOL/IOTHubPiHackathon/images/SABlobOutput.JPG" width="30%" height="30%" /> 
     </p>      
-       
-    - Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
-    - Enter a Table Name. eg. Raspberry Pi Data Table
-    - Click "Create"
-    <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
-    </p>      
-       
+           
     1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
 - Create an ASA Query.
   1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
@@ -126,7 +116,7 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
     SELECT 
       * 
     INTO  
-      [PowerBI] 
+      [BlobStorage] 
     FROM 
       [IoTHub] 
          
