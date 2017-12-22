@@ -57,14 +57,14 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       </p>
   - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
       ```
-      iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
+      iothub-explorer monitor-events <device name> --login "<iothubowner connection-string>"
       ```
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
   - To send a message to your Raspberry PI via the IoT Hub, enter the following:
       ```
-      iothub-explorer monitor-events TMDevice --login "<iothubowner connection-string>"
+      iothub-explorer send <device name> Hello --ack=full
       ```
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
