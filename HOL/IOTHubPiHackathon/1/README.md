@@ -17,7 +17,7 @@ These steps will be performed in the morning before the workshop starts. You wil
   - Retrieve the IP address with the following command: `ifconfig` <br>
      Take note of the IP address and use the following [template](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx) to track the configuration details that you will collect over the course of the lab. 
 3. If you didn't enable SSH on your Raspberry Pi previously, follow the steps in the [Pre-lab Steps instructions](/HOL/IOTHubPiHackathon/Prep). <br><br>
-4. Connect to your Raspberry Pi using your laptop to verify the connection. 
+4. If using a laptop, connect to your Raspberry Pi using your laptop to verify the connection. 
   - Open PuTTY. 
   - Enter the IP address of your Raspberry Pi into the *Host Name (or IP address)* field. 
       <p align="center">
