@@ -28,12 +28,12 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 - OPTIONAL Laptop.  A laptop can be used to edit files in user friendly editors before transferring the files to the Raspberry Pi. The lab can be completed using only a Raspberry Pi, but you will also need a monitor, mouse and keyboard.   
 
 ### SOFTWARE
-- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH into your Raspberry Pi
+- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or another SSH client. You will use PuTTY to SSH from your laptop into your Raspberry Pi
 - If you are using the Sense HAT Emulator (vs the physical device) and are emulating in from a laptop, you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
-- [iothub-explorer](https://github.com/azure/iothub-explorer) 
+- [iothub-explorer](https://github.com/azure/iothub-explorer).  You will use the iothub-explorer to view the telemetry coming in from your Raspberry Pi into the IoT Hub.
 
 ### OTHERS 
-- An Azure subscription with administrative permissions. OPTIONAL: A corporate Azure subscription is only required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
+- An Azure subscription with permissions to create Azure services.  You can use a free Azure account, but you will not be able to complete all paths of the lab.  The free account does not allow the creation of preconfigured solutions.  OPTIONAL: A corporate Azure subscription. This is required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
 - OPTIONAL A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 
