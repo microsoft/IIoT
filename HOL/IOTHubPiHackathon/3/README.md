@@ -1,4 +1,4 @@
-## Connect Your Raspberry Pi to the Remote Monitoring Pre-configured Solution
+## Connect Your Raspberry Pi to the IoT Hub
 
 In this lab, you will configure your Raspberry Pi to connect to the IoT solution that you created earlier. You will create a small application on your Raspberry Pi (python script) to send a D2C (Device to Cloud) message to the IoT Hub and also modify that such that the application can be used to receive a C2D (Cloud to Device) message that will be displayed on the Sense HAT or the Sense HAT emulator. The python script is a sample that will interact with the Sense HAT to collect telemetry data (temperature, humidity, pitch, yaw, roll) from the device. It will also contain code that will securely connect the Raspberry Pi to Azure IoT Hub and allow bidirectional communication to it. 
 
