@@ -142,38 +142,30 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
          <img src="/HOL/IOTHubPiHackathon/images/startASA2.jpg" width="50%" height="50%" /> 
       </p>  
           
-## View Data in Power BI
-1. Open Power BI in a web browser - https://powerbi.microsoft.com
-2. Sign in
-3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset)
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.png" width="80%" height="80%" /> 
-      </p>  
-            
-4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Fields.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-5. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Visualizations.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-6. Save your report.
-7. Click on the "Pin Visual" button on the chart
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Pin.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-8. Click on "New Dashboard"
-9. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
-10. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
+## View IoT blob data in the Azure Portal
 
+  1. Click "Resource Groups" -> Your *resource group name* -> Your *blob storage account name* (eg. "handsonlabstorageaccount")
+      
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/BlobStorage.JPG" /> 
+      </p> 
 
+  1. Select "Browse blobs"
+  1. Select the container.  eg. "iotdata"
+  1. Click down through the folder hierarchy.  eg. "data" -> <year> -> <month> -> <day> -> <UTC hour>
+  1. Click on a file.
+  1. Select "Download".
+      
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/BlobIoTDataDownload.JPG" /> 
+      </p> 
+
+  1. Open the file with your favorite editor to view the IoT data
+      
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/BlobIoTData.JPG" /> 
+      </p> 
+
+Congratulations, you have streamed your data into blob storage! 
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
