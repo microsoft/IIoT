@@ -17,7 +17,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   - Next, you will provide the information required to connect your device - the Raspberry Pi to the IoT pre-configured solution:
     - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> Shared access policies -> iothubowner -> Connection string-primary key)
     - Search for ```deviceId =``` and paste in the Device ID you created earlier.
-  - Copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using pscp (or some other secure client to copy files). 
+  - If you are editing the file on a laptop and not on the Raspberrry PI, copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using pscp (or some other secure client to copy files). 
     - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already and you should be able to run psp from any path. Otherwise, the pscp executable will be in your PuTTY directory. <br/>
     
       Open up a command prompt on **your local machine/laptop** and enter the following command to copy the python script to your Raspberry Pi. If you didn't change the username/password, it should be ***pi/raspberry*** <br/>
@@ -31,10 +31,10 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       As an example, if your RaspberryPi has an IP of 192.168.1.1, the command you will run is: 
 'pscp SenseHat_IoTHub_Http_Lab_Key.py pi@192.168.1.1:/home/pi'
 
-  - Log into the Raspberry Pi using PuTTY.
-  - Verify that the file was transfered by listing the directory: `ls -l`
+    - Log into the Raspberry Pi using PuTTY.
+    - Verify that the file was transfered by listing the directory: `ls -l`
   
-  ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
+     ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
   
   - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator)
   - Start sending messages by invoking the script in Python<br/>
