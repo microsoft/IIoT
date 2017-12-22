@@ -39,7 +39,7 @@ This is the shared access key that you will use to connect your device to the Io
 Consumer groups are a key element in Azure event ingestion services that allow consuming applications with a separate view of the event stream. Each consuming application can use the groups to read the streaming data independently at their own pace and with their own offet. These consumer groups will be created in advance but will be used later in this lab.
 1. Under the "Messaging" subsection, select "Endpoints"
 2. Click on the "Events" endpoint
-3. In the blade that appears on the right, add the following consumer groups:
+3. In the blade that appears on the right, add the following consumer groups.  If mulitple people are using the same IoT Hub, append your initials to the consumer group name so that each user gets their own groups.
   - "deviceexplorer"
   - "asa"
       <p align="center">
