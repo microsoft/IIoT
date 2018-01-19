@@ -30,6 +30,7 @@ For ease of getting through the lab, we have provided the code that you will nee
 4.	Fill out the required values to create a function <br>
   - Provide the function app a name (eg. functionC2DHoL)
   - Select your Azure subscription
+  - If given an option to choose between "Windows" and "Linux" as the OS, choose "Windows" (at the time of publishing this lab update, Linux was still in Preview)
   - Select your existing subscription that you are using for the hands on lab
   - For hosting plan, select “consumption plan”
   - For location, choose the closest data centre (eg. East US)
@@ -49,21 +50,26 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CustomFunction.JPG" width="50%" height="50%" />
     </p> 
-8. Choose the “EventHubTrigger – C#”
-9. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
-10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. <br>
-![Select Trigger](/HOL/IOTHubPiHackathon/images/EHTrigger.jpg)
-11.	Next, you will create a new “Event Hub connection”. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
-  - Click "new”.
-  - Select “IoT Hub”
+8. Scroll down and choose the “EventHubTrigger”
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/ChooseEventHub.JPG" width="50%" height="50%" />
+    </p> 
+9. Choose "C#" as the language and give your new function a name in the “Name your function” field. eg. MessageTriggerFunction
+New fields should show up. Select the "new" button. 
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/NewFunction1.JPG" width="50%" height="50%" />
+    </p> 
+10.	Here you will create an “IoT Hub connection”. This step will connect your new Azure function as a consumer of the IoT Hub that you provisioned. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
+  - Click the "IoT Hub” tab.
   - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
   - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
   - Click “Select”
   
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/Select.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/IoTHubConnection.jpg" width="50%" height="50%" />
     </p>
-
+11.	The “Event Hub connection” field should auto-populate with the Event hub-compatible connection string. In the "Event Hub name" file, enter name that was obtained above. eg. iothandsonlabc4f51. <br>
+![CreateEHTrigger](/HOL/IOTHubPiHackathon/images/EHTrigger.jpg)
   - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
   - Expand the “Logs” view at the bottom of the page
