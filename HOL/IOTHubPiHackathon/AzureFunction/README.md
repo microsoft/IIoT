@@ -54,23 +54,24 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/ChooseEventHub.jpg" width="70%" height="70%" />
     </p> 
-9. Choose "C#" as the language and give your new function a name in the “Name your function” field. eg. MessageTriggerFunction
-New fields should show up. Select the "new" button. 
+9. Choose "C#" as the language and give your new function a name in the “Name your function” field. eg. MessageTriggerFunction<BR>
+  New fields should show up on the screen. <br>
+  Select the "new" button. 
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/NewFunction1.jpg" width="30%" height="30%" />
     </p> 
 10.	Here you will create an “IoT Hub connection”. This step will connect your new Azure function as a consumer of the IoT Hub that you provisioned. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
-  - Click the "IoT Hub” tab.
-  - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
-  - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
-  - Click “Select”
+    - Click the "IoT Hub” tab.
+    - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
+    - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
+    - Click “Select”
   
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/IotHubConnection.jpg" width="50%" height="50%" />
     </p>
 11.	The “Event Hub connection” field should auto-populate with the Event hub-compatible connection string. In the "Event Hub name" file, enter name that was obtained above. eg. iothandsonlabc4f51. <br>
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/EHTrigger.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/CreateEHTrigger.jpg" width="50%" height="50%" />
     </p>
   - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
