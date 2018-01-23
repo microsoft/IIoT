@@ -4,7 +4,9 @@ Prerequisites: Power BI account
 
 In this lab, we are going to create an Azure Stream Analytics job that will take the telemetry data from the Raspberry Pi and feed it to PowerBI as the output. From PowerBI, we will use the user friendly interface to drag and drop values onto a BI canvas and create some simple reports so that we can visualize the data coming into Azure from our device. 
 
-## Stop the device simulators
+## Stop the device simulators 
+
+** This step is only required if you created the Remote Monitoring preconfigured solution
 
 1. Log into the [Azure portal](https://ms.portal.azure.com)
 2. Go to the "App Services" blade
