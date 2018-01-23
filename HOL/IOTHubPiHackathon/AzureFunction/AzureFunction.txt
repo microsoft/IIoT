@@ -58,7 +58,7 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
         log.Info("Twin not retrieved");
 
     double highTemperatureLimit = 40;
-    if (twin.Tags.Contains("HighTemperatureLimit")
+    if (twin.Tags.Contains("HighTemperatureLimit"))
         highTemperatureLimit = twin.Tags["HighTemperatureLimit"];
     
     string temperatureStatus = "Normal";
