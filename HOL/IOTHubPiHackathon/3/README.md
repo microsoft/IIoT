@@ -15,8 +15,8 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
      - if using the Sense HAT emulator, comment the *from sense_hat* and uncomment the *from sense_emu* statement
 
   - Next, you will provide the information required to connect your device - the Raspberry Pi to the IoT pre-configured solution:
-    - Update the file with the primary key connection string. Look for ```connectionString =``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> Shared access policies -> iothubowner -> Connection string-primary key)
-    - Search for ```deviceId =``` and paste in the Device ID you created earlier.
+    - Update the file with the primary key connection string. Look for ```connectionString = ''``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> Shared access policies -> iothubowner -> Connection string-primary key)
+    - Search for ```deviceId = ''``` and paste in the Device ID you created earlier.
   - If you are editing the file on a laptop and not on the Raspberrry PI, copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using pscp (or some other secure client to copy files). 
     - If you installed PuTTY using the default settings, the PuTTY environment variables should be set in your PATH already and you should be able to run psp from any path. Otherwise, the pscp executable will be in your PuTTY directory. <br/>
     
