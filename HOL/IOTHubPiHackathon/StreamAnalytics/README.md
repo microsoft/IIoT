@@ -43,11 +43,12 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
     1. Enter a name for your job.  eg. "HandsOnLab-PowerBI" 
     1. Choose your subscription.
     1. Choose a Resource Group. Use the existing Resource Group that was created previously. This will make it easier to delete all the resources when you are done with the lab. 
-  - Choose a Location.  eg. West US
+  - Choose a Location.  eg. East US
+  - Select "Cloud" for the Hosting Environment. With the IoT Edge gateway solution, you can now push ASA jobs down to the edge and have ASA jobs run locally on premise on your gateway solution. In these labs, we are going to use the cloud ASA job to filter out data streaming through IoT Hub and pass that data down to PowerBI. 
   - Click "Create". Feel free to click the "Pin to dashboard" check box. This will add the newly created ASA service to the main Azure portal dashboard. 
       
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/newASA3.jpg" width="30%" height="30%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/newASA4.jpg" width="30%" height="30%" /> 
       </p>   
   
   - Wait for the job to be created. You will see a notification banner that will pop up in the top right corner of the Azure portal to indicate the status of the job. This banner will disappear automatically. If you wish to see all the past notifications, click the bell icon. 
@@ -70,24 +71,30 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
       </p>   
        
   - Under the "Job Topology" category, click on "Inputs".
-  - Click "+ Add".
+  - Click "+ Add Stream Input".
+  
       
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/addInput1.jpg" width="50%" height="50%" /> 
       </p>   
-    
+      
+  - In the pop up menu that appears, select "IoT Hub" 
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/selectIoTHub.jpg" width="30%" height="30%" /> 
+      </p>  
+  
   - In the "New Input" blade that appears, fill in the fields:
-    - Alias: Free form text name for the input.  eg. "IoTHub"
-    - Source Type: Data Stream
-    - Source: IoT Hub
-    - Subscription: Use IoT Hub from current subscription
+    - Input Alias: This is a free form text name for the input to the ASA job. eg. "IoTHub"
+    - Choose "Select IoT Hub from your subscriptions". We will be connecting the ASA job to the IoT Hub you created and collecting streaming data from that existing IoT Hub
+    - Subscription: Choose the name of your IoT Hub from your current subscription
     - IoT Hub: Choose the IoT Hub you have been using for the lab
     - Endpoint: Messaging
     - Shared Access Policy Name: iothubowner
     - Consumer Group: asa (we created this earlier)
     - Event Serialization Format: JSON
     - Encoding: UTF-8
-    - Click "Create" and wait for the input to be created. 
+    - Event Compression Type: None
+    - Click "Save" and wait for the input to be created. 
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/ASANewInput.jpg" width="30%" height="30%" /> 
     </p>   
@@ -99,11 +106,12 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
          <img src="/HOL/IOTHubPiHackathon/images/addOutput.jpg" width="50%" height="50%" /> 
       </p>   
   
-  1. Click "+ Add" in the blade to the right
+  1. Click "+ Add" in the blade to the right and select "PowerBI"
   1. Fill out the values in the "New Output" blade. 
     - Enter in any free form text for the "Output alias". eg. "PowerBI"
-    - For the Sink, select "Power BI".
-    - Click "Authorize". 
+    - Click the "Authorize" button to make the connection to your PowerBI account. In the pop-up window that appears, enter in your PowerBI username and password. Once you enter in the correct credentials, the "Group Workspaces" drop down field should populate. 
+    - Choose the workspace that you want the ASA streaming data to be stored. eg. "My workspace"
+ 
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput.jpg" width="30%" height="30%" /> 
     </p>      
@@ -115,7 +123,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
        
     - Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
     - Enter a Table Name. eg. Raspberry Pi Data Table
-    - Click "Create"
+    - Click "Save"
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
     </p>      
@@ -133,7 +141,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
       [IoTHub] 
          
    1. Click "Save". 
-   1. Click "Test" 
+   1. If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button. 
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/ASAQuery.jpg" width="50%" height="50%" /> 
@@ -141,7 +149,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
        
 - Start the ASA Job
   1. Click on "Overview" 
-  1. Click "Start"
+  1. Click the "Start" button
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/startASA.jpg" width="50%" height="50%" /> 
@@ -157,7 +165,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 ## View Data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
 2. Sign in
-3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset)
+3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset). If you don't see the dataset that you created in the list, it's likely that no data has been streamed into your ASA job yet. Make sure that your ASA job has started and that there's input and output event showing up in your monitoring graph. Ask an instructor for assistance if you have any issues with this. 
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.png" width="80%" height="80%" /> 
