@@ -101,4 +101,8 @@ The finished script for this assignnment can be found [here](https://github.com/
 
 Finished early?  Try this [advanced tutorial](/HOL/IOTHubPiHackathon/3/Advanced.md)
 
+[Next lab - 4a Route Telemetry to PowerBI](/HOL/IOTHubPiHackathon/StreamAnalytics)
+
+[Next lab - 4b Route Telemetry to Blob Storage](/HOL/IOTHubPiHackathon/BlobStorage)
+
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
