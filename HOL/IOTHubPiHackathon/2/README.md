@@ -109,6 +109,6 @@ Consumer groups are a key element in Azure event ingestion services that allow c
 
 Congratulations! You have successfully spun up your Remote Monitoring Pre-configured (RM-PCS) solution and created a new custom device that you will configure in the next section of the labs! 
 
-[Jump to lab 3](/HOL/IOTHubPiHackathon/3)
+[Next lab - 3 Connect your Raspberry Pi to IoT Hub](/HOL/IOTHubPiHackathon/3)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
