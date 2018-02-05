@@ -109,5 +109,9 @@ If you recall in lab 2, you created a tag parameter called tags.HighTemperatureL
 If you are having difficulties getting the temperature on your physical Sense HAT over the threshold, you can do one of the following:
 - Lower the threshold in the device twin for the RaspberryPi device. You can do this in the preconfigured solution portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
 - Update your Python script to use the Sense Hat emulator instead of the physical board. Using the Sense HAT emulator will allow you to virtually control the temperature (and other properties)
+<BR>
+
+**IMPORTANT** - the next lab walks you through the steps to either delete or scale down the resources that you created for this workshop. If you do not walk through these steps, the services will continue to run in your subscription and therefore cost you money. <BR>
+[Next lab - 6 Lab Cleanup](/HOL/IOTHubPiHackathon/AzureFunction)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
