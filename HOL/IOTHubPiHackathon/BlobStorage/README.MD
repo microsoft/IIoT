@@ -168,4 +168,6 @@ If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solutio
 
 Congratulations, you have streamed your data into blob storage! 
 
+[Next lab - 5 Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
+
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
