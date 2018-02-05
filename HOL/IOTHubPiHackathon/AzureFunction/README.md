@@ -112,6 +112,6 @@ If you are having difficulties getting the temperature on your physical Sense HA
 <BR>
 
 **IMPORTANT** - the next lab walks you through the steps to either delete or scale down the resources that you created for this workshop. If you do not walk through these steps, the services will continue to run in your subscription and therefore cost you money. <BR>
-[Next lab - 6 Lab Cleanup](/HOL/IOTHubPiHackathon/AzureFunction)
+[Next lab - 6 Lab Cleanup](/HOL/IOTHubPiHackathon/Cleanup)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
