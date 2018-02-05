@@ -51,18 +51,18 @@ The following subsections of the Hands on Labs are as follows:
  * [1 - Hands on Lab Setup](/HOL/IOTHubPiHackathon/1)
 
  * 2 - Provision **ONE** of the following:<br>
-   * [A Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2), <BR>
+   * a) [A Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2), <BR>
    **OR**<br>
-   * [An IoT Hub](/HOL/IOTHubPiHackathon/2b)<br>
+   * b) [An IoT Hub](/HOL/IOTHubPiHackathon/2b)<br>
 
  * [3 - Connect Raspberry Pi to Azure IoT](/HOL/IOTHubPiHackathon/3)
 
 ### Afternoon
 
  * 4 - Route your IoT data using Stream Analytics to one (or both) of the following:<br>
-   * [Power BI](/HOL/IOTHubPiHackathon/StreamAnalytics)<BR>
+   * a) [Power BI](/HOL/IOTHubPiHackathon/StreamAnalytics)<BR>
    **OR**
-   * [Blob Storage](/HOL/IOTHubPiHackathon/BlobStorage)
+   * b) [Blob Storage](/HOL/IOTHubPiHackathon/BlobStorage)
 
  * [5 - Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
  
