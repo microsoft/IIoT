@@ -195,5 +195,6 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 10. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
 
 
+[Next lab - 5 Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
