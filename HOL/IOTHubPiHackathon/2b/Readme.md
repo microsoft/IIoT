@@ -64,6 +64,6 @@ Now we will configure a device in the IoT Hub for your Raspberry Pi.
    
 Congratulations! You have successfully spun up an IoT Hub and created a new custom device that you will configure in the next section of the labs! 
 
-[Next lab - 3](/HOL/IOTHubPiHackathon/3) 
+[Next lab - 3 Connect your Raspberry Pi to IoT Hub](/HOL/IOTHubPiHackathon/3)
 
 [Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
