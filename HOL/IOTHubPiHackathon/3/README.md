@@ -24,8 +24,8 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
 
       `pscp SenseHat_IoTHub_Http_Lab_Key.py <userid>@<server ip or server name>:/<$path>/SenseHat_IoTHub_Http_Lab_Key.py`
 
-      (for the \<userid\>, use your Raspberry Pi Username. The default username on Raspbian is "pi") <BR>
-      (for \<server ip or server name\>, use the Raspbery Pi's IP address) <BR>
+      (replace the \<userid\> text with your Raspberry Pi Username. The default username on Raspbian is "pi") <BR>
+      (replace \<server ip or server name\> with the Raspbery Pi's IP address) <BR>
       (for the \<$path\>, use */home/pi*)  <BR>
 
       As an example, if your RaspberryPi has an IP of 192.168.1.1, the command you will run is: 
@@ -45,6 +45,9 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```
       iothub-explorer login "<iothubowner connection-string>"
       ```
+      
+      (Make sure to replace the \<iothubowner connection-string\> text with the actual connection string that you obtained previously. <BR>
+  The connection string should be in the format HostName=*URL*;SharedAccessKeyName=iothubowner;SharedAccessKey=*key*)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="100%" height="100%" /> 
       </p>
@@ -57,8 +60,10 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       </p>
   - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
       ```
-      iothub-explorer monitor-events <device name> --login "<iothubowner connection-string>"
+      iothub-explorer monitor-events <device name> --login "<iothubowner connection-string>" --consumer-group "deviceexplorer"
       ```
+  <BR>
+    (Note: the consumer group *deviceexplorer* was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
