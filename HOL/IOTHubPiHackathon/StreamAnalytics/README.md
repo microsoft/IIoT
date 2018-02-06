@@ -4,9 +4,10 @@ Prerequisites: Power BI account
 
 In this lab, we are going to create an Azure Stream Analytics job that will take the telemetry data from the Raspberry Pi and feed it to PowerBI as the output. From PowerBI, we will use the user friendly interface to drag and drop values onto a BI canvas and create some simple reports so that we can visualize the data coming into Azure from our device. 
 
-## Stop the device simulators 
+## Optional: Stop the device simulators 
 
-** This step is only required if you created the Remote Monitoring preconfigured solution
+** This step is only relevant if you created the Remote Monitoring preconfigured solution (Lab 2a)<BR>
+Perform this part of the module if you wish to keep your PowerBI report clean with only data coming from your physical Raspberry Pi. The following steps will stop the web app that runs the simulators and therefore, the telemetry data from these simulators will not be sent to IoT hub. 
 
 1. Log into the [Azure portal](https://ms.portal.azure.com)
 2. Go to the "App Services" blade
@@ -16,7 +17,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
   
      <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/StopDeviceSimulator.jpg" width="90%" height="90%"/> 
-      </p>    
+      </p>    <BR>
   
 ## Create Azure Stream Analytics (ASA) Job
 
