@@ -6,11 +6,11 @@ In the following section of the Hands on Lab, you will walk through the creation
   - Log in using your Azure subscription credentials. 
   - Click the "Create a new solution" button. 
         <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/NewRMPCS.png" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/" /> 
       </p>
   - Select "Remote monitoring".
         <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/SelectRM.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/NewRMPCS.png" width="50%" height="50%" /> 
       </p>
   - Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
