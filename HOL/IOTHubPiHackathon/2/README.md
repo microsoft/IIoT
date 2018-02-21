@@ -6,7 +6,7 @@ In the following section of the Hands on Lab, you will walk through the creation
   - Log in using your Azure subscription credentials. 
   - Click the "Create a new solution" button. 
         <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/SelectRMS.png" /> 
       </p>
   - Select "Remote monitoring".
         <p align="center">
