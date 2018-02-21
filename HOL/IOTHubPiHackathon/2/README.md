@@ -8,7 +8,7 @@ In the following section of the Hands on Lab, you will walk through the creation
         <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/SelectRMS.png" /> 
       </p>
-  - Select "Remote monitoring".
+  - Select "Remote monitoring Preview".
         <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/NewRMPCS.png" width="50%" height="50%" /> 
       </p>
