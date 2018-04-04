@@ -69,7 +69,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       </p>
   - To send a message to your Raspberry PI via the IoT Hub, enter the following:
       ```
-      iothub-explorer send <device name> Hello --ack=full
+      iothub-explorer send <deviceID> Hello --ack=full
       ```
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
