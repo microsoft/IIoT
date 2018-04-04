@@ -172,7 +172,7 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
          <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.png" width="80%" height="80%" /> 
       </p>  
             
-4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
+4. Click on Create report. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/Fields.jpg" width="50%" height="50%" /> 
