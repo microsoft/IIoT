@@ -71,6 +71,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```
       iothub-explorer send <deviceID> Hello --ack=full
       ```
+    <BR>
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
       </p>  
