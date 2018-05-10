@@ -4,7 +4,7 @@ In the following section of the Hands on Lab, you will walk through the creation
 1. Setup your Azure IoT Suite remote monitoring pre-configured solution. You will use this pre-configured solution for the duration of the labs to help with visualization of the data and other IoT functions. 
   - Go to the Microsoft IoT Suite microsite [https://www.azureiotsuite.com/](https://www.azureiotsuite.com/).
   - Log in using your Azure subscription credentials. 
-  - Click the "Create a new solution" button. 
+  - Navigate to the Remote Montioring Solution Accelerator and click on "Try Now".
         <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/selectRMS.png" /> 
       </p>
