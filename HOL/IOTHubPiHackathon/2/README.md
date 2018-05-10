@@ -8,10 +8,6 @@ In the following section of the Hands on Lab, you will walk through the creation
         <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/selectRMS.png" /> 
       </p>
-  - Select "previous version".
-        <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/NewRMPCS.png" width="50%" height="50%" /> 
-      </p>
   - Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
     - Choose the subscription that you will be using eg. Visual Studio Enterprise with MSDN
