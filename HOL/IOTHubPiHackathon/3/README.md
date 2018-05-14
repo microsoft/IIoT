@@ -36,46 +36,50 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   
      ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
   
+2.  Now, lets send messages from the Raspberry Pi to the IoT Hub.
   - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator)
-  - Start sending messages by invoking the script in Python<br/>
+  - Start sending messages by invoking the Python script on the Pi <br/>
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
-  - Next we use iothub-explorer to view our incoming telemetry and send messages to our device via the IoT Hub.  To start, login using the following command:
+  - Next use iothub-explorer on your laptop to view our incoming telemetry and send messages to our device via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions. To start, login using the following command:
       ```
       iothub-explorer login "<iothubowner connection-string>"
       ```
       
-      (Make sure to replace the \<iothubowner connection-string\> text with the actual connection string that you obtained previously. <BR>
+      (Make sure to replace the \<iothubowner connection-string\> text with the actual connection string that you obtained previously.
   The connection string should be in the format HostName=*URL*;SharedAccessKeyName=iothubowner;SharedAccessKey=*key*)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="100%" height="100%" /> 
       </p>
   - To view the IoT Hub attributes of your device, enter the following:
       ```
-      iothub-explorer get <device name> --<iothubowner connection-string>
+      iothub-explorer get <device id> --<iothubowner connection-string>
       ```
+      
+      (Replace the \<device id\> text with the actual device id that you named your Pi previously)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerGet.JPG" width="100%" height="100%" /> 
       </p>
   - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
       ```
-      iothub-explorer monitor-events <device name> --login "<iothubowner connection-string>" --consumer-group "deviceexplorer"
+      iothub-explorer monitor-events <device id> --login "<iothubowner connection-string>" --consumer-group "deviceexplorer"
       ```
-  <BR>
-    (Note: the consumer group *deviceexplorer* was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently)
+  
+    (Note: the consumer group "deviceexplorer" was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently)  
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
-  - To send a message to your Raspberry PI via the IoT Hub, enter the following:
+  
+- To send a message to your Raspberry PI via the IoT Hub, enter the following:  
       ```
-      iothub-explorer send <device name> Hello --ack=full
-      ```
+      iothub-explorer send <device id> Hello --ack=full
+      ```  
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
       </p>  
-      
-    - On your Sense HAT, you should see the message appear on the display. (if you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
+  
+- On your Sense HAT, you should see the message appear on the display. (If you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
     ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
   
 
