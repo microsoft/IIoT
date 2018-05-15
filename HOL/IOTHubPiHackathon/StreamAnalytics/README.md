@@ -7,7 +7,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 ## Optional: Stop the device simulators 
 
 **This step is only relevant if you created the Remote Monitoring preconfigured solution [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md)** <BR>
-Perform this part of the module if you wish to keep your PowerBI report clean with only data coming from your physical Raspberry Pi. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
+Perform this part of the module if you wish to populate your PowerBI report with only data coming from your physical Raspberry Pi and not the simulated devices provisioned as part of the preconfigured solution. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
 
 1. Go to the web app that was provisioned as part of the Remote Monitoring preconfigured solution.
   - Navigate to the [Azure portal](https://ms.portal.azure.com)  
