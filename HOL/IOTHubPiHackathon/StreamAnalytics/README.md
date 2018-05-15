@@ -6,7 +6,7 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 
 ## Optional: Stop the device simulators 
 
-** This step is only relevant if you created the Remote Monitoring preconfigured solution [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md) ** <BR>
+**This step is only relevant if you created the Remote Monitoring preconfigured solution [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md)** <BR>
 Perform this part of the module if you wish to keep your PowerBI report clean with only data coming from your physical Raspberry Pi. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
 
 1. Go to the web app that was provisioned as part of the Remote Monitoring preconfigured solution.
@@ -43,10 +43,10 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
   - Click on "+ New"
   
      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/AzureNewButton.jpg" width="30%" height="30%"/> 
+         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
       </p>    
   
-  - In the "Search the marketplace" file, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
+  - In the "Search the marketplace" box, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
   
      <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/newASA.jpg" width="40%" height="40%" /> 
@@ -59,11 +59,12 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
        </p>    
       
     1. Enter a name for your job.  eg. "HandsOnLab-PowerBI" 
-    1. Choose your subscription.
-    1. Choose a Resource Group. Use the existing Resource Group that was created previously. This will make it easier to delete all the resources when you are done with the lab. 
-  - Choose a Location.  eg. East US
-  - Select "Cloud" for the Hosting Environment. With the IoT Edge gateway solution, you can now push ASA jobs down to the edge and have ASA jobs run locally on premise on your gateway solution. In these labs, we are going to use the cloud ASA job to filter out data streaming through IoT Hub and pass that data down to PowerBI. 
-  - Click "Create". Feel free to click the "Pin to dashboard" check box. This will add the newly created ASA service to the main Azure portal dashboard. 
+    1. Choose your subscription. Use the same subscription you used to provision everything else in this lab.
+    1. Choose a Resource Group. Use the existing Resource Group that was created previously. This will make it easier to delete all the resources when you are done with the lab.
+    1. Choose a Location.  Try and choose the same location as where the rest of your solution has been provisioned.
+    1. Select "Cloud" for the Hosting Environment. With the IoT Edge gateway solution, you can now push ASA jobs down to the edge and have ASA jobs run locally on premise on your gateway solution. In these labs, we are going to use the cloud ASA job to filter out data streaming through IoT Hub and pass that data down to PowerBI. 
+    1. Leave the Streaming Units at 1. Streaming Units are the pool of computation resources available for the Stream Analytics job.
+    1. Click "Create". Feel free to click the "Pin to dashboard" check box. This will add the newly created ASA service to the main Azure portal dashboard. 
       
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/newASA4.jpg" width="30%" height="30%" /> 
@@ -75,8 +76,8 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
          <img src="/HOL/IOTHubPiHackathon/images/AzureNotification.jpg" width="50%" height="50%" /> 
       </p>   
   
-- Next, you will add an Input for the Stream Analytics job. 
-  1. If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
+- Next, you will add an Input for the Stream Analytics job.  
+  - If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
       
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/clickASA1.jpg" width="30%" height="30%" /> 
@@ -127,8 +128,7 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
   1. Click "+ Add" in the blade to the right and select "PowerBI"
   1. Fill out the values in the "New Output" blade. 
     - Enter in any free form text for the "Output alias". eg. "PowerBI"
-    - Click the "Authorize" button to make the connection to your PowerBI account. In the pop-up window that appears, enter in your PowerBI username and password. Once you enter in the correct credentials, the "Group Workspaces" drop down field should populate. 
-    - Choose the workspace that you want the ASA streaming data to be stored. eg. "My workspace"
+    - Click the "Authorize" button to make the connection to your PowerBI account. In the pop-up window that appears, enter in your PowerBI username and password.
  
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput.jpg" width="30%" height="30%" /> 
@@ -138,15 +138,17 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/authorizePBI.jpg" width="50%" height="50%" /> 
     </p>      
-       
+    
+    - Once you enter in the correct credentials, the "Group Workspace" drop down field should populate. Choose the workspace that you want the ASA streaming data to be stored. eg. "My workspace"
     - Enter a Dataset name.  A dataset is a collection of data tables.  eg. Raspberry Pi Dataset
     - Enter a Table Name. eg. Raspberry Pi Data Table
-    - Click "Save"
+    - Click "Save"  
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/powerBIOutput2.jpg" width="30%" height="30%" /> 
-    </p>      
-       
-    1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
+    </p>
+
+    - Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test.  
+    
 - Create an ASA Query.
   1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
   1. Enter the following query: 
