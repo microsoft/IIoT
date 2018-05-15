@@ -150,18 +150,18 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
     - Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test.  
     
 - Create an ASA Query.
-  1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
-  1. Enter the following query: 
- 
+   - Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
+    - Enter a query like the following: (Note, if you named your Input and Output bindings something different then you will have to update the query parameters to correspond correctly) 
+  ```
     SELECT 
       * 
     INTO  
       [PowerBI] 
     FROM 
       [IoTHub] 
-         
-   1. Click "Save". 
-   1. If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button. 
+  ```  
+    - Click "Save". 
+    - If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button. 
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/ASAQuery.jpg" width="50%" height="50%" /> 
@@ -182,25 +182,31 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
          <img src="/HOL/IOTHubPiHackathon/images/startASA2.jpg" width="50%" height="50%" /> 
       </p>  
           
-## View Data in Power BI
+## View Telemetry data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
-2. Sign in
-3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select the dataset that you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset). If you don't see the dataset that you created in the list, it's likely that no data has been streamed into your ASA job yet. Make sure that your ASA job has started and that there's input and output event showing up in your monitoring graph. Ask an instructor for assistance if you have any issues with this. 
+2. Sign in.
+3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select "Datasets" to see the dataset you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset). If you don't see the dataset that you created in the list, it's likely that no data has been streamed into your ASA job yet. Make sure that your ASA job has started and that there's input and output events showing up in your monitoring graph. Ask an instructor for assistance if you have any issues with this. 
    
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.png" width="80%" height="80%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.jpg" width="80%" height="80%" /> 
       </p>  
-            
+      
+4.  Click the "Create Report" icon to create a new Power BI report using this dataset.
+      
+       <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/CreatePowerBIReport.jpg" width="80%" height="80%" /> 
+      </p>  
+      
 4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/Fields.jpg" width="50%" height="50%" /> 
       </p>  
       
-5. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart
+5. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart.
    
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Visualizations.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/SelectLineChart.jpg" width="50%" height="50%" /> 
       </p>  
       
 6. Save your report.
@@ -210,9 +216,9 @@ Perform this part of the module if you wish to keep your PowerBI report clean wi
          <img src="/HOL/IOTHubPiHackathon/images/Pin.jpg" width="50%" height="50%" /> 
       </p>  
       
-8. Click on "New Dashboard"
+8. Click on "New Dashboard".
 9. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
-10. Your trend is now viewable as a dashboard.  You can also view the dashboard from a mobile app
+10. Your trend is now viewable on a dashboard.  You may add more fields and visualizations if you like or view this dashboard from the Power BI mobile app.
 
 
 [Next lab - 5 Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
