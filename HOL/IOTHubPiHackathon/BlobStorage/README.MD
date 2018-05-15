@@ -2,19 +2,38 @@
 
 In this lab, we are going to create an Azure Stream Analytics job that will take the telemetry data from the Raspberry Pi and store it in Blob Storage. 
 
+
 ## Stop the device simulators 
 
-If you created an IoT Hub instead of the Remote Monitoring Preconfigured Solution you can skip this step.
+**This step is only relevant if you created the Remote Monitoring preconfigured solution [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md)** <BR>
+Perform this part of the module if you wish to populate Blob storage with only data coming from your physical Raspberry Pi and not the simluated devices provisioned as part of the preconfigured solution. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
 
-1. Log into the [Azure portal](https://ms.portal.azure.com)
-2. Go to the "App Services" blade
-3. Click on the App services associated with your preconfigured solution
-4. Go To the "WebJobs" blade
-5. Right click on the "DeviceSimulator-Webjob", and click "Stop"
+1. Go to the web app that was provisioned as part of the Remote Monitoring preconfigured solution.
+  - Navigate to the [Azure portal](https://ms.portal.azure.com)  
+  - Click the resource group icon -> click the name of the group of your Remote Monitoring solution -> click the App Service that was created when you provisioned the solution.
+  
+   <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/OpenWebApp.jpg" width="80%" height="80%"/> 
+      </p> 
+      
+  - Click 'Browse' to navigate to the web app. 
   
      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/StopDeviceSimulator.jpg" width="90%" height="90%"/> 
-      </p>    
+         <img src="/HOL/IOTHubPiHackathon/images/BrowseToWebApp.jpg" width="80%" height="80%"/> 
+      </p> 
+
+2. You should be at the same device dashboard as when you initially launched the preconfigured solution.
+  - Click the 'Gear' icon in the upper right corner
+  
+    <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/OpenSettingsInWebApp.jpg" width="80%" height="80%"/> 
+      </p> 
+
+3. Toggle the 'Simulation data' slider so that it reads 'Stopped'. This will stop all telemetry data and associated alerts from the simulated devices.
+
+    <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/StopSimulatedDeviceData.jpg" width="60%" height="60%"/> 
+      </p>  
   
 ## Create Azure Stream Analytics (ASA) Job
 
