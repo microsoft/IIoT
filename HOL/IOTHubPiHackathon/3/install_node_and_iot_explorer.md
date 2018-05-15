@@ -4,9 +4,8 @@ We will leverage an open source application called "Node Version Manager" (NVM),
 
 1. Install node in your environment
   - go to https://github.com/creationix/nvm#installation and run the install script:  
-  ```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash```
-
-a) You may need to refresh your .bashrc file environment:  
+  ```curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash```  
+  - You may need to refresh your .bashrc file environment:  
     ```source ~/.bashrc```
 
 2. Now you can install a specific version of Node at anytime.  At the time of writting this document, 8.11.1 is the latest stable Long Term Support (LTS) release. For example, to install Node 8.11.1 run the following command:  
