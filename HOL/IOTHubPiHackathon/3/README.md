@@ -42,7 +42,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
-  - Next use iothub-explorer on your laptop to view our incoming telemetry and send messages to our device via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions. To start, login using the following command:
+  - Next run iothub-explorer on your laptop to view the incoming telemetry and send messages to our Pi via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions. To start, login using the following command:
       ```
       iothub-explorer login "<iothubowner connection-string>"
       ```
