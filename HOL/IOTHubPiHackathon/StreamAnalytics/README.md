@@ -40,7 +40,7 @@ Perform this part of the module if you wish to populate your PowerBI report with
 
 1. Log into the [Azure portal](https://ms.portal.azure.com)
 2. Add an Azure Stream Analytics (ASA) Job
-  - Click on "+ New"
+  - Click on "+ Create a resource"
   
      <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
@@ -90,8 +90,7 @@ Perform this part of the module if you wish to populate your PowerBI report with
       </p>   
        
   - Under the "Job Topology" category, click on "Inputs".
-  - Click "+ Add Stream Input".
-  
+  - Click "+ Add Stream input".
       
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/addInput1.jpg" width="50%" height="50%" /> 
