@@ -118,7 +118,7 @@ Perform this part of the module to populate Blob storage with only data coming f
     </p>   
   
 - Next, add an Output for the Stream Analytics job.
-  1. First we need to create a new Storage account for the data to be sent to.
+  1. First we need to create a new Storage account for the data to be streamed to.
     - Click on "+ Create a resource"
   
      <p align="center">
@@ -148,9 +148,9 @@ Perform this part of the module to populate Blob storage with only data coming f
      </p>
   
   
-  2. Navigate back to the Stream Analytics Job you created ("Resource Groups" -> Your resource group name -> Your ASA name). 
+  2. Navigate back to the Stream Analytics Job you created ("Resource Groups" -> *Your resource group name* -> *Your ASA name*). 
   
-    - In this blade under the "Job Topology" category, click on "Outputs". 
+    - In the Stream Analytics blade under the "Job Topology" category, click on "Outputs". 
         
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/addOutput.jpg" width="50%" height="50%" /> 
@@ -160,45 +160,41 @@ Perform this part of the module to populate Blob storage with only data coming f
     
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/SelectASAOutputBlob.jpg" width="30%" height="30%" /> 
-    </p>  
-    
-    
-    TO DO FROM HERE ON!!!!!!!!!!!!!!!
-    
+    </p>      
     
   4. Fill out the values in the "Blob storage" blade. 
     - Enter in any free form text for the "Output alias". eg. "BlobStorage"
-    - Choose "Select Blob storage from your subscriptions". We will be connecting the ASA job to the Blob Storage account that was created when you
-    
-    you created and collecting streaming data from that existing IoT Hub
-    - In "Import option", select "Select blob storage from your subscription".
-    - In "Storage Account", select "Create a new storage account"
-    - In "Storage Account", enter a globally unique storage account name.  eg. handsonlabstorageaccount
-    - In "Container", enter "iotdata"
+    - Choose "Select Blob storage from your subscriptions". We will be connecting the ASA job to the Blob Storage account that you just created.
+    - Choose the subscription that you created your storage account in.
+    - Choose the Storage account that you just created in the previous steps.
+    - For "Container", select "Create new" and enter "iotdata"
     - In "Path pattern", enter "data/{date}/{time}"
+    - Keep all the remaining options set to their default values.
+    - Click "Save". 
     
-    - Click "Create". 
     <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/SABlobOutput.JPG" width="30%" height="30%" /> 
+       <img src="/HOL/IOTHubPiHackathon/images/SABlobOutput.jpg" width="30%" height="30%" /> 
     </p>      
            
-    1. Wait for the input and output to be created.  Check the Notifications in the portal for a successful connection test. 
-- Create an ASA Query.
-  1. Under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
-  1. Enter the following query: 
- 
+- Next lets create an ASA Query.
+  1. In the Stream Analytics job blade, under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
+  2. Enter the following query: (Note, if you named your Input and Output bindings something different then you will have to update the query parameters so that they correspond correctly)  
+  
+  
+```
     SELECT 
       * 
     INTO  
       [BlobStorage] 
     FROM 
       [IoTHub] 
-         
-   1. Click "Save". 
-   1. Click "Test" 
+```  
+
+  1. Click "Save". 
+  1. If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button.
    
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/ASAQuery.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/ASAQueryBlob.jpg" width="50%" height="50%" /> 
       </p>      
        
 - Start the ASA Job
