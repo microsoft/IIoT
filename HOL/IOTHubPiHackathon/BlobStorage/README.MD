@@ -45,13 +45,13 @@ Perform this part of the module to populate Blob storage with only data coming f
          <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
       </p>    
   
-  - In the "Search the marketplace" file, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
+  - In the "Search the marketplace" blade, type in "Stream Analytics". Click on the "Stream Analytics job" option that shows up. 
   
      <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/newASA.jpg" width="40%" height="40%" /> 
      </p>    
   
-    1. Click on the "Stream Analytics job" that shows up in the results. Click "Create".
+    1. Click "Create" on this blade.
   
        <p align="center">
           <img src="/HOL/IOTHubPiHackathon/images/newASA1.jpg" width="50%" height="50%" /> 
@@ -118,16 +118,59 @@ Perform this part of the module to populate Blob storage with only data coming f
     </p>   
   
 - Next, add an Output for the Stream Analytics job.
-  1. Under the "Job Topology" category, click on "Outputs". 
+  1. First we need to create a new Storage account for the data to be sent to.
+    - Click on "+ Create a resource"
+  
+     <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
+      </p> 
+      
+    - In the "Search the marketplace" blade, type in "storage account". Click on the "Storage account - blob, file, table, queue" option that shows up. Click "Create".
+  
+     <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount.jpg" width="40%" height="40%" /> 
+     </p> 
+     
+    - In the "Create storage account" blade enter the following. 
+      - Enter a name for your atorage account. this name must be unique across all existing storage account names in Azure. eg. "<your-initials>iotholstorageaccount" 
+      - Leave "Resource manager" as the Deployment model. 
+      - Leave "Storage (general purpose v1)" as the Account Kind.
+      - Choose a Location. Try and choose the same location as where the rest of your IoT Hub has been provisioned.
+      - Leave "Locally Redundant storage (LRS)" as the Replication. LRS still ensures that three copies of your data is stored in Azure.
+      - Leave the default settings selected for Performance and Secure transfer required options.
+      - Choose your subscription. Use the same subscription you used to provision your IoT Hub resource.
+      - Choose an existing Resource Group. Use the one that contains your IoT Hub resource.
+      - Leave "Virtual Networks" disabled. Enabling this will grant access to the storage account from only a specified virtual network and subnets.
+      - Click "Create".
+      
+     <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount1.jpg" width="30%" height="40%" /> 
+     </p>
+  
+  
+  2. Navigate back to the Stream Analytics Job you created ("Resource Groups" -> Your resource group name -> Your ASA name). 
+  
+    - In this blade under the "Job Topology" category, click on "Outputs". 
         
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/addOutput.jpg" width="50%" height="50%" /> 
       </p>   
   
-  1. Click "+ Add" in the blade to the right
-  1. Fill out the values in the "New Output" blade. 
+  3. Click "+ Add" in the blade to the right. In the pop up menu that appears select "Blob storage".
+    
+    <p align="center">
+       <img src="/HOL/IOTHubPiHackathon/images/SelectASAOutputBlob.jpg" width="30%" height="30%" /> 
+    </p>  
+    
+    
+    TO DO FROM HERE ON!!!!!!!!!!!!!!!
+    
+    
+  4. Fill out the values in the "Blob storage" blade. 
     - Enter in any free form text for the "Output alias". eg. "BlobStorage"
-    - For the Sink, select "Blob Storage".
+    - Choose "Select Blob storage from your subscriptions". We will be connecting the ASA job to the Blob Storage account that was created when you
+    
+    you created and collecting streaming data from that existing IoT Hub
     - In "Import option", select "Select blob storage from your subscription".
     - In "Storage Account", select "Create a new storage account"
     - In "Storage Account", enter a globally unique storage account name.  eg. handsonlabstorageaccount
