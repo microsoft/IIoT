@@ -14,7 +14,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
      - if you are using the physical Sense HAT, uncomment the *from sense_hat* statement and comment the *from sense_emu* statement. To comment a statement, use the '#' character in front of the text that you are trying to comment. To uncomment, remove the '#' character. 
      - if using the Sense HAT emulator, comment the *from sense_hat* and uncomment the *from sense_emu* statement
 
-  - Next, you will provide the information required to connect your device - the Raspberry Pi to the IoT pre-configured solution:
+  - Next, you will provide the information required to connect your device - the Raspberry Pi to your provisioned IoT Hub:
     - Update the file with the primary key connection string. Look for ```connectionString = ''``` and paste in the IoT Hub "Connection string - primary key" you noted earlier. (Azure Portal -> IoT Hub -> Shared access policies -> iothubowner -> Connection string-primary key)
     - Search for ```deviceId = ''``` and paste in the Device ID you created earlier.
   - If you are editing the file on a laptop and not on the Raspberrry PI, copy ```SenseHat_IoTHub_Http_Lab_Key.py``` to your Raspberry Pi using pscp (or some other secure client to copy files). 
