@@ -5,36 +5,43 @@
   1. Select the [IoT Hub Service](https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Devices%2FIotHubs). 
   1. Click on "Add".
   1. Enter the properties for your IoT Hub.
-    1. Enter a name for your hub.  eg. TerrysFirstIoTHub
-    1. Choose the "Free" pricing tier.  This will allow you up to 5,000 messages per day.
-    1. For the Free tier, the "IoT Hub units" will default to 1.
-    1. If you have more than 1 subscription, choose the one you wish to use.
-    1. Create a new Resource group for your hub.  It can have the same name as the IoT Hub.
-    1. Select the "West US" Location.
-    1. Click the "Pin to dashboard" button.
-    1. Click the "Create" button.
+      1. Enter a name for your hub.  eg. TerrysFirstIoTHub
+      1. Choose the "Free" pricing tier.  This will allow you up to 8,000 messages per day.
+      1. For the Free tier, the "IoT Hub units" will default to 1.
+      1. If you have more than 1 subscription, choose the one you wish to use.
+      1. Create a new Resource group for your hub.  It can have the same name as the IoT Hub.
+      1. Select the "West US" Location.
+      1. Click the "Pin to dashboard" button.
+      1. Click the "Create" button.
 1. Wait for the hub to be created.  You will be notified in the "Notifications" section when it is complete.  
+      
       <p align="center">
         <img src="/HOL/IOTHubPiHackathon/images/Notifications.JPG" /> 
       </p>
+      
 1. Create (configure) your device in Azure IoT Hub.
-  1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
-  1. Click on the "Shared access policies".
-  1. Click on the "iothubowner" policy.
-  1. Copy the primary key connection string. Save the primary key connection string for later.
+    1. Click on your new IoT Hub in the [Azure Portal](https://portal.azure.com) Dashboard.
+    1. Click on the "Shared access policies".
+    1. Click on the "iothubowner" policy.
+    1. Copy the primary key connection string. Save the primary key connection string for later.
+      
       <p align="center">
         <img src="/HOL/IOTHubPiHackathon/images/IoTHubConnectionString.jpg" /> 
       </p>
-  1. Open Device Explorer
+      
+1. Open Device Explorer
   1. In the "Connection information" tab paste the primary key connection string into the "IoT Hub Connection String" text box.
   1. Click on "Update".
   1. Click on the "Management" tab.
   1. In the "Actions" section, select "Create".
   1. Enter a name for your device. Save the device name for later.
+      
       <p align="center">
         <img src="/HOL/IOTHubPiHackathon/images/DeviceExplorer.JPG" /> 
       </p>
+      
   1. Click "Create".
+  
 1. Configure the Raspberry Pi to send messages to the IoT Hub.
   1. Copy the [Python code](https://github.com/Microsoft/IIoT/blob/master/HOL/IOTHubPiHackathon/SenseHat_IoTHub_Http.py) from this HOL to a file. Save the file as ```SenseHat_IoTHub_Http.py``` and open it with a text editor such as Notepad.
     1. Alternatively you can download the file directly to your Raspberry Pi using: ```git clone https://github.com/Microsoft/IIoT/HOL/IoTHubPiHackathon.git``` and edit the ```SenseHat_IoTHub_Http.py``` using a text editor such as Nano.
