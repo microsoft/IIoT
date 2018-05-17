@@ -1,8 +1,8 @@
 At the end of the Hands on Labs, you should clean up your Azure account so that the resources provisioned do not continue to consume funds from your account. There are two options that we suggest you follow:
 
-### Option 1 - Delete the Pre-configured Solution Completely
+### Option 1 - Delete the Solution Accelerator Completely
 
-If you did not create a preconfigured solution skip this step.
+If you did not create a solution accelerator skip this step.
 
 1. Remove any functions you created. <br>
     - Click on "Function Apps" in the Azure portal  https://ms.portal.azure.com/
@@ -10,10 +10,10 @@ If you did not create a preconfigured solution skip this step.
     - Click on "Manage"
     - Click on the "Delete" button
 
-1. Delete the Remote Monitoring Pre-configured Solution completely if you are not planning to continue to work on the labs in your own time. <br />
+1. Delete the Remote Monitoring Solution Accelerator completely if you are not planning to continue to work on the labs in your own time. <br />
   - Best way to remove all the resources is through the www.azureiotsuite.com microsite
     - Navigate to www.azureiotsuite.com
-    - Click the tile for your pre-configured solution: 
+    - Click the tile for your solution accelerator: 
     
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/SolutionReady.jpg" width="50%" height="50%"/> 
@@ -38,7 +38,7 @@ If you did not create the free IoT Hub skip this step.
 ### Option 3 - Reduce the size of the running Azure services
 If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
 1. Change the IoT Hub from an S2 – Standard to an S1 – Standard.
-  - Within the pre-configured solution resource group, click on the IoT Hub service. 
+  - Within the solution accelerator resource group, click on the IoT Hub service. 
   - Navigate to Settings -> Pricing and Scale -> and change the pricing tier to S1 – Standard. Make sure to click "Save" in the top navigation.
     
       <p align="center">
@@ -46,7 +46,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
       </p> 
 
 2. Change the Storage account from Standard – GRS to Standard – LRS.
-  - Click on the pre-configured solution storage account
+  - Click on the solution accelerator storage account
   - Navigate to Settings -> Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
 
       <p align="center">
@@ -54,7 +54,7 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
       </p> 
       
 3. Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
-   - Click on the app service plans that were provisioned as part of the pre-configured solution
+   - Click on the app service plans that were provisioned as part of the solution accelerator
    - Under Settings -> Scale Up (App Service Plan), select the B1 - Basic plan and click "Select"
    - Do the same for the *-jobhost* service plan
      <p align="center">
