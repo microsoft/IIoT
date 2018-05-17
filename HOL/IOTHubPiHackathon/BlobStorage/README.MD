@@ -5,12 +5,12 @@ In this lab, we are going to create an Azure Stream Analytics job that will take
 
 ## Stop the device simulators 
 
-**This step is only relevant if you created the Remote Monitoring preconfigured solution [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md)** <BR>
-Perform this part of the module to populate Blob storage with only data coming from your physical Raspberry Pi and not the simluated devices provisioned as part of the preconfigured solution. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
+**This step is only relevant if you created the Remote Monitoring solution accelerator [(Lab 2a)](/HOL/IOTHubPiHackathon/2/README.md)** <BR>
+Perform this part of the module to populate Blob storage with only data coming from your physical Raspberry Pi and not the simluated devices provisioned as part of the solution accelerator. The following steps will stop the telemetry data flowing from the simulated devices to your IoT Hub.
 
-1. Go to the web app that was provisioned as part of the Remote Monitoring preconfigured solution.
+1. Go to the web app that was provisioned as part of the Remote Monitoring solution accelerator.
   - Navigate to the [Azure portal](https://ms.portal.azure.com)  
-  - Click the resource group icon -> click the name of the group of your Remote Monitoring solution -> click the App Service that was created when you provisioned the solution.
+  - Click the resource group icon -> click the name of the group of your Remote Monitoring solution -> click the App Service that was created when you provisioned the solution acclerator.
   
    <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/OpenWebApp.jpg" width="80%" height="80%"/> 
@@ -22,7 +22,7 @@ Perform this part of the module to populate Blob storage with only data coming f
          <img src="/HOL/IOTHubPiHackathon/images/BrowseToWebApp.jpg" width="80%" height="80%"/> 
       </p> 
 
-2. You should be at the same device dashboard as when you initially launched the preconfigured solution.
+2. You should be at the same device dashboard as when you initially launched the solution accelerator.
   - Click the 'Gear' icon in the upper right corner
   
     <p align="center">
@@ -75,63 +75,63 @@ Perform this part of the module to populate Blob storage with only data coming f
          <img src="/HOL/IOTHubPiHackathon/images/AzureNotification.jpg" width="50%" height="50%" /> 
       </p>   
   
-- Next, you will add an Input for the Stream Analytics job. 
-  - If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
-  
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/clickASABlob.jpg" width="20%" height="20%" /> 
-      </p> 
-      
-     If not, click "Resource Groups" -> Your *resource group name* -> Your *ASA name*
-      
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/BlobStorage.JPG" width="60%" height="60%" /> 
-      </p>   
-       
-  - Under the "Job Topology" category, click on "Inputs".
-  - Click "+ Add stream input".
-      
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/addInput1.jpg" width="60%" height="60%" /> 
-      </p>   
-      
-  - In the pop up menu that appears, select "IoT Hub" 
-      <p align="center">
+  - Next, you will add an Input for the Stream Analytics job. 
+    1. If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/clickASABlob.jpg" width="20%" height="20%" /> 
+        </p>
+        
+        If not, click "Resource Groups" -> Your *resource group name* -> Your *ASA name*
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/BlobStorage.JPG" width="60%" height="60%" /> 
+        </p>
+        
+    1. Under the "Job Topology" category, click on "Inputs".
+    1. Click "+ Add stream input".
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/addInput1.jpg" width="60%" height="60%" /> 
+        </p>   
+        
+    1. In the pop up menu that appears, select "IoT Hub". 
+        
+        <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/selectIoTHub.jpg" width="30%" height="30%" /> 
-      </p>   
-    
-  - In the "New Input" blade that appears, fill in the fields:
-    - Input Alias: This is a free form text name for the input to the ASA job. eg. "IoTHub"
-    - Choose "Select IoT Hub from your subscriptions". We will be connecting the ASA job to the IoT Hub you created and collecting streaming data from that existing IoT Hub
-    - Subscription: Choose the name of your IoT Hub from your current subscription
-    - IoT Hub: Choose the IoT Hub you have been using for the lab
-    - Endpoint: Messaging
-    - Shared Access Policy Name: iothubowner
-    - Consumer Group: asa (we created this earlier)
-    - Event Serialization Format: JSON
-    - Encoding: UTF-8
-    - Event Compression Type: None
-    - Click "Save" and wait for the input to be created. 
+        </p>   
+        
+    1. In the "New Input" blade that appears, fill in the fields:
+      - Input Alias: This is a free form text name for the input to the ASA job. eg. "IoTHub"
+      - Choose "Select IoT Hub from your subscriptions". We will be connecting the ASA job to the IoT Hub you created and collecting streaming data from that existing IoT Hub
+      - Subscription: Choose the name of your IoT Hub from your current subscription
+      - IoT Hub: Choose the IoT Hub you have been using for the lab
+      - Endpoint: Messaging
+      - Shared Access Policy Name: iothubowner
+      - Consumer Group: asa (we created this earlier)
+      - Event Serialization Format: JSON
+      - Encoding: UTF-8
+      - Event Compression Type: None
+      - Click "Save" and wait for the input to be created. 
     
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/ASANewInput.jpg" width="30%" height="30%" /> 
     </p>   
   
-- Next, add an Output for the Stream Analytics job.
-  1. First we need to create a new Storage account for the data to be streamed to.
-    - Click on "+ Create a resource"
-  
-     <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
-      </p> 
-      
-    - In the "Search the marketplace" blade, type in "storage account". Click on the "Storage account - blob, file, table, queue" option that shows up. Click "Create".
-  
-     <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount.jpg" width="40%" height="40%" /> 
-     </p> 
-     
-    - In the "Create storage account" blade enter the following. 
+  - Next, create a Blob Storage account for the Stream Analytics job to stream data to.
+    1. Click on "+ Create a resource".
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/CreateAResource.jpg" width="30%" height="30%"/> 
+        </p>
+        
+    1. In the "Search the marketplace" blade, type in "storage account". Click on the "Storage account - blob, file, table, queue" option that shows up. Click "Create".
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount.jpg" width="40%" height="40%" /> 
+        </p> 
+        
+    1. In the "Create storage account" blade enter the following. 
       - Enter a name for your atorage account. this name must be unique across all existing storage account names in Azure. eg. "<your-initials>iotholstorageaccount" 
       - Leave "Resource manager" as the Deployment model. 
       - Leave "Storage (general purpose v1)" as the Account Kind.
@@ -143,78 +143,77 @@ Perform this part of the module to populate Blob storage with only data coming f
       - Leave "Virtual Networks" disabled. Enabling this will grant access to the storage account from only a specified virtual network and subnets.
       - Click "Create".
       
-     <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount1.jpg" width="30%" height="40%" /> 
-     </p>
-  
-  
-  2. Navigate back to the Stream Analytics Job you created ("Resource Groups" -> *Your resource group name* -> *Your ASA name*). 
-  
-    - In the Stream Analytics blade under the "Job Topology" category, click on "Outputs". 
-        
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/addOutput.jpg" width="50%" height="50%" /> 
-      </p>   
-  
-  3. Click "+ Add" in the blade to the right. In the pop up menu that appears select "Blob storage".
-    
-    <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/SelectASAOutputBlob.jpg" width="30%" height="30%" /> 
-    </p>      
-    
-  4. Fill out the values in the "Blob storage" blade. 
-    - Enter in any free form text for the "Output alias". eg. "BlobStorage"
-    - Choose "Select Blob storage from your subscriptions". We will be connecting the ASA job to the Blob Storage account that you just created.
-    - Choose the subscription that you created your storage account in.
-    - Choose the Storage account that you just created in the previous steps.
-    - For "Container", select "Create new" and enter "iotdata"
-    - In "Path pattern", enter "data/{date}/{time}"
-    - Keep all the remaining options set to their default values.
-    - Click "Save". 
-    
-    <p align="center">
-       <img src="/HOL/IOTHubPiHackathon/images/SABlobOutput.jpg" width="30%" height="30%" /> 
-    </p>      
-           
-- Next lets create an ASA Query.
-  1. In the Stream Analytics job blade, under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
-  2. Enter the following query: (Note, if you named your Input and Output bindings something different then you will have to update the query parameters so that they correspond correctly)  
-  
-  
-```
-    SELECT 
-      * 
-    INTO  
-      [BlobStorage] 
-    FROM 
-      [IoTHub] 
-```  
-
-  1. Click "Save". 
-  1. If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button.
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/ASAQueryBlob.jpg" width="50%" height="50%" /> 
-      </p>      
-       
-- Start the ASA Job
-  1. Click on "Overview" 
-  1. Click "Start"
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/startASA.jpg" width="50%" height="50%" /> 
-      </p>  
+        <img src="/HOL/IOTHubPiHackathon/images/NewStorageAccount1.jpg" width="30%" height="40%" /> 
+      </p>
       
-  1. For the "Job output start time", click "Now"
-  1. Click "Start"
-   
+      
+  - Now we need to add the Blob Storage as Output for the Stream analytics job. Navigate back to the Stream Analytics Job you created ("Resource Groups" -> *Your resource group name* -> *Your ASA name*). 
+    1. In the Stream Analytics blade under the "Job Topology" category, click on "Outputs".
+        
+        <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/addOutput.jpg" width="50%" height="50%" /> 
+        </p>   
+        
+    1. Click "+ Add" in the blade to the right. In the pop up menu that appears select "Blob storage".
+        
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/SelectASAOutputBlob.jpg" width="30%" height="30%" /> 
+        </p>      
+        
+    1. Fill out the values in the "Blob storage" blade. 
+      - Enter in any free form text for the "Output alias". eg. "BlobStorage"
+      - Choose "Select Blob storage from your subscriptions". We will be connecting the ASA job to the Blob Storage account that you just created.
+      - Choose the subscription that you created your storage account in.
+      - Choose the Storage account that you just created in the previous steps.
+      - For "Container", select "Create new" and enter "iotdata"
+      - In "Path pattern", enter "data/{date}/{time}"
+      - Keep all the remaining options set to their default values.
+      - Click "Save". 
+      
       <p align="center">
+        <img src="/HOL/IOTHubPiHackathon/images/SABlobOutput.jpg" width="30%" height="30%" /> 
+      </p>      
+      
+  - Next lets create an ASA Query.
+    1. In the Stream Analytics job blade, under the "Job Topology" category, click on "Query". The inline query editing tool will already have some stub code inserted. You will make some modifications to the query. 
+    1. Enter the following query: (Note, if you named your Input and Output bindings something different then you will have to update the query parameters so that they correspond correctly)  
+        
+        ```
+          SELECT 
+              * 
+          INTO  
+              [BlobStorage] 
+          FROM 
+              [IoTHub] 
+        ```  
+        
+    1. Click "Save". 
+    1. If you wish to run a test on your newly generated query, you will need to upload some sample data that the ASA Query tool will use to run the query. To generate a sample file, you can either manually generate your own file or get a sampling of data from the IoT Hub input. Click the elipses (...) beside the IoTHub input and click "Sample data from input" to start collecting data. Click the "Upload sample data from file" option once you have created a sample file and then run the query test by clicking the "Test" button.
+        
+        <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/ASAQueryBlob.jpg" width="50%" height="50%" /> 
+        </p>      
+        
+  - Start the ASA Job
+    1. Click on "Overview".
+    1. Click "Start".
+        
+        <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/startASA.jpg" width="50%" height="50%" /> 
+        </p>
+        
+    1. For the "Job output start time", click "Now".
+    1. Click "Start".
+        
+        <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/startASA2.jpg" width="50%" height="50%" /> 
-      </p>  
-          
+        </p>  
+        
+        
 ## View IoT blob data in the Azure Portal
 
-  1. Click "Resource Groups" -> Your *resource group name* -> Your *blob storage account name* (eg. "handsonlabstorageaccount")
+  1. Click "Resource Groups" -> Your *resource group name* -> Your *blob storage account name* (eg. "iotholstorageaccount")
       
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/BlobStorage.JPG" /> 
