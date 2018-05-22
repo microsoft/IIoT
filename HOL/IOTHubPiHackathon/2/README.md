@@ -2,9 +2,9 @@ In the following section of the Hands on Lab, you will walk through the creation
 
 ## Create a Remote Monitoring Solution Accelerator
 1. Setup your Azure IoT Suite remote monitoring solution accelerator. You will use this solution accelerator for the duration of the labs to help with visualization of the data and other IoT functions. 
-  - Go to the Microsoft IoT Suite microsite [https://www.azureiotsuite.com/](https://www.azureiotsuite.com/).
+  - Go to the Microsoft IoT Solution Accelerators microsite [https://www.azureiotsolutions.com/](https://www.azureiotsolutions.com/).
   - Log in using your Azure subscription credentials. 
-  - Navigate to the Remote Montioring Solution Accelerator and click on "Try Now".
+  - Navigate to the Remote Monitoring Solution Accelerator and click on "Try Now".
         <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/selectRMS.png" /> 
       </p>
@@ -16,6 +16,16 @@ In the following section of the Hands on Lab, you will walk through the creation
        <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMPCS.jpg" width="50%" height="50%" /> 
       </p>
+    - Take note of the list of resources that get provisioned as part of the process. At the time of writing this document, the following Azure services get created in the Azure subscription that you specified (and therefore will incur some cost):
+      - 1 Azure Active Directory application
+      - 1 Virtual Machine (Standard D1 V2 (1 core, 3.5 GB memory))
+      - 1 IoT Hub (S1 - Basic tier)
+      - 1 Cosmos DB Account (Standard)
+      - 1 Storage account (Standard-GRS)
+      - 1 Web Application 
+      - 1 Azure Maps account (Standard)
+      - 1 Azure Stream Analytics (3 streaming units)
+
    - While the remote monitoring solution is being provisioned, you can see the provisioning state and logging information by clicking on the solution 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/ProvisioningState.jpg" /> 
@@ -67,10 +77,11 @@ Consumer groups are a key element in Azure event ingestion services that allow c
       </p>
 
 5. Create a new custom device within the IoT Solution Accelerator. 
-  - At the top left of the portal, click the "Devices" button. 
+  - At the top left of the portal in the navigation bar, click the "Devices" button. 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMDashboardwArrow.jpg"/> 
       </p>
+  - Click the '+ New Device' button in the top right corner
   - Under device type, select physical. The custom device that you will add is the physical Raspberry Pi. 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/AddNewCustomDevice.jpg"/> 
@@ -78,19 +89,21 @@ Consumer groups are a key element in Azure event ingestion services that allow c
   - Under Device ID, create a custom Device ID. Enter in a device ID eg. MyRaspberryPi. 
   
   - Leave the Authentication Type as Symmetric Key.
+  (Note: Communication between IoT devices and the IoT Hub can be secured using two methods. In these labs, we will use SAS based tokens but a higher level of security can be provided through the use of X.509 based certificates. See the following for best practices on securing your [IoT Architecture] (https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-security-deployment).
   
-  - Select Auto Generate Keys under Authentican Key.
+  - Select Auto Generate Keys under "Authentication Key".
   
-  - Select Apply.
+  - Click "Apply".
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/CustomDeviceParams.jpg"/> 
       </p>
      
   - Take note of your Device ID, as you will need this later. Feel free to use the parameters template provided earlier.
+  - Click "Close"
       
   - As a final step in this lab, add a high temperature limit to your physical device. 
-    - Select the checkbox of the physical device you created.. 
-    - Select "Jobs".
+    - Click the checkbox of the physical device you created. 
+    - Click the "Jobs" button.
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/twinTag1.jpg" /> 
     </p>
