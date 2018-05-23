@@ -8,7 +8,7 @@ We will leverage an open source application called "Node Version Manager" (NVM),
   - You may need to refresh your .bashrc file environment:  
     ```source ~/.bashrc```
 
-2. Now you can install a specific version of Node at anytime.  At the time of writting this document, 8.11.1 is the latest stable Long Term Support (LTS) release. For example, to install Node 8.11.1 run the following command:  
+2. Now you can install a specific version of Node at anytime.  At the time of writing this document, 8.11.1 is the latest stable Long Term Support (LTS) release. For example, to install Node 8.11.1 run the following command:  
 ```nvm install 8.11.1```  
   - This will install Node 8.11.1
   - If this is your first time running ```nvm install``` it will make ```8.11.1``` your default Node version  
