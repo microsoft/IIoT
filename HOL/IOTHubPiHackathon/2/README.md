@@ -88,7 +88,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
       </p>
   - Under Device ID, create a custom Device ID. Enter in a device ID eg. MyRaspberryPi. 
   
-  - Leave the Authentication Type as Symmetric Key.
+  - Leave the Authentication Type as Symmetric Key.<BR>
   (Note: Communication between IoT devices and the IoT Hub can be secured using two methods. In these labs, we will use SAS based tokens but a higher level of security can be provided through the use of X.509 based certificates. See the following for best practices on securing your [IoT Architecture] (https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-security-deployment).
   
   - Select Auto Generate Keys under "Authentication Key".
@@ -101,16 +101,18 @@ Consumer groups are a key element in Azure event ingestion services that allow c
   - Take note of your Device ID, as you will need this later. Feel free to use the parameters template provided earlier.
   - Click "Close"
       
-  - As a final step in this lab, add a high temperature limit to your physical device. 
+  - As a final step in this part of the lab, you will add a tag that will be used by the app backend to define a property on the device. This tag will be a high temperature limit that will serve as a high temperature threshold that will trigger a message to be sent to your to your physical device later in the lab. 
     - Click the checkbox of the physical device you created. 
     - Click the "Jobs" button.
     <p align="center">
        <img src="/HOL/IOTHubPiHackathon/images/twinTag1.jpg" /> 
     </p>
     
+    - Keep the "Tag" radio button selected under the "Select job" header.
+    - Provide the job a name. eg. SetHighTemp
     - Click "+ Add Tag".
     
-    - Add a new parameter "tags.HighTemperatureLimit" under "TAGS".  Set it to 40 and make it of data type "Number".
+    - Add a new parameter "HighTemperatureLimit" under the "KEY" header.  Set the value to 40 and make it of data type "Number".
     
     - Click " Apply ".
     
