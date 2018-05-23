@@ -37,12 +37,15 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
      ![ls -l](/HOL/IOTHubPiHackathon/images/ListFiles.jpg)
   
 2.  Now, lets send messages from the Raspberry Pi to the IoT Hub.
-  - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator)
+  - If you are using the Sense HAT Emulator, start it now (Open a VNC session to the Raspberry Pi: Start -> Programming -> Sense HAT emulator). The Python script will error out if the Emulator is not running. 
   - Start sending messages by invoking the Python script on the Pi <br/>
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
-  - Next run iothub-explorer on your laptop to view the incoming telemetry and send messages to our Pi via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions. To start, login using the following command:
+  - Next run iothub-explorer on your laptop to view the incoming telemetry and send messages to the Pi via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions.
+  Note: if you are running on Windows and want a GUI based option, you can use the [device explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2018-3-13/SetupDeviceExplorer.msi). For simplicity, the instructions below do not document the steps that would be taken with the device explorer but performing the steps below using the GUI based device explorer should be easy to follow.  
+  
+  To start, login using the following command:
       ```
       iothub-explorer login "<iothubowner connection-string>"
       ```
@@ -66,7 +69,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       iothub-explorer monitor-events <device id> --login "<iothubowner connection-string>" --consumer-group "deviceexplorer"
       ```
   
-    (Note: the consumer group "deviceexplorer" was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently)  
+    (Note: the consumer group "deviceexplorer" was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently as they read off of the IoT Hubs queue)  
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
@@ -78,6 +81,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
       </p>  
+      In this step, you are using the IoTHub-explorer as a backend service to send a message to the IoT hub. IoT hub receives the message, queues it and sends the message down to the device using a C2D (Cloud-to-Device) command. In the Azure functions lab, you will be creating a script that will monitor telemetry values from the Raspberry Pi and any time that a value goes above the set threshold, the function will be used to send a message down to the Pi. 
   
 - On your Sense HAT, you should see the message appear on the display. (If you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
     ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
