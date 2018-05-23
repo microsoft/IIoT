@@ -57,6 +57,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
 3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own groups.
   - "deviceexplorer"
   - "asa"
+  4. Click save in the top left hand corner of the blade.
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/consumerGroups.jpg" /> 
       </p>
