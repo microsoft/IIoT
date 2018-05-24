@@ -35,25 +35,11 @@ If you did not create the free IoT Hub skip this step.
 1. Enter the name of the resource group.  <b>Be sure not to delete any resource groups you did not create!</b>
 1. Click "Delete".
 
+<!--
 ### Option 3 - Reduce the size of the running Azure services
 If you plan on using the PCS after this lab, you can leave it running but it's recommended that you reduce the size/scale of some of the resources so that the services consume less from your subscription. 
-1. Change the IoT Hub from an S2 – Standard to an S1 – Standard.
-  - Within the solution accelerator resource group, click on the IoT Hub service. 
-  - Navigate to Settings -> Pricing and Scale -> and change the pricing tier to S1 – Standard. Make sure to click "Save" in the top navigation.
-    
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/reduceIoTHub.jpg" width="90%" height="90%"/> 
-      </p> 
 
-2. Change the Storage account from Standard – GRS to Standard – LRS.
-  - Click on the solution accelerator storage account
-  - Navigate to Settings -> Configuration. Select Locally-redundant storage (LRS). Make sure to click Save in the top navigation.
-
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/reduceStorage.jpg" width="90%" height="90%"/> 
-      </p> 
-      
-3. Change the App Service plans from S1 - Standard to B1 – Basic. Note that there’s two app services to scale down. 
+1. Change the App Service plans from S1 - Standard to B1 – Basic. Note that you cannot go down to the F1 - Free tier as we need the custom domain feature that is available with the B1 tier. Note that there’s two app services to scale down. 
    - Click on the app service plans that were provisioned as part of the solution accelerator
    - Under Settings -> Scale Up (App Service Plan), select the B1 - Basic plan and click "Select"
    - Do the same for the *-jobhost* service plan
@@ -61,12 +47,12 @@ If you plan on using the PCS after this lab, you can leave it running but it's r
          <img src="/HOL/IOTHubPiHackathon/images/reduceAppService.jpg" width="90%" height="90%"/> 
       </p>   
       
-4. Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
+2. Pause the simulated devices. The simulated devices run in a web job. To completely halt generation of new data when not in use, you can stop the web job in which the simulated devices are running.
   - From within the jobhost service plan, select Settings -> Webjobs. 
   - Right-click the "DeviceSimulator-Webjob" webjob. Click "Stop". 
 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/pauseSimulatedDevices.jpg" width="90%" height="90%"/> 
       </p> 
-
+-->
 
