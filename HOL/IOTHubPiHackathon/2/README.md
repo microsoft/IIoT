@@ -71,7 +71,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMSignIn.jpg" width="50%" height="50%"/> 
       </p>
-3. If the following page requires you to accept the terms and conditions, click "I Agree". 
+3. If the following page requires you to accept the terms and conditions, click "Accept". 
 4. You will now have access to your created remote monitoring solution accelerator. Feel free to browse around and review the features available in the solution accelerator. 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMDashboard.jpg"/> 
