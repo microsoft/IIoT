@@ -189,6 +189,7 @@ Perform this part of the module if you wish to populate your PowerBI report with
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.jpg" width="80%" height="80%" /> 
       </p>  
+
       
 4.  Click the "Create Report" icon to create a new Power BI report using this dataset.
       
