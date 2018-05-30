@@ -33,7 +33,7 @@ You can order your hardware from a variety of online sites such as adafruit.com,
 - If using a Windows based system, install [device explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2018-3-13/SetupDeviceExplorer.msi). If using a Mac or Linux system, install [iothub-explorer](https://github.com/azure/iothub-explorer). You will use these tools to view the telemetry coming in from your Raspberry Pi into the IoT Hub. iothub-explorer is a command line based version of the device explorer (which runs on Windows based systems only)
 
 ### OTHERS 
-- An Azure subscription with permissions to create Azure services.  You can use a free Azure account, but you will not be able to complete all paths of the lab.  The free account does not allow the creation of preconfigured solutions.  OPTIONAL: A corporate Azure subscription. This is required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
+- An Azure subscription with permissions to create Azure services.  You can use a free Azure account, but you will not be able to complete all paths of the lab.  The free account does not allow the creation of solution accelerators.  OPTIONAL: A corporate Azure subscription. This is required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
 - OPTIONAL A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 
@@ -51,7 +51,7 @@ The following subsections of the Hands on Labs are as follows:
  * [1 - Hands on Lab Setup](/HOL/IOTHubPiHackathon/1)
 
  * 2 - Provision **ONE** of the following:<br>
-   * a) [A Remote Monitoring Pre-configured Solution](/HOL/IOTHubPiHackathon/2), <BR>
+   * a) [A Remote Monitoring Solution Accelerator](/HOL/IOTHubPiHackathon/2) <BR>
    **OR**<br>
    * b) [An IoT Hub](/HOL/IOTHubPiHackathon/2b)<br>
 

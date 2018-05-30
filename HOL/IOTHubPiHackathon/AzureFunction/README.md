@@ -30,7 +30,7 @@ For ease of getting through the lab, we have provided the code that you will nee
 4.	Fill out the required values to create a function <br>
   - Provide the function app a name (eg. functionC2DHoL)
   - Select your Azure subscription
-  - If given an option to choose between "Windows" and "Linux" as the OS, choose "Windows" (at the time of publishing this lab update, Linux was still in Preview)
+  - If given an option to choose between "Windows", "Linux" and "Docker" as the OS, choose "Windows" (At the time of this publication, Linux was still in preview)
   - Select your existing subscription that you are using for the hands on lab
   - For hosting plan, select “consumption plan”
   - For location, choose the closest data centre (eg. East US)
@@ -107,7 +107,7 @@ If you recall in lab 2, you created a tag parameter called tags.HighTemperatureL
 2. Try to get the temperature of the Sense HAT above the threshold value (if set to the instructed value, you should be trying to get the temperature above 40C)
 
 If you are having difficulties getting the temperature on your physical Sense HAT over the threshold, you can do one of the following:
-- Lower the threshold in the device twin for the RaspberryPi device. You can do this in the preconfigured solution portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
+- Lower the threshold in the device twin for the RaspberryPi device. You can do this in the solution accelerator portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
 - Update your Python script to use the Sense Hat emulator instead of the physical board. Using the Sense HAT emulator will allow you to virtually control the temperature (and other properties)
 <BR>
 
