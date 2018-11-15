@@ -52,3 +52,4 @@ The following steps will walk you through the installation of tools that you nee
 1. OPTIONAL if using a laptop and the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 1. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
 
+[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
