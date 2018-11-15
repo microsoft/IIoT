@@ -7,7 +7,7 @@ In the following section of the Hands on Lab, you will walk through the creation
   - Click on the "Remote Monitoring Solution" Accelerator.
         ![remote monitoring](/HOL/IOTHubPiHackathon/images/selectRMS.png)
   - Click on "Try Now"
-        ![remote monitoring try now](/HOL/IOTHubPiHackathon/images/RemoteMonitoringTryNow.png)
+        ![remote monitoring try now](/HOL/IOTHubPiHackathon/images/RemoteMonitoringTryNow.PNG)
   - Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
     - Choose the subscription that you will be using eg. Visual Studio Enterprise with MSDN
