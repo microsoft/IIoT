@@ -4,10 +4,10 @@ In the following section of the Hands on Lab, you will walk through the creation
 1. Setup your Azure IoT Suite remote monitoring solution accelerator. You will use this solution accelerator for the duration of the labs to help with visualization of the data and other IoT functions. 
   - Go to the Microsoft IoT Solution Accelerators microsite [https://www.azureiotsolutions.com/](https://www.azureiotsolutions.com/).
   - Log in using your Azure subscription credentials. 
-  - Navigate to the Remote Monitoring Solution Accelerator and click on "Try Now".
-        <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/selectRMS.png" /> 
-      </p>
+  - Click on the "Remote Monitoring Solution" Accelerator.
+        ![remote monitoring](/HOL/IOTHubPiHackathon/images/selectRMS.png)
+  - Click on "Try Now"
+        ![remote monitoring try now](/HOL/IOTHubPiHackathon/images/RemoteMonitoringTryNow.png)
   - Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
     - Choose the subscription that you will be using eg. Visual Studio Enterprise with MSDN
