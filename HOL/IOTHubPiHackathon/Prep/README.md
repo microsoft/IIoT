@@ -48,7 +48,6 @@ You will need to walk through the following steps on your Raspberry Pi prior to 
 The following steps will walk you through the installation of tools that you need to run on your laptop for this lab: 
 
 1. Install [nodejs](https://nodejs.org/en/download/).  This is a prerequisite for iothub-explorer.
-1. Install [iothub-explorer](https://github.com/azure/iothub-explorer).  This tool is used to view telemetry coming into the IoT Hub.
 1. OPTIONAL if using a laptop, download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
 1. OPTIONAL if using a laptop and the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 1. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
