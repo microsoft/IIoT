@@ -56,7 +56,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
 1. Under the "Messaging" subsection, select "Endpoints"
 2. Click on the "Events" endpoint
 3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own groups.
-  - "deviceexplorer"
+  - "monitor"
   - "asa"
   4. Click save in the top left hand corner of the blade.
       <p align="center">
