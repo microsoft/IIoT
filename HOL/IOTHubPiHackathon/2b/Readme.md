@@ -64,8 +64,9 @@ Now we will configure a device in the IoT Hub for your Raspberry Pi.
    1. Authentication Type.  Choose "Symmetric Key"
    1. Check "Auto Generate Keys"
    1. Select "Enable" for "Connect Device to IoT Hub"
+   1. Do not set a parent Device.
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubParams.JPG" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/CreateDevice.png /> 
       </p>
    1. Click on Save
    
