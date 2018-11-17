@@ -100,7 +100,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
          <img src="/HOL/IOTHubPiHackathon/images/CustomDeviceParams.jpg"/> 
       </p>
      
-  - Take note of your Device ID, as you will need this later. Feel free to use the parameters template provided earlier.
+  - Take note of your Device ID and Connection String, as you will need these later. Feel free to use the parameters template provided earlier.
   - Click "Close"
       
   - As a final step in this part of the lab, you will add a tag that will be used by the app backend to define a property on the device. This tag will be a high temperature limit that will serve as a high temperature threshold that will trigger a message to be sent to your to your physical device later in the lab. 
