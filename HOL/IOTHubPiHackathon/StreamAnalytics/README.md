@@ -184,43 +184,42 @@ Perform this part of the module if you wish to populate your PowerBI report with
           
 ## View Telemetry data in Power BI
 1. Open Power BI in a web browser - https://powerbi.microsoft.com
-2. Sign in.
-3. Go to the bottom of the bar on the left.  Expand "My Workspace" and select "Datasets" to see the dataset you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset). If you don't see the dataset that you created in the list, it's likely that no data has been streamed into your ASA job yet. Make sure that your ASA job has started and that there's input and output events showing up in your monitoring graph. Ask an instructor for assistance if you have any issues with this. 
+1. Sign in.
+1. Go to the bottom of the bar on the left.  Expand "My Workspace" and select "Datasets" to see the dataset you configured in Azure Stream Analytics (eg. Raspberry Pi Dataset). If you don't see the dataset that you created in the list, it's likely that no data has been streamed into your ASA job yet. Make sure that your ASA job has started and that there's input and output events showing up in your monitoring graph. Ask an instructor for assistance if you have any issues with this. 
    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/PowerBILab.jpg" width="80%" height="80%" /> 
       </p>  
 
-      
-4.  Click the "Create Report" icon to create a new Power BI report using this dataset.
-      
-       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/CreatePowerBIReport.jpg" width="80%" height="80%" /> 
-      </p>  
-      
-4. In the "Fields" bar (far right), select EventEnqueuedUtcTime and Temperature
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Fields.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-5. Select "Line Chart" from the visualizations.  You now see your Pi data in a line chart.
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/SelectLineChart.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-6. Save your report.
-7. Click on the "Pin Visual" button on the chart
-   
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/Pin.jpg" width="50%" height="50%" /> 
-      </p>  
-      
-8. Click on "New Dashboard".
-9. Type in a name for your dashboard.  eg. "Raspberry Dashboard"
-10. Your trend is now viewable on a dashboard.  You may add more fields and visualizations if you like or view this dashboard from the Power BI mobile app.
+1. Click on "My Workspace".  Click on the "Dashboards" tab, and select "+ Create" from the top right corner.  Choose "Dashboard"
 
+      ![New Dashboard](/HOL/IOTHubPiHackathon/images/PowerBINewDashboard.PNG)
+
+1. Give the dashboard a name.  eg. "Lab Dashboard"
+
+      ![New Dashboard](/HOL/IOTHubPiHackathon/images/PowerBINameDashboard.PNG)
+
+1. Click on "Add tile" and select "REAL-TIME DATA".  Select "Next".
+
+      ![New Tile](/HOL/IOTHubPiHackathon/images/PowerBINewTile.PNG)
+
+1. Click on the dataset you created under "YOUR DATASETS".  Select "Next".
+
+      ![Select Dataset](/HOL/IOTHubPiHackathon/images/PowerBIYourDataset.PNG)
+      
+1. Under "Visualization Type", select "Line chart".  Under "Axis", select "EventEnqueuedUtcTime". Under "Values" select "Temperature".  Select an appropriate time window. eg. 1-5 minutes.  Select "Next".
+
+      ![Configure Tile](/HOL/IOTHubPiHackathon/images/PowerBITileConfig.PNG)
+      
+1. Give your tile a title.  eg. "Real-time Raspberry Pi temperature".  Select "Apply".      
+
+      ![Tile Details](/HOL/IOTHubPiHackathon/images/PowerBITileDetails.PNG)
+
+1. Ignore the phone configuration by clicking on the "X" to close the window.
+
+1. You are now viewing your Raspberry Pi temperature data in (near) real time.
+
+      ![Real Time Data](/HOL/IOTHubPiHackathon/images/PowerBIRealTimeData.PNG)
 
 [Next lab - 5 Azure Functions](/HOL/IOTHubPiHackathon/AzureFunction)
 
