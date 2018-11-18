@@ -45,7 +45,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   
   - Next use the az CLI to look at the messages coming into the IoT Hub.  Click on the "Cloud Shell" button on the menu bar across the top of the [Azure Portal](http://portal.azure.com) in your browser.  Enter the following command with your  iot hub name and device id. If the system requires you to login, enter ```az login```.
   
-    ![Cloud Shell](HOL/IOTHubPiHackathon/images/AzureToolBar.JPG)
+    ![Cloud Shell](/HOL/IOTHubPiHackathon/images/AzureToolBar.JPG)
 
     ```bash
     # Will show messages coming in from your device.  To see  messages coming in from all devices, 
@@ -53,7 +53,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
     az iot hub monitor-events --hub-name <iot-hub-name> --consumer-group monitor --device-id <device-id>
     ```
     
-   ![Cloud Shell](HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
+   ![Monitor Device](/HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
 
     Here are some additional az CLI commands you can try
     
