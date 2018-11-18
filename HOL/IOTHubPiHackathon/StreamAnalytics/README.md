@@ -76,7 +76,8 @@ Perform this part of the module if you wish to populate your PowerBI report with
          <img src="/HOL/IOTHubPiHackathon/images/AzureNotification.jpg" width="50%" height="50%" /> 
       </p>   
   
-- Next, you will add an Input for the Stream Analytics job.  
+- Next, you will add an Input for the Stream Analytics job. 
+  - Click on "Go to Resource", or
   - If you pinned the ASA service to the dashboard, you will see the ASA tile on the main Azure portal page. Click it. 
       
       <p align="center">
