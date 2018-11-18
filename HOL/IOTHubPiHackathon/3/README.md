@@ -45,31 +45,34 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
   
   - Next use the az CLI to look at the messages coming into the IoT Hub.  Click on the "Cloud Shell" button on the menu bar across the top of the [Azure Portal](http://portal.azure.com) in your browser.  Enter the following command with your  iot hub name and device id. If the system requires you to login, enter ```az login```.
   
-    ![Cloud Shell](images/AzureToolBar.JPG)
+    ![Cloud Shell](HOL/IOTHubPiHackathon/images/AzureToolBar.JPG)
 
     ```bash
-    # Will show messages coming in from your device.  To see  messages coming in from all devices, remove the '--device-id' param.
-    # Note that we are using the 'monitor' consumer group that we created earlier in this lab
+    # Will show messages coming in from your device.  To see  messages coming in from all devices, 
+    # remove the '--device-id' param. We are using the 'monitor' consumer group that we created earlier in this lab
     az iot hub monitor-events --hub-name <iot-hub-name> --consumer-group monitor --device-id <device-id>
     ```
-  Note: if you are running on Windows and want a GUI based option, you can use the [device explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2018-3-13/SetupDeviceExplorer.msi). For simplicity, the instructions below do not document the steps that would be taken with the device explorer but performing the steps below using the GUI based device explorer should be easy to follow.  
-  
-    (Note: the consumer group "deviceexplorer" was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently as they read off of the IoT Hubs queue)  
     
-    
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
-      </p>
+   ![Cloud Shell](HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
 
-  
-- To send a message to your Raspberry PI via the IoT Hub, enter the following:  
+    Here are some additional az CLI commands you can try
+    
+    ```bash
+    # Show the details of a device
+    az iot hub device-identity show --hub-name <hub-name> --device-id <device-id>
+
+    # List the devices in an IoT Hub
+    az iot hub device-identity list --hub-name <hub-name>
+
+    # Retrieve the connection string for an individual device.  Why would it be better to use a connection string
+    # for an individual device than one that works for all devices?
+    az iot hub device-identity show-connection-string --hub-name <hub-name> --device-id <device-id>
+    ```
+  - To send a message to your Raspberry PI via the IoT Hub, enter the following:  
       ```
-      iothub-explorer send <device id> Hello --ack=full
+      az iot device c2d-message send --hub-name <hub-name> --device-id <device-id> --data Hello
       ```  
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerSend.JPG" width="100%" height="100%" /> 
-      </p>  
-      In this step, you are using the IoTHub-explorer as a backend service to send a message to the IoT hub. IoT hub receives the message, queues it and sends the message down to the device using a C2D (Cloud-to-Device) command. In the Azure functions lab, you will be creating a script that will monitor telemetry values from the Raspberry Pi and any time that a value goes above the set threshold, the function will be used to send a message down to the Pi. 
+      In this step, you are using the az CLI as a backend service to send a message to the IoT hub. IoT hub receives the message, queues it and sends the message down to the device using a C2D (Cloud-to-Device) command. In the Azure functions lab, you will be creating a script that will monitor telemetry values from the Raspberry Pi and any time that a value goes above the set threshold, the function will be used to send a message down to the Pi. 
   
 - On your Sense HAT, you should see the message appear on the display. (If you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
     ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
