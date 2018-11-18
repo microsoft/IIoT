@@ -53,7 +53,7 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
     az iot hub monitor-events --hub-name <iot-hub-name> --consumer-group monitor --device-id <device-id>
     ```
     
-   ![Monitor Device](/HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
+    ![Monitor Device](/HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
 
     Here are some additional az CLI commands you can try
     
