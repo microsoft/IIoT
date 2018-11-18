@@ -42,34 +42,21 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```
       pi@raspberrypi:~ $ python SenseHat_IoTHub_Http_Lab_Key.py
       ```
-  - Next run iothub-explorer on your laptop to view the incoming telemetry and send messages to the Pi via the IoT Hub. If you haven't installed iothub-explorer follow [these](/HOL/IOTHubPiHackathon/3/install_node_and_iot_explorer.md) instructions.
+  
+  - Next use the az CLI to look at the messages coming into the IoT Hub.  Click on the "Cloud Shell" button on the menu bar across the top of the [Azure Portal](http://portal.azure.com) in your browser.  Enter the following command with your  iot hub name and device id. If the system requires you to login, enter ```az login```.
+  
+    ![Cloud Shell](images/AzureToolBar.JPG)
+
+    ```bash
+    # Will show messages coming in from your device.  To see  messages coming in from all devices, remove the '--device-id' param.
+    # Note that we are using the 'monitor' consumer group that we created earlier in this lab
+    az iot hub monitor-events --hub-name <iot-hub-name> --consumer-group monitor --device-id <device-id>
+    ```
   Note: if you are running on Windows and want a GUI based option, you can use the [device explorer](https://github.com/Azure/azure-iot-sdk-csharp/releases/download/2018-3-13/SetupDeviceExplorer.msi). For simplicity, the instructions below do not document the steps that would be taken with the device explorer but performing the steps below using the GUI based device explorer should be easy to follow.  
   
-  To start, login using the following command:
-      ```
-      iothub-explorer login "<iothubowner connection-string>"
-      ```
-      
-      (Make sure to replace the \<iothubowner connection-string\> text with the actual connection string that you obtained previously.
-  The connection string should be in the format HostName=*URL*;SharedAccessKeyName=iothubowner;SharedAccessKey=*key*)
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerLogin.JPG" width="100%" height="100%" /> 
-      </p>
-  - To view the IoT Hub attributes of your device, enter the following:
-      ```
-      iothub-explorer get <device id> --<iothubowner connection-string>
-      ```
-      
-      (Replace the \<device id\> text with the actual device id that you named your Pi previously)
-      <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerGet.JPG" width="100%" height="100%" /> 
-      </p>
-  - To view telemetry coming in from your Raspberry Pi into the ioT Hub, enter the following. Use double quotes for Windows, and single quotes for Linux.
-      ```
-      iothub-explorer monitor-events <device id> --login "<iothubowner connection-string>" --consumer-group "deviceexplorer"
-      ```
-  
     (Note: the consumer group "deviceexplorer" was created in the previous lab. This consumer group provides you with the ability to consume from the event stream using multiple consumers, enabling those consumers to act independently as they read off of the IoT Hubs queue)  
+    
+    
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubExplorerMonitor.JPG" width="100%" height="100%" /> 
       </p>
