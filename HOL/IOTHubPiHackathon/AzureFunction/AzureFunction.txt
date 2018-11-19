@@ -23,7 +23,7 @@ static RegistryManager registryManager;
 // It is a better to store the connection string in the App Settings
 // for your function and retrieve it with Environment.GetEnvironmentVariable("<setting name>")
 // The CONNECTION_STRING variable should be in the form: "HostName=handsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A="
-private const string CONNECTION_STRING = "<your-connection-string";
+private const string CONNECTION_STRING = "<your-connection-string>";
 
 public static async void Run(string myIoTHubMessage, ILogger log)
 {
