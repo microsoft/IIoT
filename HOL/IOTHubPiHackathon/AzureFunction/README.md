@@ -67,7 +67,7 @@ For ease of getting through the lab, we have provided the code that you will nee
 
   - Click on “+ Add” under the "View files" tab. 
   - Create a new text file on your laptop.  Copy the contents of [function.proj](/HOL/IOTHubPiHackathon/AzureFunction/function.proj) to this file.
-  - In your function app click on "Upload" to upload this file to your function app.
+  - In your function app click on "Upload" to upload this file to your function app.  This will add the Nuget libraries to your function app.
     ![Upload Function proj](/HOL/IOTHubPiHackathon/images/FunctionUploadProj.PNG)
 1.	Now add the main source code that will used within the function
   - Copy the text from [Function.txt](/HOL/IOTHubPiHackathon/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
