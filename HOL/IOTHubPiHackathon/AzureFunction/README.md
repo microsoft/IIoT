@@ -66,14 +66,9 @@ For ease of getting through the lab, we have provided the code that you will nee
 ![Expand Function views](/HOL/IOTHubPiHackathon/images/functionViews.jpg)
 
   - Click on “+ Add” under the "View files" tab. 
-  - Enter “project.json” <br />
-![Add project file](/HOL/IOTHubPiHackathon/images/addProject.jpg)
-
-  - Copy the text from [project.json](/HOL/IOTHubPiHackathon/AzureFunction/project.json) file in the github repo to the new json file you created.
-  - Click "Save". 
-    <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/projectSave.jpg" width="50%" height="50%" />
-    </p>    
+  - Create a new text file on your laptop.  Copy the contents of [function.proj](/HOL/IOTHubPiHackathon/AzureFunction/function.proj) to this file.
+  - In your function app click on "Upload" to upload this file to your function app.
+    ![Upload Function proj](/HOL/IOTHubPiHackathon/images/FunctionUploadProj.PNG)
 1.	Now add the main source code that will used within the function
   - Copy the text from [Function.txt](/HOL/IOTHubPiHackathon/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
   - In the run.csx file, find the CONNECTION_STRING variable and set the value to the IoT Hub Primary Key Connection String obtained in an earlier lab.
