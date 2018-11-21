@@ -55,6 +55,10 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
     
     ![Monitor Device](/HOL/IOTHubPiHackathon/images/MonitorDevice.PNG)
 
+    Note: If you didn't install the Azure IoT CLI extension previously, run the following command:
+    ```
+    az extension add --name azure-cli-iot-ext
+    ```
     Here are some additional az CLI commands you can try
     
     ```bash
