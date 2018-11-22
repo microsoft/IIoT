@@ -197,7 +197,7 @@ Perform this part of the module if you wish to populate your PowerBI report with
 
 1. Give the dashboard a name.  eg. "Lab Dashboard"
 
-      ![New Dashboard](/HOL/IOTHubPiHackathon/images/PowerBINameDashboard.PNG)
+      ![New Dashboard](/HOL/IOTHubPiHackathon/images/PowerBINameDashboard.jpg)
 
 1. Click on "Add tile" and select "REAL-TIME DATA".  Select "Next".
 
