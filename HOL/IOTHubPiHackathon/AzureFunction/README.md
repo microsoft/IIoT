@@ -3,17 +3,6 @@
 In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the status of the Raspberry Pi is normal and the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a Cloud to Device (C2D) message and the status message will be displayed on the Sense HAT LED display. 
 Note that if your are using the Sense HAT emulator, the text that shows up across the emulated LED display may be faint and may show up quickly. Keep an eye on the LED display so you can see the message appear. 
 
-### Obtain Values Required to Connect Function to the IoT Hub
-
-Before you start to build out the Azure function, you'll need some configuration information from the IoT Hub you provisioned. <br>
-1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
-  - Open the Azure Portal [here](https://ms.portal.azure.com)
-  - Click on the IoT Hub that was created earlier. 
-  - Under the “Messaging” category click on “Endpoints”.
-  - In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
-  - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. Feel free to use the parameters XLS to note these new values. <br />  
-  ![Event Hub Endpoint](/HOL/IOTHubPiHackathon/images/EHendpointValues.jpg) <br />
-  
 ### Create a Function
 
 In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenever the IoT hub service receives a new event. 
@@ -43,7 +32,7 @@ For ease of getting through the lab, we have provided the code that you will nee
     <img src="/HOL/IOTHubPiHackathon/images/CreateFunction3.jpg" width="30%" height="30%" />
     </p> 
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
-1. As of the date when this lab was updated, Azure Function V2 is in preview. For the labs, we want to use generally available services so that any changes made to preview code does not affect the lab material. As such, we will need to revert the Azure Functions service to V1 using the following steps. 
+1. On the day this lab was updated, the default version of Azure Functions that gets provisioned is V2 which is in preview. For the labs, we want to use generally available (GA) services so that any changes made to preview code in the backend does not affect the lab material. As such, we will need to revert the default version of Azure Functions to V1 using the following steps. 
   - Click the newly created Azure Function.
   - Click the "Platform features" tab. 
   - Click "Function app settings" 
@@ -62,9 +51,9 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CustomFunction.JPG" width="50%" height="50%" />
     </p> 
-8. Scroll down and choose the “IoT Hub (Event Hub)” based trigger. 
+8. Scroll down and choose the “Event Hub trigger”. 
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/IoTHubTrigger.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/eventHubTrigger.JPG" width="50%" height="50%" />
     </p> 
 9. Input all the values to create your new IoT Hub based function.
   - Choose "C#" as the language
