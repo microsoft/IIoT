@@ -62,12 +62,12 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/newFunction1.JPG" width="50%" height="50%" />
     </p>   
-  - In the *Connection* pop-up, click the "IoT Hub" button and select the IoT Hub that you provisioned. The *Endpoint* should be "Events (built-in endpoint)". Click "Select"
+  - In the _Connection_ pop-up, click the "IoT Hub" button and select the IoT Hub that you provisioned. The _Endpoint_ should be "Events (built-in endpoint)". Click "Select"
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/functionConnection.JPG" width="50%" height="50%" />
     </p> 
-    - You should be brought back to the *New Function* blade and the *Event Hub connection* and *Event Hub consumer group* (leave it at *$Default*) fields should be auto-filled. 
-    You will need to type in the *Event Hub name*. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the *Event Hub name* field and click the "Create" button. 
+    - You should be brought back to the _New Function_ blade and the _Event Hub connection_ and _Event Hub consumer group_ (leave it at _$Default_) fields should be auto-filled. 
+    You will need to type in the _Event Hub name_. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the _Event Hub name_ field and click the "Create" button. 
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.JPG" width="50%" height="50%" />
     </p>     
