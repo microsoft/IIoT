@@ -55,7 +55,7 @@ The following steps will walk you through the installation of tools that you nee
   - Open the [Azure Portal](http://portal.azure.com) in your browser
   - click on the "Cloud Shell" button on the menu bar across the top
 
-    ![Cloud Shell](/HOL/IoTHubPiHackathon/images/AzureToolBar.JPG)
+    ![Cloud Shell](../images/AzureToolBar.JPG)
 
   - install the azure iot cli extension with the following command
 
