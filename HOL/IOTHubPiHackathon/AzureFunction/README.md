@@ -66,8 +66,8 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/functionConnection.jpg" width="50%" height="50%" />
     </p> 
-    - You should be brought back to the *New Function* blade and the *Event Hub connection* and *Event hub consumer group* (leave it at _$Default_) fields should be auto-filled. 
-    You will need to type in the _Event Hub name_. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the _Event Hub name_ field and click the "Create" button. 
+    - You should be brought back to the New Function blade and the Event Hub connection and Event hub consumer group (leave it at $Default) fields should be auto-filled. 
+    You will need to type in the Event Hub name. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the Event Hub name field and click the "Create" button. 
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.jpg" width="50%" height="50%" />
     </p>     
