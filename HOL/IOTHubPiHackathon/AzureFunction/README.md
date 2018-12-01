@@ -53,23 +53,23 @@ For ease of getting through the lab, we have provided the code that you will nee
     </p> 
 8. Scroll down and choose the “Event Hub trigger”. 
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/eventHubTrigger.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/eventHubTrigger.jpg" width="50%" height="50%" />
     </p> 
 9. Input all the values to create your new IoT Hub based function.
   - Choose "C#" as the language
   - Enter a name for your new function in the “Name:” field. eg. MessageTriggerFunction
   - click "new"
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/newFunction1.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/newFunction1.jpg" width="50%" height="50%" />
     </p>   
   - In the _Connection_ pop-up, click the "IoT Hub" button and select the IoT Hub that you provisioned. The _Endpoint_ should be "Events (built-in endpoint)". Click "Select"
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/functionConnection.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/functionConnection.jpg" width="50%" height="50%" />
     </p> 
     - You should be brought back to the _New Function_ blade and the _Event Hub connection_ and _Event Hub consumer group_ (leave it at _$Default_) fields should be auto-filled. 
     You will need to type in the _Event Hub name_. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the _Event Hub name_ field and click the "Create" button. 
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.jpg" width="50%" height="50%" />
     </p>     
 10.	The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
