@@ -1,22 +1,12 @@
 ## Azure Functions Lab
 
-In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the status of the Raspberry Pi is normal and the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a Cloud to Device (C2D) message and the status will be displayed on the Sense HAT LED display. 
+In this part of the lab, you will create an Azure function that will be used to programmatically send data back to the Raspberry Pi. The Azure function that you will create will be triggered by events that arrive at the IoT Hub. If the status of the Raspberry Pi is normal and the newly reported temperature goes above the set threshold, the status of Sense HAT will be set to high. If the status is at high and the temperature goes below the threshold, the status will be reset to normal. These state changes will be sent back to the Raspberry Pi through a Cloud to Device (C2D) message and the status message will be displayed on the Sense HAT LED display. 
+Note that if your are using the Sense HAT emulator, the text that shows up across the emulated LED display may be faint and may show up quickly. Keep an eye on the LED display so you can see the message appear. 
 
-### Obtain Values Required to Connect Function to the IoT Hub
-
-Before you start to build out the Azure function, you'll need some configuration information from the IoT Hub you provisioned. <br>
-1. Get the values associated with the Event Hub compatible endpoints as well as the IoT Hub Connection String:
-  - Open the Azure Portal [here](https://ms.portal.azure.com)
-  - Click on the IoT Hub that was created earlier. 
-  - Under the “Messaging” category click on “Endpoints”.
-  - In the list of "Built-in endpoints", click on “Events” to load the Events endpoint properties blade. 
-  - Take note of the values for the “Event Hub-compatible name” and “Event Hub-compatible endpoint" fields. Feel free to use the parameters XLS to note these new values. <br />  
-  ![Event Hub Endpoint](/HOL/IOTHubPiHackathon/images/EHendpointValues.jpg) <br />
-  
 ### Create a Function
 
 In the next part of this lab, you will be creating a C# Azure Function that will get triggered whenever the IoT hub service receives a new event. 
-For ease of getting through the lab, we have provided the code that you will need to write the function. When triggered, the code in the function will compare the input to the set threshold (the tag parameter setting that you previously set to a value of 40). If the value is above or below, the function will send a cloud to device (C2D) message to the RaspberryPi. Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub service is built with the event hub service running under the covers.
+For ease of getting through the lab, we have provided the code that you will need to write the function. When triggered, the code in the function will compare the new event value to the set threshold. The threshold value is the tag parameter setting that you previously set to a value of 40. If the value is above or below, the function will send a cloud to device (C2D) message to the RaspberryPi. Note: To be technically correct, the function actually gets triggered when the event hub compatible endpoint within the IoT Hub service receives an event. IoT Hub service is built with the event hub service running under the covers.
 1. Navigate to the Azure portal: https://portal.azure.com 
 2. Click the ‘+’ sign and type in “function app” 
     <p align="center">
@@ -31,16 +21,28 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Provide the function app a name (eg. functionC2DHoL)
   - Select your Azure subscription
   - Select your existing subscription that you are using for the hands on lab
+  - Select "Windows" for the OS
   - For hosting plan, select “consumption plan”
   - For location, choose the closest data centre (eg. East US)
+  - For Runtime stack, choose ".NET"
   - For storage, select “create new” and provide a name for the storage
   - You can leave Application Insights turned off
   - Click “Create” <br>
       <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CreateFunction3.jpg" width="30%" height="30%" />
     </p> 
-  
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
+1. On the day this lab was updated, the default version of Azure Functions that gets provisioned is V2 which is in preview. For the labs, we want to use generally available (GA) services so that any changes made to preview code in the backend does not affect the lab material. As such, we will need to revert the default version of Azure Functions to V1 using the following steps. 
+  - Click the newly created Azure Function.
+  - Click the "Platform features" tab. 
+  - Click "Function app settings" 
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/ChangeVersion.jpg" />
+    </p> 
+  - Under the "Runtime version" heading, click the "~1" button
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/ChangeVersion2.jpg" />
+    </p> 
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CreateFunction4.jpg" />
@@ -49,22 +51,27 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CustomFunction.JPG" width="50%" height="50%" />
     </p> 
-8. Choose the “EventHubTrigger – C#”
-9. Enter a name for your new function in the “Name your function” field. eg. MessageTriggerFunction
-10.	In the “Event Hub name” field, enter the Event hub-compatible name that was obtained above. eg. iothandsonlabc4f51. <br>
-![Select Trigger](/HOL/IOTHubPiHackathon/images/EHTrigger.jpg)
-11.	Next, you will create a new “Event Hub connection”. The next few steps will walk you through a simple wizard that will allow you to build out the required connection string. 
-  - Click "new”.
-  - Select “IoT Hub”
-  - Under the *IoT Hub* drop down box, select your IoT Hub eg. Iothandsonlabs
-  - Under the *Endpoint* drop down box, select “Events (built-in endpoint)
-  - Click “Select”
-  
+8. Scroll down and choose the “Event Hub trigger”. 
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/Select.jpg" width="50%" height="50%" />
-    </p>
-
-  - Finally, click the “Create” button. The template for your new Event Hub trigger is now created! 
+    <img src="/HOL/IOTHubPiHackathon/images/eventHubTrigger.JPG" width="50%" height="50%" />
+    </p> 
+9. Input all the values to create your new IoT Hub based function.
+  - Choose "C#" as the language
+  - Enter a name for your new function in the “Name:” field. eg. MessageTriggerFunction
+  - click "new"
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/newFunction1.JPG" width="50%" height="50%" />
+    </p>   
+  - In the _Connection_ pop-up, click the "IoT Hub" button and select the IoT Hub that you provisioned. The _Endpoint_ should be "Events (built-in endpoint)". Click "Select"
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/functionConnection.JPG" width="50%" height="50%" />
+    </p> 
+    - You should be brought back to the _New Function_ blade and the _Event Hub connection_ and _Event Hub consumer group_ (leave it at _$Default_) fields should be auto-filled. 
+    You will need to type in the _Event Hub name_. The name is a substring of the connection string (see highlighted substring in the screenshot). Paste this value into the _Event Hub name_ field and click the "Create" button. 
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.JPG" width="50%" height="50%" />
+    </p>     
+10.	The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
   - Expand the “Logs” view at the bottom of the page
   - Click on “View Files”	
