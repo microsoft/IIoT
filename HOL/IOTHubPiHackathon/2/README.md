@@ -53,7 +53,8 @@ The Remote Monitoring solution accelerator implements an end-to-end monitoring s
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubKeys1.jpg" /> 
       </p>
 2. Obtain the "Connection string - primary key" for your IoT Hub. <BR>
-This is the shared access key that you will use to connect your device to the IoT Hub. Note that since we are using the iothubowner policy, we will be using the policy that provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. We do this to simplify the labs but in practice, you should only give your services access to the appropriate permissions. For example, in the case of devices, you should be using the device connect permission. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions)
+This is the shared access key that you will use to connect your device to the IoT Hub. Note that since we are using the iothubowner policy, we will be using the policy that provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. We do this to simplify the labs but in practice, you should only give your services access to the appropriate permissions. For example, if you are connecting a backend service that will be used to write to the IoT Hub register, you should only grant that particular service the "registryWrite" permission. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions).
+  Also, note that this is the primary key used by back end services to connect to the IoT Hub. Later in the labs, you will also be using a connection string that is used for individual devices to connect to IoT Hub. Make sure to note the difference. 
   - Click on the "Shared access policies".
   - Click on the "iothubowner" policy.
   - Copy the primary key connection string. Take note of the primary key connection string as you will use it later. To make things easier to capture, you can use the following template to capture all the required variables that you will use throughout this lab: [IoT HOL - Lab Parameters.xlsx](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx)
@@ -62,10 +63,10 @@ This is the shared access key that you will use to connect your device to the Io
       </p>
 
 ## Create Consumer Groups
-Consumer groups are a key element in Azure event ingestion services that allow consuming applications with a separate view of the event stream. Each consuming application can use the groups to read the streaming data independently at their own pace and with their own offet. These consumer groups will be created in advance but will be used later in this lab.
+Consumer groups are a key element in Azure event ingestion services that allow consuming applications with a separate view of the event stream. Each consuming application can use the groups to read the streaming data independently at their own pace and with their own offet. For this section of the lab, you will create two new consumer groups that will be used by Azure Stream Analytics as well as the Azure CLI command tool to monitor IoT Hub events. You will create these in advance but won't use them until later in this lab.
 1. Under the "Messaging" subsection, select "Endpoints"
 2. Click on the "Events" endpoint
-3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own groups.
+3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own consumer groups.
   - "monitor"
   - "asa"
   4. Click save in the top left hand corner of the blade.
@@ -134,6 +135,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
     <p align="center">
       <img src="/HOL/IOTHubPiHackathon/images/twinTag2.jpg" width="70%" height="70%" /> 
     </p>
+  -The job will be submitted and you should see a "job submitted successfully" message. This action will queue up a job in the IoT Hub job queue until the RaspberryPi device that you will setup later connects into the IoT Hub.  
 
 Congratulations! You have successfully spun up your Solution Accelerator and created a new custom device that you will configure in the next section of the labs! 
 
