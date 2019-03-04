@@ -47,10 +47,14 @@ You will need to walk through the following steps on your Raspberry Pi prior to 
 
 The following steps will walk you through the installation of tools that you need to run on your laptop for this lab: 
 
-1. OPTIONAL if using a laptop, download and install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
-1. OPTIONAL if using a laptop and the Sense HAT Emulator (vs the physical device), you'll need to install VNC viewer on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
+1. OPTIONAL if using a laptop to connect to the Raspberry Pi, download and install an SSH client like [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). We will use PuTTY to SSH into the Raspberry Pi to perform various functions throughout the lab. 
+1. OPTIONAL if using a laptop and the Sense HAT Emulator (vs the physical device), you'll need to install a VNC viewer client on your laptop so that you can remotely view your Raspbian desktop. Download and install RealVNC from (https://www.realvnc.com/download/viewer/)
 1. Ensure your Azure subscription login is working and you have sufficient permissions to create resources.
 1. Ensure you have access to Powerbi.com. If you are able to log in then you should be okay. 
+1. Ensure that you can log into www.azureiotsolutions.com and can see the various Azure IoT solution Accelerators tiles as per below. If you get permission errors, you will need to ask your IT team to provide you with the right permissions or email your instructor for assistance. 
+        <p align="center">
+          <img src="/HOL/IOTHubPiHackathon/images/ValidAccelerators.jpg"  width="50%" height="50%"/>
+        </p>
 1. During the labs, you will install the Azure IoT CLI in your Azure cloud shell on the Azure Portal.  
   - Open the [Azure Portal](http://portal.azure.com) in your browser
   - click on the "Cloud Shell" button on the menu bar across the top

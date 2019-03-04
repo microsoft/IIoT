@@ -43,7 +43,7 @@ You can order your hardware from a variety of online sites such as adafruit.com,
   ```
 
 ### OTHERS 
-- An Azure subscription with permissions to create Azure services.  You can use a free Azure account, but you will not be able to complete all paths of the lab.  The free account does not allow the creation of solution accelerators.  OPTIONAL: A corporate Azure subscription. This is required if you plan to use a preconfigured solution. You can use a corporate MSDN Azure subscription or a subscription from your company. 
+- An Azure subscription with permissions to create Azure services.  You can use a free Azure account, but you will not be able to complete all paths of the lab.  The free account does not allow the creation of solution accelerators.  OPTIONAL: A corporate Azure subscription. This is required if you plan to use a solution accelerator. You can use a corporate MSDN Azure subscription or a subscription from your company. 
 - OPTIONAL A PowerBI account (same account as the corporate Azure account).
 - A basic understanding of Python and Linux.
 

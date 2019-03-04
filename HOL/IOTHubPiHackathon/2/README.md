@@ -1,4 +1,5 @@
-In the following section of the Hands on Lab, you will walk through the creation of a remote monitoring solution accelerator from the Azure IoT Suite microsite. 
+In the following section of the Hands on Lab, you will walk through the creation of a remote monitoring solution accelerator from the Azure IoT Solutions Accelerator microsite. 
+The Remote Monitoring solution accelerator implements an end-to-end monitoring solution for multiple machines in remote locations. The solution combines key Azure services to provide a generic implementation of the business scenario. You can use the solution as a starting point for your own implementation and customize it to meet your own specific business requirements. It includes and by default will provision simulated devices such as trucks, chillers, elevators, engines and others. 
 
 ## Create a Remote Monitoring Solution Accelerator
 1. Setup your Azure IoT Suite remote monitoring solution accelerator. You will use this solution accelerator for the duration of the labs to help with visualization of the data and other IoT functions. 
@@ -11,10 +12,11 @@ In the following section of the Hands on Lab, you will walk through the creation
   - Fill out the form to create a Remote monitoring solution
     - Enter a name for your remote monitoring solution eg. IoTHandsOnLab-VinnyH. Note that the solution name needs to be globally unique. Once you provide a unique name, a green checkmark will appear to indicate that the solution name is valid. 
     - Choose the subscription that you will be using eg. Visual Studio Enterprise with MSDN
-    - Select the closest region to deploy your remote monitoring solution eg. East US
-    - Click "Create solution". The remote monitoring solution will get provisioned to your Azure subscription in approximately 5 minutes. 
+    - Select the closest region to deploy your remote monitoring solution eg. Canada Central
+    - Choose the Deployment option you want - either C# or Java
+    - Click "Create". The remote monitoring solution will get provisioned to your Azure subscription in approximately 25 minutes. 
        <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/RMPCS.jpg" width="50%" height="50%" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/RMPCS2.jpg" width="50%" height="50%" /> 
       </p>
     - Take note of the list of resources that get provisioned as part of the process. At the time of writing this document, the following Azure services get created in the Azure subscription that you specified (and therefore will incur some cost):
       - 1 Azure Active Directory application
@@ -28,11 +30,19 @@ In the following section of the Hands on Lab, you will walk through the creation
 
    - While the remote monitoring solution is being provisioned, you can see the provisioning state and logging information by clicking on the solution 
       <p align="center">
-         <img src="/HOL/IOTHubPiHackathon/images/ProvisioningState.jpg" /> 
+         <img src="/HOL/IOTHubPiHackathon/images/ProvisioningState2.jpg" /> 
       </p>
-   - Once the solution is fully created, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark. It will take about 5 minutes to provision so while you wait for that, continue with the steps below. 
+   - Once the solution is fully created, it will appear in your list of provisioned solutions showing the "Ready" indicator with a green checkmark or your provisiong status page will show a . It will take about 25 minutes to provision so while you wait for that, feel free to go for a coffee or click on the "Azure activity log" to see the logs that are written during the provisioning process. 
+   
+   When the provisioning is complete, you will see one of the two following screens:
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/SolutionReady.jpg" width="30%" height="30%" /> 
+      </p>
+      <BR>
+      OR
+      <BR>
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/SolutionReady2.jpg" width="50%" height="50%" /> 
       </p>
 
 ## Obtain Your IoT Hub Primary Key Connection String
@@ -43,19 +53,20 @@ In the following section of the Hands on Lab, you will walk through the creation
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubKeys1.jpg" /> 
       </p>
 2. Obtain the "Connection string - primary key" for your IoT Hub. <BR>
-This is the shared access key that you will use to connect your device to the IoT Hub. The key provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions)
+This is the shared access key that you will use to connect your device to the IoT Hub. Note that since we are using the iothubowner policy, we will be using the policy that provides the device with all permissions - registryWrite, ServiceConnect and DeviceConnect. We do this to simplify the labs but in practice, you should only give your services access to the appropriate permissions. For example, if you are connecting a backend service that will be used to write to the IoT Hub register, you should only grant that particular service the "registryWrite" permission. Details on the permissions are available [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-security#iot-hub-permissions).
+  Also, note that this is the primary key used by back end services to connect to the IoT Hub. Later in the labs, you will also be using a connection string that is used for individual devices to connect to IoT Hub. Make sure to note the difference. 
   - Click on the "Shared access policies".
   - Click on the "iothubowner" policy.
-  - Copy the primary key connection string. Take note of the primary key connection string for later. You can use the following template to capture all the required variables for this lab: [IoT HOL - Lab Parameters.xlsx](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx)
+  - Copy the primary key connection string. Take note of the primary key connection string as you will use it later. To make things easier to capture, you can use the following template to capture all the required variables that you will use throughout this lab: [IoT HOL - Lab Parameters.xlsx](/HOL/IOTHubPiHackathon/IoTHOL-LabParameters.xlsx)
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/IoTHubKeys2.jpg" /> 
       </p>
 
 ## Create Consumer Groups
-Consumer groups are a key element in Azure event ingestion services that allow consuming applications with a separate view of the event stream. Each consuming application can use the groups to read the streaming data independently at their own pace and with their own offet. These consumer groups will be created in advance but will be used later in this lab.
+Consumer groups are a key element in Azure event ingestion services that allow consuming applications with a separate view of the event stream. Each consuming application can use the groups to read the streaming data independently at their own pace and with their own offet. For this section of the lab, you will create two new consumer groups that will be used by Azure Stream Analytics as well as the Azure CLI command tool to monitor IoT Hub events. You will create these in advance but won't use them until later in this lab.
 1. Under the "Messaging" subsection, select "Endpoints"
 2. Click on the "Events" endpoint
-3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own groups.
+3. In the blade that appears on the right, add the following consumer groups.  If multiple people are connecting to the same IoT Hub, append your initials to each of the consumer group names so that each person gets their own consumer groups.
   - "monitor"
   - "asa"
   4. Click save in the top left hand corner of the blade.
@@ -64,16 +75,19 @@ Consumer groups are a key element in Azure event ingestion services that allow c
       </p>
 
 ## Create Your Device in the Remote Monitoring Solution Accelerator
-1. Go back to the Azure IoT Suite microsite tab. Your solution accelerator should be provisioned now. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
+1. Go back to the Azure IoT Solution Accelerators microsite tab. Click the "Launch" button on the newly provisioned remote monitoring solution. This will open up a new browser tab to your remote monitoring solution dashboard.
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/SolutionReady.jpg" width="30%" height="30%" /> 
       </p>
-2. Click the "Sign In" button.
+2. If the following permissions page showsup, click "Accept". 
+      <p align="center">
+         <img src="/HOL/IOTHubPiHackathon/images/permissions.jpg" width="50%" height="50%"/> 
+      </p>
+3. Click the "Sign In" button and provide your corporate credentials if it's requested. 
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMSignIn.jpg" width="50%" height="50%"/> 
       </p>
-3. If the following page requires you to accept the terms and conditions, click "Accept". 
-4. You will now have access to your created remote monitoring solution accelerator. Feel free to browse around and review the features available in the solution accelerator. 
+4. You will now have access to your created remote monitoring solution accelerator. Feel free to browse around and review the features available in the solution accelerator. More information on how to navigate and use the features of the remote monitoring solution accelerator are here: https://docs.microsoft.com/en-ca/azure/iot-accelerators/iot-accelerators-remote-monitoring-monitor
       <p align="center">
          <img src="/HOL/IOTHubPiHackathon/images/RMDashboard.jpg"/> 
       </p>
@@ -121,6 +135,7 @@ Consumer groups are a key element in Azure event ingestion services that allow c
     <p align="center">
       <img src="/HOL/IOTHubPiHackathon/images/twinTag2.jpg" width="70%" height="70%" /> 
     </p>
+  -The job will be submitted and you should see a "job submitted successfully" message. This action will queue up a job in the IoT Hub job queue until the RaspberryPi device that you will setup later connects into the IoT Hub.  
 
 Congratulations! You have successfully spun up your Solution Accelerator and created a new custom device that you will configure in the next section of the labs! 
 

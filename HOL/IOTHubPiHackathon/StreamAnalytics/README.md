@@ -2,7 +2,7 @@
 
 Prerequisites: Power BI account
 
-In this lab, we are going to create an Azure Stream Analytics job that will take the telemetry data from the Raspberry Pi and feed it to PowerBI as the output. From PowerBI, we will use the user friendly interface to drag and drop values onto a BI canvas and create some simple reports so that we can visualize the data coming into Azure from our device. 
+In this lab, we are going to create an Azure Stream Analytics job that will take the telemetry data that is flowing through IoT Hub from the Raspberry Pi and feed it to PowerBI as the output. From PowerBI, we will use the user friendly interface to drag and drop values onto a BI canvas and create some simple reports so that we can visualize the data coming into Azure from our device. 
 
 ## Optional: Stop the device simulators 
 
