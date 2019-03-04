@@ -83,7 +83,8 @@ In this lab, you will configure your Raspberry Pi to connect to the IoT solution
       ```  
       In this step, you are using the az CLI as a backend service to send a message to the IoT hub. IoT hub receives the message, queues it and sends the message down to the device using a C2D (Cloud-to-Device) command. In the Azure functions lab, you will be creating a script that will monitor telemetry values from the Raspberry Pi and any time that a value goes above the set threshold, the function will be used to send a message down to the Pi. 
   
-- On your Sense HAT, you should see the message appear on the display. (If you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />You should still be running Python script should be running 
+- On your Sense HAT, you should see the message appear on the display. (If you are using the Sense HAT emulator, you will need to VNC to your Raspberry Pi and open the Sense HAT Emulator application: Menu -> Programming -> Sense HAT Emulator) <br />
+If you didn't see the message on your LED display, double check that your Python script is still running.  
     ![Sense HAT Message Display](/HOL/IOTHubPiHackathon/images/SenseMsgDisplay.jpg)
   
 
