@@ -1,9 +1,12 @@
+#r "../bin/Microsoft.Azure.EventHubs.dll"
 #r "Newtonsoft.Json"
-using System;
+
 using Microsoft.Azure.Devices;
 using Microsoft.Azure.Devices.Shared;
 using Newtonsoft.Json;
+using System;
 using System.Text;
+using Microsoft.Azure.EventHubs;
 
 public class RaspberryPi
 {
@@ -17,67 +20,122 @@ public class RaspberryPi
 }
 
 static ServiceClient serviceClient;
+
 static RegistryManager registryManager;
 
 // It is a better to store the connection string in the App Settings
+
 // for your function and retrieve it with Environment.GetEnvironmentVariable("<setting name>")
+
 // The CONNECTION_STRING variable should be in the form: "HostName=handsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A="
-private const string CONNECTION_STRING = "<your-connection-string>";
 
-public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
+private const string CONNECTION_STRING = "HostName=iothub-eavee.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=ng5xal8ngtQhdzqj2FtJiTP91xmgQiI/JPQVBqIMArg=";
+
+ 
+public static async Task Run(EventData[] events, ILogger log)
 {
-    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
-
-    // Initiate the services used to interact with the IoT Hub
+    var exceptions = new List<Exception>();
+	
+	// Initiate the services used to interact with the IoT Hub
     serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(CONNECTION_STRING);
     registryManager = registryManager ?? RegistryManager.CreateFromConnectionString(CONNECTION_STRING);
 
+    foreach (EventData eventData in events)
+    {
+        try
+        {
+            string messageBody = Encoding.UTF8.GetString(eventData.Body.Array, eventData.Body.Offset, eventData.Body.Count);
+
+            // Replace these two lines with your processing logic.
+            log.LogInformation($"C# Event Hub trigger function processed a message: {messageBody}");
+            await ProcessMessage(messageBody, log);
+        }
+        catch (Exception e)
+        {
+            // We need to keep processing the rest of the batch - capture this exception and continue.
+            // Also, consider capturing details of the message that failed processing so it can be processed again later.
+            exceptions.Add(e);
+        }
+    }
+
+    // Once processing of the batch is complete, if any messages in the batch failed processing throw an exception so that there is a record of the failure.
+
+    if (exceptions.Count > 1)
+        throw new AggregateException(exceptions);
+
+    if (exceptions.Count == 1)
+        throw exceptions.Single();
+}
+
+private async static Task ProcessMessage(string myIoTHubMessage, ILogger log)
+ {
     //Retrieve IoT Hub Messages
+
     var raspberryPi = new RaspberryPi();
+
     try
     {
         //(This line is what it’s all about. Take the Message that trigger this function and load it into our object by deserializing it.)
-        raspberryPi = Newtonsoft.Json.JsonConvert.DeserializeObject<RaspberryPi>(myEventHubMessage);
+        raspberryPi = Newtonsoft.Json.JsonConvert.DeserializeObject<RaspberryPi>(myIoTHubMessage);
     }
     catch (Exception ex)
     {
-        log.Info($"Error deserializing: {ex.Message}");
-        return null;
+        log.LogInformation($"Error deserializing: {ex.Message}");
+
+        return;
     }
 
     // Retrieve the digital twin from the IoT Hub.
+
     Twin twin = await registryManager.GetTwinAsync(raspberryPi.DeviceId);
+
     if (twin != null)
     {
-        log.Info("Twin Properties:");
-        log.Info(twin.Properties.Desired.ToJson());
-        log.Info(twin.Properties.Reported.ToJson());
-        log.Info(twin.Tags.ToJson());
+		log.LogInformation("Twin Properties:");
+
+        log.LogInformation(twin.Properties.Desired.ToJson());
+
+        log.LogInformation(twin.Properties.Reported.ToJson());
+
+        log.LogInformation(twin.Tags.ToJson());
+
     }
     else
-        log.Info("Twin not retrieved");
+	{
+        log.LogInformation("Twin not retrieved");
+	}
 
-    double highTemperatureLimit = twin.Tags["HighTemperatureLimit"];
-    
-    string temperatureStatus = "Normal";
+    double highTemperatureLimit = 40;
+
+    if (twin.Tags.Contains("HighTemperatureLimit"))
+	{
+        highTemperatureLimit = twin.Tags["HighTemperatureLimit"];
+	}
+
+    var temperatureStatus = "Normal";
+
     if (twin.Tags.Contains("TemperatureStatus"))
+	{
         temperatureStatus = twin.Tags["TemperatureStatus"];
-    
+	}
+
     if (raspberryPi.Temperature >= highTemperatureLimit && temperatureStatus != "High")
     {
-        log.Info("Changing status to Hot");
+        log.LogInformation("Changing status to Hot");
+
         await SendCloudToDeviceMessageAsync(raspberryPi.DeviceId, "High");
+
         await AddTag(twin, "High");
     }
     else if (raspberryPi.Temperature < highTemperatureLimit && temperatureStatus != "Normal")
     {
-        log.Info("Changing status to Normal");
+        log.LogInformation("Changing status to Normal");
+
         await SendCloudToDeviceMessageAsync(raspberryPi.DeviceId, "Normal");
+
         await AddTag(twin, "Normal");
     }
-
-    return null;
-}
+ }
 
 /// <summary>
 /// Sends a message to the device via a method.  If the device is not active an error occurs.
@@ -88,6 +146,7 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 private async static Task SendCloudToDeviceMessageAsync(string deviceId, string message)
 {
     var commandMessage = new Message(Encoding.ASCII.GetBytes(message));
+
     await serviceClient.SendAsync(deviceId, commandMessage);
 }
 
@@ -97,14 +156,16 @@ private async static Task SendCloudToDeviceMessageAsync(string deviceId, string 
 /// <param name="twin">The devices twin</param>
 /// <param name="status">The new status</param>
 /// <returns></returns>
+
 public static async Task AddTag(Twin twin, string status)
 {
     string patch =
         @"{{
              tags: {{
                  TemperatureStatus: ""{0}""
-                 }}
+                }}
          }}";
+
     patch = string.Format(patch, status);
 
     await registryManager.UpdateTwinAsync(twin.DeviceId, patch, twin.ETag);
