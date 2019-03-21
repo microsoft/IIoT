@@ -29,7 +29,7 @@ static RegistryManager registryManager;
 
 // The CONNECTION_STRING variable should be in the form: "HostName=handsonlab230c6.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=jXbEZiTfHOfG+rrlFw5CoM47I1TE1mpz/IgKyEu0K/A="
 
-private const string CONNECTION_STRING = "HostName=iothub-eavee.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=ng5xal8ngtQhdzqj2FtJiTP91xmgQiI/JPQVBqIMArg=";
+private const string CONNECTION_STRING = "<ADD_CONNECTION_STRING_HERE>";
 
  
 public static async Task Run(EventData[] events, ILogger log)
