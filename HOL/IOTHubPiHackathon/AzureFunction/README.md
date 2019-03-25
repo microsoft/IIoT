@@ -32,31 +32,23 @@ For ease of getting through the lab, we have provided the code that you will nee
     <img src="/HOL/IOTHubPiHackathon/images/CreateFunction3.jpg" width="30%" height="30%" />
     </p> 
 5. Once the Function app is created, click the function (the function icon is the one in the shape of a lightning bolt)
-1. On the day this lab was updated, the default version of Azure Functions that gets provisioned is V2 which is in preview. For the labs, we want to use generally available (GA) services so that any changes made to preview code in the backend does not affect the lab material. As such, we will need to revert the default version of Azure Functions to V1 using the following steps. 
-  - Click the newly created Azure Function.
-  - Click the "Platform features" tab. 
-  - Click "Function app settings" 
-    <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/ChangeVersion.jpg" />
-    </p> 
-  - Under the "Runtime version" heading, click the "~1" button
-    <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/ChangeVersion2.jpg" />
-    </p> 
 6. Click the ‘+’ sign beside the “Functions” node in the hierarchy tree
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/CreateFunction4.jpg" />
     </p> 
-7. Click on “Custom Function”
+7. Click on “In-Portal” then Continue.
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/CustomFunction.JPG" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/FunctionsV2GetStarted.PNG" width="50%" height="50%" />
     </p> 
-8. Scroll down and choose the “Event Hub trigger”. 
+8. Choose "More templates..." then click on "Finish and view templates".
+    <p align="center">
+    <img src="/HOL/IOTHubPiHackathon/images/FunctionsV2MoreTemplates.PNG" width="50%" height="50%" />
+    </p> 
+9. Scroll down and choose the “Azure Event Hub trigger”. 
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/eventHubTrigger.jpg" width="50%" height="50%" />
     </p> 
-9. Input all the values to create your new IoT Hub based function.
-  - Choose "C#" as the language
+10. Input all the values to create your new IoT Hub based function.
   - Enter a name for your new function in the “Name:” field. eg. MessageTriggerFunction
   - click "new"
     <p align="center">
@@ -71,21 +63,21 @@ For ease of getting through the lab, we have provided the code that you will nee
     <p align="center">
     <img src="/HOL/IOTHubPiHackathon/images/createNewFunction.jpg" width="50%" height="50%" />
     </p>     
-10.	The template for your new Event Hub trigger is now created! 
+11.	The template for your new Event Hub trigger is now created! 
 12.	You will now configure the required libraries that will be needed for the new function created. 
   - Expand the “Logs” view at the bottom of the page
   - Click on “View Files”	
 
-![Expand Function views](/HOL/IOTHubPiHackathon/images/functionViews.jpg)
+![Expand Function views](/HOL/IOTHubPiHackathon/images/FunctionsV2ViewFiles.PNG)
 
   - Click on “+ Add” under the "View files" tab. 
-  - Enter “project.json” <br />
-![Add project file](/HOL/IOTHubPiHackathon/images/addProject.jpg)
+  - Enter “function.proj” <br />
+![Add project file](/HOL/IOTHubPiHackathon/images/FunctionsV2AddFunctionFile.PNG)
 
-  - Copy the text from [project.json](/HOL/IOTHubPiHackathon/AzureFunction/project.json) file in the github repo to the new json file you created.
+  - Copy the text from [function.proj](/HOL/IOTHubPiHackathon/AzureFunction/function.proj) file in the github repo to the new json file you created.
   - Click "Save". 
     <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/projectSave.jpg" width="50%" height="50%" />
+    <img src="/HOL/IOTHubPiHackathon/images/FunctionsV2SaveProj.PNG" width="50%" height="50%" />
     </p>    
 13.	Now add the main source code that will used within the function
   - Copy the text from [Function.txt](/HOL/IOTHubPiHackathon/AzureFunction/AzureFunction.txt) in the github repo to the "run.csx" file. 
@@ -93,7 +85,7 @@ For ease of getting through the lab, we have provided the code that you will nee
   - Click “Save and run” to run the function
 
    <p align="center">
-    <img src="/HOL/IOTHubPiHackathon/images/runFunction.jpg" />
+    <img src="/HOL/IOTHubPiHackathon/images/FunctionsV2RunFunction.PNG" />
     </p>
 
 ## Trying it out
@@ -108,4 +100,4 @@ If you are having difficulties getting the temperature on your physical Sense HA
 - Lower the threshold in the device twin for the RaspberryPi device. You can do this in the preconfigured solution portal (see steps in lab 2 to determine how to change the HighTemperatureLimit) 
 - Update your Python script to use the Sense Hat emulator instead of the physical board. Using the Sense HAT emulator will allow you to virtually control the temperature (and other properties)
 
-[Back to Main HOL Instructions](/HOL/IOTHubPiHackathon/README.md)
+[Back to Main HOL Instructions](../README.md)
